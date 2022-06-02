@@ -9,7 +9,6 @@ import  DashBoardRouters  from "./DashBoardRouters"
 
 
 
-
 const AppRouters = () => {
 
     // const [isAuth, setIsAuth] = useState(false)
@@ -31,7 +30,13 @@ const AppRouters = () => {
 
 if(checking){
     return(
-        <h1>Espere....</h1>
+      <div className="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import { Container, Navbar } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useForm from '../hooks/useForm';
 import { loginAsync, loginFacebookAsync, loginGoogleAsync } from '../redux/actions/authActions';
+import { ContenDivStyle } from '../styles/styleApp';
+
 
 const Login = () => {
 
@@ -27,7 +30,18 @@ const Login = () => {
       rest()
   }
   return (
-      <div>
+    <div>
+        <Navbar bg="primary" variant="dark">
+            <Container>
+                <Navbar.Brand href="#home">OpenHostal</Navbar.Brand>
+                {/* <Nav className="me-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    </Nav>*/}
+            </Container> 
+        </Navbar>
+        <ContenDivStyle>
           <div className="card-body p-5">
               <form onSubmit={handleSubmit}>
                   <h1>Inico de Sesion</h1>
@@ -74,8 +88,8 @@ const Login = () => {
               <button className='m-2 btn btn-primary text-light col-lg-2' onClick={loginFacebook}>Inicio con facebook</button>
               <p style={{marginLeft:'30px'}}><Link to='/registro'>registrarse</Link></p>
           </div>
-      </div>
-
+        </ContenDivStyle>
+    </div>
   );
 };
 

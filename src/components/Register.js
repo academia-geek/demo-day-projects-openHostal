@@ -3,8 +3,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUsr } from '../redux/actions/authActions';
 import * as Yup from 'yup';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Container, Form, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { ContenDivStyle } from '../styles/styleApp';
 
 const Register = () => {
 
@@ -28,7 +29,17 @@ const Register = () => {
   });
 
   return (
-      <div>
+      <ContenDivStyle>
+          <Navbar bg="primary" variant="dark">
+            <Container>
+                <Navbar.Brand href="#home">OpenHostal</Navbar.Brand>
+                {/* <Nav className="me-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    </Nav>*/}
+            </Container> 
+        </Navbar>
            
       <Form className='p-5' onSubmit={formik.handleSubmit} >
               <h1>Registro</h1>
@@ -85,7 +96,7 @@ const Register = () => {
               </Link>
           
           </Form>
-      </div>
+      </ContenDivStyle>
   );
 };
 

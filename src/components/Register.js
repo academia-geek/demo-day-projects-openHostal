@@ -30,19 +30,14 @@ const Register = () => {
 
   return (
       <ContenDivStyle>
-          <Navbar bg="primary" variant="dark">
+          <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">OpenHostal</Navbar.Brand>
-                {/* <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>*/}
+                <Navbar.Brand href="#home"><h2>OpenHostal</h2></Navbar.Brand>
             </Container> 
         </Navbar>
            
       <Form className='p-5' onSubmit={formik.handleSubmit} >
-              <h1>Registro</h1>
+              <h3>Registro</h3>
               <Form.Group className="mb-3 col-lg-3" controlId="formBasicName">
                   <Form.Label>Nombre</Form.Label>
                   <Form.Control
@@ -89,7 +84,7 @@ const Register = () => {
               <Button  className='m-2'variant="primary" type="submit">
                   Registrarse
               </Button>
-              <Link to='/'>
+              <Link to='/login'>
                   <Button className='m-2'variant="primary" type="submit">
                       Iniciar Sesion 
                   </Button>

@@ -6,12 +6,11 @@ import Register from "../components/Register"
 import  PrivateRouters  from "./PrivateRouters"
 import  PublicRouters  from "./PublicRouters"
 import  DashBoardRouters  from "./DashBoardRouters"
-
+import LandPage from "../components/LandPage"
 
 
 const AppRouters = () => {
 
-    // const [isAuth, setIsAuth] = useState(false)
     const [checking, setChecking]=useState(true)
     const [isLoggedIn, setIsLoggedIn]= useState(false)
 
@@ -44,6 +43,10 @@ if(checking){
     <>
     <BrowserRouter>
         <Routes>
+            <Route path='/landpage' element={
+              <PublicRouters isAuth={isLoggedIn} >
+                <LandPage/>
+              </PublicRouters>} />
             <Route path='/login' element={
               <PublicRouters isAuth={isLoggedIn} >
                 <Login />

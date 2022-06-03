@@ -31,20 +31,15 @@ const Login = () => {
   }
   return (
     <div>
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">OpenHostal</Navbar.Brand>
-                {/* <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>*/}
+                <Navbar.Brand href="#home"><h2>OpenHostal</h2></Navbar.Brand>
             </Container> 
         </Navbar>
         <ContenDivStyle>
           <div className="card-body p-5">
               <form onSubmit={handleSubmit}>
-                  <h1>Inico de Sesion</h1>
+                  <h3>Inico de Sesion</h3>
                   <div className="orm-group ">
                       <label className="col-sm-4 col-lg-2 col-form-label">Correo</label>
                       <div className="form-group col-sm-8 col-lg-2">

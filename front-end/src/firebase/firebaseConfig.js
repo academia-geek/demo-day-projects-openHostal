@@ -2,23 +2,17 @@ import { initializeApp } from "firebase/app";
 import { getFirestore} from "firebase/firestore";
 import { FacebookAuthProvider} from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-//const firebaseConfig = {
- // apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
- // authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
- // projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
- // storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
- // messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
- // appId: process.env.REACT_APP_FIREBASE_APPID
-//};
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDJAYisOs94NkdrIRLi99SCQLKFQFauAK0",
-  authDomain: "openhostal.firebaseapp.com",
-  projectId: "openhostal",
-  storageBucket: "openhostal.appspot.com",
-  messagingSenderId: "998986334721",
-  appId: "1:998986334721:web:c19a99e93810d158a57600"
+ const firebaseConfig = {
+ apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+ authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+ projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+ storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+ messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+ appId: process.env.REACT_APP_FIREBASE_APPID
 };
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

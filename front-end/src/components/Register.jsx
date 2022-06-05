@@ -58,6 +58,12 @@ const Register = () => {
                       required
                       onChange={formik.handleChange}
                   />
+                  <input placeholder="Date" class="textbox-n" 
+                  type="text" onFocus="(this.type='date')" 
+                  onBlur="(this.value == '' ? this.type='text' : this.type='date')" 
+                  id="date">
+
+                  </input>
               </Form.Group>
 
               <Form.Group className="mb- col-lg-3" controlId="formBasicPassword">

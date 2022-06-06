@@ -26,14 +26,14 @@
  *              id_hotales:
  *                  type: string
  *                  description: relacion del usuario con el hotal  
- *          required:
- *                  - tipo:
- *                  - descripcion: 
+ *          required: 
+ *                  - nombre:
+ *                  - ciudad:
+ *                  - sede:
+ *                  - descripcion:
  *                  - foto:
- *                  - estado:
- *                  - capacidad:
- *                  - servicios:
- *                  - id_hotales:  
+ *                  - coordenadas:
+ *                  - direccion:
  *      users:
  *          type: object
  *          properties:
@@ -110,6 +110,7 @@
  *                  - foto:
  *                  - coordenadas:
  *                  - direccion: 
+ * 
  */
 /** 
  * @swagger
@@ -149,8 +150,6 @@
  *              description: Error en el servidor
  *
  */
-
-
 /**
  * @swagger
  * /api/hostal:
@@ -158,12 +157,32 @@
  *      summary: Crea un nuevo hostal
  *      tags: [hostal]
  *      requestBody:
- *          required: true
  *          content:
- *              application/json:
+ *              multipart/form-data:
  *                 schema:
  *                   type: object
- *                   $ref: '#/components/schemas/hostal'
+ *                   properties:
+ *                          nombre:
+ *                              type: string
+ *                              description: nombre de hostal
+ *                          ciudad:
+ *                              type: string
+ *                              description: ciudad en la cual se encuentra hubicado el hostal
+ *                          sede:
+ *                              type: string
+ *                              description: sede del hostal
+ *                          descripcion:
+ *                              type: string
+ *                              description: describe la caracteristicas particulares del hostal
+ *                          foto:
+ *                              type: string
+ *                              format: binary
+ *                          coordenadas:
+ *                              type: string
+ *                              description: cordenadas en eje x y del hostal
+ *                          direccion:
+ *                              type: string
+ *                              description: direccion de la sede           
  *      responses:
  *          200:
  *              description: Hostal creada
@@ -205,14 +224,34 @@
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de los hostales
+ *          description: Identificador de los usuarios
  *      requestBody:
- *          required: true
  *          content:
- *              application/json:
+ *              multipart/form-data:
  *                 schema:
  *                   type: object
- *                   $ref: '#/components/schemas/hostal'
+ *                   properties:
+ *                          nombre:
+ *                              type: string
+ *                              description: nombre de hostal
+ *                          ciudad:
+ *                              type: string
+ *                              description: ciudad en la cual se encuentra hubicado el hostal
+ *                          sede:
+ *                              type: string
+ *                              description: sede del hostal
+ *                          descripcion:
+ *                              type: string
+ *                              description: describe la caracteristicas particulares del hostal
+ *                          foto:
+ *                              type: string
+ *                              format: binary
+ *                          coordenadas:
+ *                              type: string
+ *                              description: cordenadas en eje x y del hostal
+ *                          direccion:
+ *                              type: string
+ *                              description: direccion de la sede        
  *      responses:
  *          200:
  *              description: Se editó de manera correcta 
@@ -227,8 +266,6 @@
  *              description: Error en el servidor
  *
  */
-
-
 /** 
  * @swagger
  * /api/users:
@@ -246,7 +283,6 @@
  *                       $ref: '#/components/schemas/users'
  *
  */
-
 /**
  * @swagger
  * /api/users/{id}:
@@ -267,7 +303,6 @@
  *              description: Error en el servidor
  *
  */
-
 /**
  * @swagger
  * /api/users:
@@ -289,7 +324,6 @@
  *          500:
  *              description: Hostal no creada por error en el servidor
 */
-
 /**
  * @swagger
  * /api/users/{id}:
@@ -310,7 +344,6 @@
  *              description: Error en el servidor
  *
  */
-
 /**
  * @swagger
  * /api/users/{id}:
@@ -345,7 +378,6 @@
  *              description: Error en el servidor
  *
  */
-
 /** 
  * @swagger
  * /api/room:
@@ -363,7 +395,6 @@
  *                       $ref: '#/components/schemas/room'
  *
  */
-
 /**
  * @swagger
  * /api/room/{id}:
@@ -384,8 +415,6 @@
  *              description: Error en el servidor
  *
  */
-
-
 /**
  * @swagger
  * /api/room:
@@ -393,12 +422,33 @@
  *      summary: Crea una nueva habitaciones
  *      tags: [room]
  *      requestBody:
- *          required: true
  *          content:
- *              application/json:
+ *              multipart/form-data:
  *                 schema:
  *                   type: object
- *                   $ref: '#/components/schemas/room'
+ *                   properties:
+ *                      tipo:
+ *                          type: string
+ *                          description: tipo de habitacion 
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion de la habitacion del hostal
+ *                      foto:
+ *                          type: string
+ *                          format: binary
+ *                          description: fotos de las habitaciones 
+ *                      estado: 
+ *                          type: string
+ *                          description: estado de la habitacion
+ *                      capacidad:
+ *                          type: string
+ *                          description: caracteristicas de la cantidad de personas 
+ *                      servicios:
+ *                          type: string
+ *                          description: servicios prestado en la habitacion
+ *                      id_hotales:
+ *                          type: string
+ *                          description: relacion del usuario con el hotal  
  *      responses:
  *          200:
  *              description: habitacion creada
@@ -407,7 +457,6 @@
  *          500:
  *              description: habitacion no creada por error en el servidor
 */
-
 /**
  * @swagger
  * /api/room/{id}:
@@ -428,7 +477,6 @@
  *              description: Error en el servidor
  *
  */
-
 /**
  * @swagger
  * /api/room/{id}:
@@ -441,14 +489,35 @@
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de las habitaciones
+ *          description: Identificador de las habitaciones 
  *      requestBody:
- *          required: true
  *          content:
- *              application/json:
+ *              multipart/form-data:
  *                 schema:
  *                   type: object
- *                   $ref: '#/components/schemas/room'
+ *                   properties:
+ *                      tipo:
+ *                          type: string
+ *                          description: tipo de habitacion 
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion de la habitacion del hostal
+ *                      foto:
+ *                          type: string
+ *                          format: binary
+ *                          description: fotos de las habitaciones 
+ *                      estado: 
+ *                          type: string
+ *                          description: estado de la habitacion
+ *                      capacidad:
+ *                          type: string
+ *                          description: caracteristicas de la cantidad de personas 
+ *                      servicios:
+ *                          type: string
+ *                          description: servicios prestado en la habitacion
+ *                      id_hotales:
+ *                          type: string
+ *                          description: relacion del usuario con el hotal  
  *      responses:
  *          200:
  *              description: Se editó de manera correcta 

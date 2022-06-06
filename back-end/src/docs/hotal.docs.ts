@@ -109,7 +109,8 @@
  *                  - descripcion:
  *                  - foto:
  *                  - coordenadas:
- *                  - direccion: 
+ *                  - direccion:
+ *     
  */
 /** 
  * @swagger

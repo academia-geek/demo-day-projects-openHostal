@@ -5,7 +5,8 @@ export const  hostalSchema=Joi.object({
     cuidad:Joi.string().min(1).max(45).required(),
     sede:Joi.string().min(1).max(45),
     descripcion:Joi.string().min(1).max(200).required(),
-    foto:Joi.string().min(1).max(50).required(),
+    direccion:Joi.string().required(),
+    foto: Joi.any().required(),  
     coordenadas:Joi.string().min(1).max(100).required(),
 
 });

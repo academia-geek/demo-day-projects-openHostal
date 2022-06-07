@@ -10,19 +10,18 @@ roomRouter.use(express.json())
 roomRouter.get('/room',async(req,res)=>{
     let cliente = await pool.connect()
     try{
-        let result =await cliente.query('SELECT * FROM habitacion')
+        let result =await cliente.query('SELECT * FROM room')
         res.json(result.rows)
     } catch(err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
 }
 })
-
 roomRouter.get('/room/:id', async(req,res)=>{
     let cliente = await pool.connect()
     const { id } = req.params
        try{
-         let result =await cliente.query(`SELECT * FROM habitacion WHERE id = $1`,
+         let result =await cliente.query(`SELECT * FROM room WHERE id = $1`,
         [id])
        if(result.rows.length>0){
         res.json(result.rows)
@@ -44,12 +43,12 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             estado,
             capacidad,
             servicios,
-            id_hotales
+            id_hostal
         }=req.body
         const cliente=await pool.connect()
         const response=await cliente.query(
-            `INSERT INTO habitacion(tipo,descripcion,foto,estado,capacidad,servicios,id_hotales)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
-            [  tipo,descripcion,foto,estado,capacidad,servicios,id_hotales]
+            `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
+            [  tipo,descripcion,foto,estado,capacidad,servicios,id_hostal]
         )
         if (response.rowCount > 0) {res.send ('Se crea habitacion correctamente')
         uploadFileGoogle(originalname).catch(console.error);       
@@ -73,7 +72,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 id_hotales
             }=req.body
             try{
-                const result=await cliente.query(`UPDATE habitacion SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,id_hotales=$7 WHERE id =$8`,
+                const result=await cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,id_hotales=$7 WHERE id =$8`,
                     [  tipo,
                         descripcion,
                         foto,
@@ -99,7 +98,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{
-                    const result=await cliente.query(`DELETE FROM habitacion WHERE id = $1`,[id])
+                    const result=await cliente.query(`DELETE FROM room WHERE id = $1`,[id])
                     if(result.rowCount>0){res.send('Se eliminado habitacion de manera exitosa')
                 }else{
                     res.status(409).json({ message: 'Error en dato enviado' })

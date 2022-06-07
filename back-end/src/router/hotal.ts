@@ -11,7 +11,7 @@ hostalRouter.use(express.json())
 hostalRouter.get('/hostal', async(req,res)=>{
     let cliente = await pool.connect()
     try{
-        let result =await cliente.query('SELECT * FROM hotales')
+        let result =await cliente.query('SELECT * FROM hostal')
         res.json(result.rows)
     } catch(err) {
         console.log({ err })
@@ -23,7 +23,7 @@ hostalRouter.get('/hostal/:id', async(req,res)=>{
     let cliente = await pool.connect()
     const { id } = req.params   
     try{
-      let result =await cliente.query(`SELECT * FROM hotales WHERE id = $1`,
+      let result =await cliente.query(`SELECT * FROM hostal WHERE id = $1`,
         [id])
        if(result.rows.length>0){
         res.json(result.rows)
@@ -42,7 +42,7 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
     const{nombre,ciudad,sede,descripcion,direccion,coordenadas}=req.body
     try{
         const cliente= await pool.connect()
-        const response=await cliente.query(`INSERT INTO hotales(nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
+        const response=await cliente.query(`INSERT INTO hostal(nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
         [  nombre,
             ciudad,
             sede,
@@ -57,7 +57,9 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
             }catch(err){console.log(err)
             res.status(500).json({ error: 'Internal error server' })}
 })
-         hostalRouter.put('/hostal/:id',async(req,res)=>{
+         hostalRouter.put('/hostal/:id',uploadFile,async(req,res)=>{
+            const originalname=req.file.originalname;
+            const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
             let cliente=await pool.connect()
             const{ id }=req.params
             const{
@@ -66,11 +68,10 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
                 sede,
                 descripcion,
                 direccion,
-                foto,
                 coordenadas
             }=req.body
             try{
-                const result=await cliente.query(`UPDATE hotales SET nombre = $1, ciudad=$2,sede = $3,descripcion =$4,direccion=$5,foto=$6,coordenadas=$7 WHERE id =$8`,
+                const result=await cliente.query(`UPDATE hostal SET nombre = $1, ciudad=$2,sede = $3,descripcion =$4,direccion=$5,foto=$6,coordenadas=$7 WHERE id =$8`,
                     [  nombre,
                        ciudad,
                        sede,
@@ -94,8 +95,8 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{
-                    const result=await cliente.query(`DELETE FROM hotales WHERE id = $1`,[id])
-                    if(result.rowCount>0){res.send('Se eliminado hotal de manera exitosa')
+                    const result=await cliente.query(`DELETE FROM hostal WHERE id = $1`,[id])
+                    if(result.rowCount>0){res.send('Se eliminado hostal de manera exitosa')
                 }else{
                     res.status(409).json({ message: 'Error en dato enviado' })
                 }

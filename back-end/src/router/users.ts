@@ -4,9 +4,6 @@ export const usersRouter = express.Router()
 
 usersRouter.use(express.json())
 
-
-
-
 usersRouter.get('/users',async(req,res)=>{
     let cliente = await pool.connect()
     try{
@@ -51,11 +48,11 @@ usersRouter.post('/users',async(req,res)=>{
             numero_documento,
             nacionalidad,
             rol,
-            id_hotales
+            id_hostal
         }=req.body
        
         const cliente=await pool.connect()
-        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hotales)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
+        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
             [  nombre,
                 apellido,
                 email,
@@ -65,7 +62,7 @@ usersRouter.post('/users',async(req,res)=>{
                 numero_documento,
                 nacionalidad,
                 rol,
-                id_hotales]
+                id_hostal]
         )
         if (response.rowCount > 0) {res.send ('Se crea usuario correctamente')
             }
@@ -88,10 +85,10 @@ usersRouter.post('/users',async(req,res)=>{
                 numero_documento,
                 nacionalidad,
                 rol,
-                id_hotales
+                id_hostal
             }=req.body
             try{
-                const result=await cliente.query(`UPDATE users SET nombre = $1, apellido=$2,email = $3,contrasena =$4,celular =$5, tipo_documento=$6,numero_documento=$7,nacionalidad=$8,rol=$9, id_hotales=$10 WHERE id =$11`,
+                const result=await cliente.query(`UPDATE users SET nombre = $1, apellido=$2,email = $3,contrasena =$4,celular =$5, tipo_documento=$6,numero_documento=$7,nacionalidad=$8,rol=$9, id_hostal=$10 WHERE id =$11`,
                     [  nombre,
                         apellido,
                         email,
@@ -101,7 +98,7 @@ usersRouter.post('/users',async(req,res)=>{
                         numero_documento,
                         nacionalidad,
                         rol,
-                        id_hotales,
+                        id_hostal,
                         id]
                     ) 
                     if (result.rowCount > 0) {

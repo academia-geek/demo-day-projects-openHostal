@@ -109,7 +109,12 @@
  *                  - descripcion:
  *                  - foto:
  *                  - coordenadas:
+<<<<<<< HEAD
  *                  - direccion: 
+=======
+ *                  - direccion:
+ *     
+>>>>>>> 684571c3f4287d12b25438336cf0331e948ef995
  */
 /** 
  * @swagger

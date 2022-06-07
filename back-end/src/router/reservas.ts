@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import { collection } from "../services/database.service";
+import validator from "../services/validator.service";
 
 export const reservaRouter = express.Router();
 

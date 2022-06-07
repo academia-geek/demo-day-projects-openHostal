@@ -81,7 +81,7 @@ const Login = () => {
                   </button>
                   <br/>
               <button className='m-2 btn btn-primary text-light col-lg-2' onClick={loginFacebook}>Inicio con facebook</button>
-              <p style={{marginLeft:'30px'}}><Link to='/registro'>registrarse</Link></p>
+              <p style={{marginLeft:'30px'}}><Link to='/registro'>Registrarse</Link></p>
           </div>
         </ContenDivStyle>
     </div>

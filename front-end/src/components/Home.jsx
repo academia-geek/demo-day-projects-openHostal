@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button, Container, Nav, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { logoutAsync } from '../redux/actions/authActions'
+import { BootonStyle } from '../styles/styleLandPage'
 
 const Home = () => {
     const dispatch = useDispatch() 
@@ -9,7 +10,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">OpenHostal</Navbar.Brand>
           <Nav className="me-auto">
@@ -17,11 +18,8 @@ const Home = () => {
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
-          <Button className="text-light" type='button' variant="primary"
-              onClick={()=>dispatch(logoutAsync())}>
-                            Cerrar Sesion 
-          </Button>
-          </Container> 
+          <BootonStyle  onClick={()=>dispatch(logoutAsync())}>Cerrar Sesion</BootonStyle>
+        </Container> 
       </Navbar>
     </>
   )

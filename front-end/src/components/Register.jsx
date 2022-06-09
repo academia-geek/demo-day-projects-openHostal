@@ -14,6 +14,7 @@ const Register = () => {
       initialValues: {
           nombre: "",
           email: "",
+          date:"",
           contrasenia: "",
           contrasenia2: ""
       },
@@ -23,6 +24,7 @@ const Register = () => {
       validationSchema: Yup.object({
           nombre: Yup.string().required(),
           email: Yup.string().email().required(),
+          date: Yup.string().required(),
           contrasenia: Yup.string().required().oneOf([Yup.ref('contrasenia2')], 'Los password no coinciden'),
           contrasenia2: Yup.string().required().oneOf([Yup.ref('contrasenia')], 'Los password no coinciden')
       })
@@ -58,12 +60,20 @@ const Register = () => {
                       required
                       onChange={formik.handleChange}
                   />
-                  <input placeholder="Date" class="textbox-n" 
-                  type="text" onFocus="(this.type='date')" 
-                  onBlur="(this.value == '' ? this.type='text' : this.type='date')" 
-                  id="date">
-
-                  </input>
+                <Form.Group className="mb-3 col-lg-3" controlId="formBasicEmail">
+                  </Form.Group>
+                  <Form.Label>Fecha de Nacimiento</Form.Label>
+                  <Form.Control 
+                  placeholder="date" 
+                  className="textbox-n" 
+                  type="date" 
+                  name="date"
+                  required
+                  onChange={formik.handleChange}
+                //   onFocus="(this.type='date')" 
+                //   onBlur="(this.value == '' ? this.type='text' : this.type='date')" 
+                //   id="date"
+                  />
               </Form.Group>
 
               <Form.Group className="mb- col-lg-3" controlId="formBasicPassword">
@@ -83,7 +93,7 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       name="contrasenia2"
-                      require
+                      required
                       onChange={formik.handleChange}
                   />
               </Form.Group>

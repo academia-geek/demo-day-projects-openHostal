@@ -16,6 +16,7 @@ export const registerUsr = ({ nombre, email, contrasenia }) => {
             console.log(results)
             alert("usuario registrado exitosamente")
             dispatch( register( newUsr.user.uid, nombre, email ) )
+           
         } catch ( err ) {
             alert("El email ya esta en uso")
         }        
@@ -35,7 +36,8 @@ export const loginFacebookAsync = ( ) => {
     return ( dispatch ) => {
         const auth = getAuth();
         signInWithPopup( auth, facebook)
-        .then( (usr ) => console.log(usr))
+        .then( (usr ) => dispatch(loginSync(usr)))
+        
     }
 }
 
@@ -44,7 +46,8 @@ export const loginGoogleAsync = () => {
     return ( dispatch ) => {
         const auth = getAuth();
         signInWithPopup( auth, google)
-        .then(({user}) => {console.log(user,'usuario actualizado');})
+        
+        .then(({user}) => {dispatch(loginSync(user))})
         .catch(({error}) =>{console.warn(error, 'usuario no autorizado')})
     }
 }

@@ -23,7 +23,7 @@ export const HDivStyle = styled.h2`
 export const TitlesDivStyle = styled.div`
 display: flex;
 flex-direction:column;
-width:350px
+width:350px;
 `;
 export const PDivStyle = styled.p`
     padding-left:50px;
@@ -36,7 +36,7 @@ background-color:#000000 ;
 position: relative;
 top:20px; 
 display:flex;
-frex-direction: row-wrap;
+flex-wrap: wrap;
 
 
 `;
@@ -54,6 +54,9 @@ export const CartabStyle = styled.table`
 `;
 export const IconCStyle = styled.tr`
     color:blue;
+`;
+export const IconIIStyle = styled.th`
+    
 `;
 export const CardImgStyle = styled.div`
 margin: 4px 4px;
@@ -92,6 +95,7 @@ z-index: 1;
 font-family: inherit;
 color: white;
 border-radius: 8px;
+margin-left: 20px;
 &::before {
     content: '';
  width: 0;
@@ -113,14 +117,16 @@ border-radius: 8px;
     color: white;
    }
 `;
+
 export const FormLanStyle = styled.div`
     display:flex;
-    align-itens:center;
+    align-items:center;
     height:100px;
     justify-content:center;
     @media(max-width: 600px) {
         flex-direction: column;
         margin: 0px 40px;}
+        height:200px;
 `;
 export const BtnStyle = styled.button`
 padding: 0.8em 2.5em;
@@ -135,18 +141,45 @@ border:none;
 border-radius: 5px;
 height:40px;
 margin-top:23px;
+margin-left:20px;
 `;
 
 export const CardCateStyle = styled.div`
 display: flex;
-flexDirection: row;
-flexWrap: wrap;
+flex-direction: row;
+flex-wrap: wrap;
 background: linear-gradient(#212529, black);
 `;
 
 export const CardFindStyle = styled.div`
 display: flex;
-flexDirection: row;
-flexWrap: wrap;
+flex-direction: row;
+flex-Wrap: wrap;
 background-color: black;
+`;
+
+export const CardImmStyle  = styled.div`
+    margin:auto;
+`;
+
+export const CardsStyle = styled.div`  
+    display:flex;
+    flex-direction:row;
+    background-image: linear-gradient(to right,#212529,#212529,white);
+    width: 42%;
+    height: 200px;
+    border-radius: 13px;
+    margin: 20px;
+    transition: all .5s;
+    box-shadow: 10px 5px 5px #454748;
+        &:hover{
+            margin-top: 5px; 
+            background-image: linear-gradient(to right,#212529,#212529);
+            
+        }
+`;
+export const ImgIgStyle = styled.img` 
+    width: 100%;
+    margin-left: 5px;
+    border-radius: 10px 3px 3px 10px;
 `;

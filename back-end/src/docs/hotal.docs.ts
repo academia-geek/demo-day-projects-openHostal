@@ -15,8 +15,8 @@
  *                  type: string
  *                  description: fotos de las habitaciones 
  *              estado: 
- *                  type: string
- *                  description: estado de la habitacion
+ *                  type: number
+ *                  description: estado de la habitacion (1=disponible,2=ocupado,3=reservado sin paga,4= reservadas pagadas 5 =limpieza, 6=no molestar)
  *              capacidad:
  *                  type: string
  *                  description: caracteristicas de la cantidad de personas 
@@ -109,14 +109,7 @@
  *                  - descripcion:
  *                  - foto:
  *                  - coordenadas:
-<<<<<<< HEAD
  *                  - direccion: 
-=======
- *                  - direccion:
- *     
->>>>>>> 684571c3f4287d12b25438336cf0331e948ef995
- */
-/** 
  * @swagger
  * /api/hostal:
  *  get:
@@ -407,6 +400,25 @@
  *      responses:
  *          200:
  *              description: Se consultó habitaciones por ID
+ *          500:
+ *              description: Error en el servidor
+ */
+/**
+ * @swagger
+ * /api/roomestado/{estado}:
+ *  get:
+ *      summary: Consulta las habitaciones y su realcion con el hostal sugun su estado. 
+ *      tags: [room]
+ *      parameters:
+ *        - in: path
+ *          name: estado
+ *          schema:
+ *              type: number
+ *          required: true
+ *          description: Identificador segun el estado de la habitaciom
+ *      responses:
+ *          200:
+ *              description: Se consultó habitacion segun su estado
  *          500:
  *              description: Error en el servidor
  */

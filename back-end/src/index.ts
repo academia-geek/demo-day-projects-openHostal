@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import { mailRouter } from "./router/mail.router";
 import{hostalRouter}from "./router/hotal";
-import {authRouter} from "./router/ruterUsuario";
+import {codigoRouter} from "./router/codigoSengrid";
 import{reservaRouter} from"./router/reservas";
 import{usersRouter}from"./router/users";
 import{roomRouter} from"./router/habitacion";
@@ -45,7 +45,7 @@ app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);
 }); 
 app.use('/mail',mailRouter)
-app.use('/usuarios',authRouter)
+app.use('/api',codigoRouter)
 app.use('/api', hostalRouter)
 app.use('/api',usersRouter)
 app.use('/api',roomRouter)

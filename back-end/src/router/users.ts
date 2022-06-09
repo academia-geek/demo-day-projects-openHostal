@@ -1,6 +1,10 @@
 import express, { Request, Response, Router } from 'express'
 import { pool } from '../sql/config';
-export const usersRouter = express.Router()
+export const usersRouter = express.Router();
+import { createValidator } from "express-joi-validation";
+import { usersSchema }  from"../schemas-joi/hostal"
+
+const validator=createValidator({});
 
 usersRouter.use(express.json())
 
@@ -15,13 +19,10 @@ usersRouter.get('/users',async(req,res)=>{
 }
 })
 
-
 usersRouter.get('/users/:id', async(req,res)=>{
     let cliente = await pool.connect()
-    const { id } = req.params
-    
+    const { id } = req.params  
     try{
- 
         let result =await cliente.query(`SELECT * FROM users WHERE id = $1`,
         [id])
        if(result.rows.length>0){
@@ -35,7 +36,7 @@ usersRouter.get('/users/:id', async(req,res)=>{
 }
 })
 
-usersRouter.post('/users',async(req,res)=>{
+usersRouter.post('/users',validator.body(usersSchema),async(req,res)=>{
     try{
        
         const{
@@ -72,7 +73,7 @@ usersRouter.post('/users',async(req,res)=>{
             }
          } )
 
-         usersRouter.put('/users/:id',async(req,res)=>{
+         usersRouter.put('/users/:id',validator.body(usersSchema),async(req,res)=>{
             let cliente=await pool.connect()
             const{ id }=req.params
             const{

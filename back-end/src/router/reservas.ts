@@ -1,11 +1,15 @@
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import { collection } from "../services/database.service";
-import validator from "../services/validator.service";
+// import validator from "../services/database.service";
 
 export const reservaRouter = express.Router();
 
 reservaRouter.use(express.json());
+
+reservaRouter.get('/', (req, res) => {
+    res.send('Hello world')
+  })
 
 reservaRouter.get("/reservas", async (req:Request, res:Response) => {
     try{

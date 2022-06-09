@@ -5,6 +5,11 @@ export const hostalRouter = express.Router()
 import{GOOGLE_CLOUD_BUCKET} from'../utilities/configcloud'
 import {uploadFileGoogle}from'../utilities/configcloud'
 import { uploadFile } from '../utilities/configMulter'
+import { createValidator } from "express-joi-validation";
+import { roomSchema } from"../schemas-joi/hostal";
+import{decodeToken}from"../firebase/token";
+const validator=createValidator({});
+
 roomRouter.use(express.json())
 
 roomRouter.get('/room',async(req,res)=>{
@@ -33,6 +38,26 @@ roomRouter.get('/room/:id', async(req,res)=>{
         res.status(500).json({ error: 'Internal error server' })
 }
 })
+
+roomRouter.get('/roomestado/:estado', async(req,res)=>{
+    let cliente = await pool.connect()
+    const { estado } = req.params
+       try{
+         let result =await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
+        [estado])
+       if(result.rows.length>0){
+        res.json(result.rows)
+       }else{
+           res.send('NO EXISTE Habitación')
+       }
+    } catch(err) {
+        console.log({ err })
+        res.status(500).json({ error: 'Internal error server' })
+}
+})
+
+
+
 roomRouter.post('/room',uploadFile,async(req,res)=>{
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`

@@ -1,78 +1,84 @@
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
-import { collection } from "../services/database.service";
-// import validator from "../services/database.service";
+import { collections } from "../services/database.service";
 
-export const reservaRouter = express.Router();
+import { pool } from '../sql/config';
 
-reservaRouter.use(express.json());
+export const reservasRouter = express.Router();
 
-reservaRouter.get('/', (req, res) => {
-    res.send('Hello world')
-  })
+reservasRouter.use(express.json());
+//visualiza todas las peliculas requier TOKEN
+reservasRouter.get("/reserva",async (_req: Request, res: Response) => {
+    try {
+       
+        const reservas = await collections.reservas.find({}).toArray();
 
-reservaRouter.get("/reservas", async (req:Request, res:Response) => {
-    try{
-        const reservas = await collection.reservas.find().toArray();
-        res.status(200).json(reservas);
-    }catch{
-        res.status(500).json({ error: 'Internal error server' });
+        res.status(200).send(reservas);
+    } catch (error) {
+        res.status(500).send(error.message);
     }
 });
 
-reservaRouter.get("/reserva:id", async (req:Request, res:Response) => {
+reservasRouter.get("/reserva/:id",async (req: Request, res: Response) => {
+    const id = req?.params?.id;
     try {
-        const id = req?.params?.id;
-        const reserva = await collection.reservas.findOne({ _id: new ObjectId(id) });
-        if (reserva) {
-            res.status(200).json(reserva);
-        } else {
-            res.status(404).json({ message: 'Reserva not found' });
+        const query = { _id: new ObjectId(id) };
+        const reservas = await collections.reservas.findOne(query);
+
+        if (reservas) {
+            res.status(200).send(reservas);
         }
     } catch (error) {
-        res.status(500).send(`Unable to find matching the reserva with the id: ${req.params.id}`);
-    }
-        
-});
-
-reservaRouter.post("/reserva", async (req:Request, res:Response) => {
-    try {
-        const reserva = req.body;
-        const result = await collection.reservas.insertOne(reserva);
-        const newReserva = await collection.reservas.findOne({ _id: result.insertedId });
-        res.status(201).json(newReserva);
-    } catch (error) {
-        res.status(500).json(error.message);
+        res.status(404).send(`No se puede encontrar reserva: ${req.params.id}`);
     }
 });
-
-reservaRouter.put("/reserva:id", async (req:Request, res:Response) => {
+//crear nuevas peliculas requiere Token Y squema Joi
+reservasRouter.post("/reserva",async (req: Request, res: Response) => {
     try {
-        const id = req?.params?.id;
-        const UpdateReserva = req.body;
-        const result = await collection.reservas.updateOne({ _id: new ObjectId(id) }, { $set: UpdateReserva });
+        const newReservas = req.body;
+        const result = await collections.reservas.insertOne(newReservas);
         result
-            ? res.status(200).json({ message: 'Reserva updated' })
-            : res.status(304).json({ message: `Reserva with id: ${id} not updated` });
+            ? res.status(200).send(`Se crean reservas con id ${result.insertedId}`)
+            : res.status(500).send(" Error en el servidor");
     } catch (error) {
-        res.status(500).send(error.message);
+        console.error(error);
+        res.status(400).send(error.message);
     }
 });
 
-reservaRouter.delete("/reserva:id", async (req:Request, res:Response) => {
+//Actualizar peliculas por id requiere token y schema joi
+reservasRouter.put("/reserva/:_id", async (req: Request, res: Response) => {
+    const id = req?.params?.id;
     try {
-        const id = req?.params?.id;
-        const result = await collection.reservas.deleteOne({ _id: new ObjectId(id) });
-        if(result && result.deletedCount){
-            res.status(200).json({ message: `Reserva with id: ${id} deleted` });
-        }else if(!result){
-            res.status(400).json({ message: `Reserva with id: ${id} not found` });
-        }else if (!result.deletedCount){
-            res.status(404).json({ message: `Reserva with id: ${id} does not exist` });
+        const updatedReservas = req.body;
+        const query = { _id: new ObjectId(id) };
+        const result = await collections.reservas.updateOne(query, { $set: updatedReservas });
+        result
+            ? res.status(200).send(`Reserva actualizada exitosamente `)
+            : res.status(304).send(`Reserva id: ${id} no actualizada`);
+    } catch (error) {
+        console.error(error.message);
+        res.status(400).send(error.message);
+    }
+});
+//Eliminar peliculas por id requiere Token
+reservasRouter.delete("/reserva/:id",async (req: Request, res: Response) => {
+    const id = req?.params?.id;
+
+    try {
+        const query = { _id: new ObjectId(id) };
+        const result = await collections.reservas.deleteOne(query);
+
+        if (result && result.deletedCount) {
+            res.status(202).send(`Se elimina id ${id} correctamente`);
+        } else if (!result) {
+            res.status(400).send(`Fallo al eliminar ${id}`);
+        } else if (!result.deletedCount) {
+            res.status(404).send(`Reservas con ID ${id} no existe`);
         }
     } catch (error) {
-        res.status(500).send(error.message);
+        console.error(error.message);
+        res.status(400).send(error.message);
     }
-        
-})
+});
 

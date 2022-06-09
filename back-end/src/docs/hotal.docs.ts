@@ -15,15 +15,15 @@
  *                  type: string
  *                  description: fotos de las habitaciones 
  *              estado: 
- *                  type: string
- *                  description: estado de la habitacion
+ *                  type: number
+ *                  description: estado de la habitacion (1=disponible,2=ocupado,3=reservado sin paga,4= reservadas pagadas 5 =limpieza, 6=no molestar)
  *              capacidad:
  *                  type: string
  *                  description: caracteristicas de la cantidad de personas 
  *              servicios:
  *                  type: string
  *                  description: servicios prestado en la habitacion
- *              id_hotales:
+ *              id_hostal:
  *                  type: string
  *                  description: relacion del usuario con el hotal  
  *          required: 
@@ -64,7 +64,7 @@
  *              rol: 
  *                  type: string
  *                  description: rol del usuario 
- *              id_hotales:
+ *              id_hostal:
  *                  type: number
  *                  description: relacion del usuario con el hotal
  *          required: 
@@ -93,15 +93,15 @@
  *              descripcion:
  *                  type: string
  *                  description: describe la caracteristicas particulares del hostal
+ *              direccion:
+ *                  type: string
+ *                  description: direccion de la sede
  *              foto:
  *                  type: string
  *                  description: url de la imagen 
  *              coordenadas:
  *                  type: string
  *                  description: cordenadas en eje x y del hostal
- *              direccion:
- *                  type: string
- *                  description: direccion de la sede
  *          required: 
  *                  - nombre:
  *                  - ciudad:
@@ -109,10 +109,7 @@
  *                  - descripcion:
  *                  - foto:
  *                  - coordenadas:
- *                  - direccion:
- *     
- */
-/** 
+ *                  - direccion: 
  * @swagger
  * /api/hostal:
  *  get:
@@ -148,7 +145,6 @@
  *              description: Se consultó hostales por ID
  *          500:
  *              description: Error en el servidor
- *
  */
 /**
  * @swagger
@@ -174,15 +170,15 @@
  *                          descripcion:
  *                              type: string
  *                              description: describe la caracteristicas particulares del hostal
+ *                          direccion:
+ *                              type: string
+ *                              description: direccion de la sede    
  *                          foto:
  *                              type: string
  *                              format: binary
  *                          coordenadas:
  *                              type: string
- *                              description: cordenadas en eje x y del hostal
- *                          direccion:
- *                              type: string
- *                              description: direccion de la sede           
+ *                              description: cordenadas en eje x y del hostal       
  *      responses:
  *          200:
  *              description: Hostal creada
@@ -191,7 +187,6 @@
  *          500:
  *              description: Hostal no creada por error en el servidor
 */
-
 /**
  * @swagger
  * /api/hostal/{id}:
@@ -211,7 +206,6 @@
  *          500:
  *              description: Error en el servidor
  */
-
 /**
  * @swagger
  * /api/hostal/{id}:
@@ -243,15 +237,15 @@
  *                          descripcion:
  *                              type: string
  *                              description: describe la caracteristicas particulares del hostal
+ *                          direccion:
+ *                              type: string
+ *                              description: direccion de la sede 
  *                          foto:
  *                              type: string
  *                              format: binary
  *                          coordenadas:
  *                              type: string
- *                              description: cordenadas en eje x y del hostal
- *                          direccion:
- *                              type: string
- *                              description: direccion de la sede        
+ *                              description: cordenadas en eje x y del hostal      
  *      responses:
  *          200:
  *              description: Se editó de manera correcta 
@@ -264,7 +258,6 @@
  *              description: Error en envío de datos por parte del cliente 
  *          500:
  *              description: Error en el servidor
- *
  */
 /** 
  * @swagger
@@ -281,7 +274,6 @@
  *                     type: array
  *                     items:
  *                       $ref: '#/components/schemas/users'
- *
  */
 /**
  * @swagger
@@ -301,7 +293,6 @@
  *              description: Se consultó usuarios por ID
  *          500:
  *              description: Error en el servidor
- *
  */
 /**
  * @swagger
@@ -376,7 +367,6 @@
  *              description: Error en envío de datos por parte del cliente 
  *          500:
  *              description: Error en el servidor
- *
  */
 /** 
  * @swagger
@@ -393,7 +383,6 @@
  *                     type: array
  *                     items:
  *                       $ref: '#/components/schemas/room'
- *
  */
 /**
  * @swagger
@@ -413,7 +402,25 @@
  *              description: Se consultó habitaciones por ID
  *          500:
  *              description: Error en el servidor
- *
+ */
+/**
+ * @swagger
+ * /api/roomestado/{estado}:
+ *  get:
+ *      summary: Consulta las habitaciones y su realcion con el hostal sugun su estado. 
+ *      tags: [room]
+ *      parameters:
+ *        - in: path
+ *          name: estado
+ *          schema:
+ *              type: number
+ *          required: true
+ *          description: Identificador segun el estado de la habitaciom
+ *      responses:
+ *          200:
+ *              description: Se consultó habitacion segun su estado
+ *          500:
+ *              description: Error en el servidor
  */
 /**
  * @swagger
@@ -446,7 +453,7 @@
  *                      servicios:
  *                          type: string
  *                          description: servicios prestado en la habitacion
- *                      id_hotales:
+ *                      id_hostal:
  *                          type: string
  *                          description: relacion del usuario con el hotal  
  *      responses:
@@ -475,7 +482,6 @@
  *              description: habitaciones eliminada
  *          500:
  *              description: Error en el servidor
- *
  */
 /**
  * @swagger
@@ -515,7 +521,7 @@
  *                      servicios:
  *                          type: string
  *                          description: servicios prestado en la habitacion
- *                      id_hotales:
+ *                      id_hostal:
  *                          type: string
  *                          description: relacion del usuario con el hotal  
  *      responses:

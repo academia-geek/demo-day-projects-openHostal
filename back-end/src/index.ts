@@ -1,12 +1,15 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'
 import morgan from 'morgan';
+
+import { connectToDatabase } from "./services/database.service";
 import { mailRouter } from "./router/mail.router";
 import{hostalRouter}from "./router/hotal";
-import {authRouter} from "./router/ruterUsuario";
-import{reservaRouter} from"./router/reservas";
+import {codigoRouter} from "./router/codigoSengrid";
+import { reservasRouter } from "./router/reservas";
 import{usersRouter}from"./router/users";
 import{roomRouter} from"./router/habitacion";
+
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from "swagger-jsdoc";
@@ -41,12 +44,23 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use(cors());
 app.set('port',process.env.PORT||8080);
 
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
-}); 
+
+connectToDatabase()
+.then(() => {
+
 app.use('/mail',mailRouter)
-app.use('/usuarios',authRouter)
+app.use('/api',codigoRouter)
 app.use('/api', hostalRouter)
 app.use('/api',usersRouter)
 app.use('/api',roomRouter)
-app.use('/api',reservaRouter)
+app.use('/api',reservasRouter)
+
+app.listen(app.get('port'), () => {
+    console.log(`Server on port ${app.get('port')}`);
+}); 
+
+})   .catch((error: Error) => {
+    console.error("Database connection failed", error);
+    process.exit();
+});
+

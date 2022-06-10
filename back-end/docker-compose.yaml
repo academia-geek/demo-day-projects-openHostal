@@ -3,7 +3,7 @@ version: '3'
 services:
 
     api:
-     container_name: api-movie-dock
+     container_name: api-openhostal-dock
      restart: always
      build: .
      ports:
@@ -13,7 +13,7 @@ services:
       - mongo
 
     mongo:
-        container_name: mongoDB
+        container_name: mongoDB1
         image: mongo
         ports:
           - 27022:27017 

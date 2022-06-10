@@ -11,7 +11,9 @@ CREATE TABLE hostal(
     descripcion  VARCHAR(200)NOT NULL,
     direccion varchar(85)NOT NULL,
     foto VARCHAR (50)NOT NULL,
-    coordenadas VARCHAR(100) NOT NULL,
+    geometry1 int NOT NULL,
+    geometry2  int NOT NULL,        
+
      PRIMARY KEY (id)
 
 );
@@ -60,7 +62,7 @@ CREATE TABLE users(
 ALTER TABLE hotales AUTO_INCREMENT=1;
 
 
- INSERT INTO hotales( nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)
+ INSERT INTO hostal( nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)
  VALUES( 'Selina','Medellín','Selina Medellin & Cowork','Vení a disfrutar de nuestro hotel Selina Medellín. En medio del barrio La Florida. Clases de Yoga, estudio de musica, espacio de cowork y mucho más','Cra.32d #9-17, Medellín, El Poblado','ing1.jpg','-16.2531253896762,28.47492552989593');
 
 INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,numero_documento,nacionalidad,rol,id_hotales)

@@ -1,0 +1,146 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hostalRouter = exports.roomRouter = void 0;
+const express_1 = __importDefault(require("express"));
+const config_1 = require("../sql/config");
+exports.roomRouter = express_1.default.Router();
+exports.hostalRouter = express_1.default.Router();
+const configcloud_1 = require("../utilities/configcloud");
+const configcloud_2 = require("../utilities/configcloud");
+const configMulter_1 = require("../utilities/configMulter");
+const express_joi_validation_1 = require("express-joi-validation");
+const validator = (0, express_joi_validation_1.createValidator)({});
+exports.roomRouter.use(express_1.default.json());
+exports.roomRouter.get('/room', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    try {
+        let result = yield cliente.query('SELECT * FROM room');
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log({ err });
+        res.status(500).json({ error: 'Internal error server' });
+    }
+}));
+exports.roomRouter.get('/room/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { id } = req.params;
+    try {
+        let result = yield cliente.query(`SELECT * FROM room WHERE id = $1`, [id]);
+        if (result.rows.length > 0) {
+            res.json(result.rows);
+        }
+        else {
+            res.send('NO EXISTE Habitación');
+        }
+    }
+    catch (err) {
+        console.log({ err });
+        res.status(500).json({ error: 'Internal error server' });
+    }
+}));
+exports.roomRouter.get('/roomestado/:estado', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { estado } = req.params;
+    try {
+        let result = yield cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`, [estado]);
+        if (result.rows.length > 0) {
+            res.json(result.rows);
+        }
+        else {
+            res.send('NO EXISTE Habitación');
+        }
+    }
+    catch (err) {
+        console.log({ err });
+        res.status(500).json({ error: 'Internal error server' });
+    }
+}));
+exports.roomRouter.post('/room', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // uploadFile(req, res, err => {
+    // if (err) {
+    //   console.log(err)
+    //   err.message = 'Error al cargar el archivo'
+    //   res.send(err)
+    // }
+    // if (req.file) console.log(req.file)
+    // else if (req.files) console.log(req.files)
+    // res.send('Archivo cargado')    
+    const originalname = req.file.originalname;
+    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
+    try {
+        const { tipo, descripcion, estado, capacidad, servicios, id_hostal } = req.body;
+        const cliente = yield config_1.pool.connect();
+        const response = yield cliente.query(`INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`, [tipo, descripcion, foto, estado, capacidad, servicios, id_hostal]);
+        if (response.rowCount > 0) {
+            res.send('Se crea habitacion correctamente');
+            (0, configcloud_2.uploadFileGoogle)(originalname).catch(console.error);
+        }
+        else {
+            res.json({ message: 'No se pudo crear el habitacion' });
+        }
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({ error: 'Internal error server' });
+    }
+    // } )
+}));
+exports.roomRouter.put('/room/:id', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { id } = req.params;
+    const originalname = req.file.originalname;
+    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
+    const { tipo, descripcion, estado, capacidad, servicios, id_hotales } = req.body;
+    try {
+        const result = yield cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,id_hotales=$7 WHERE id =$8`, [tipo,
+            descripcion,
+            foto,
+            estado,
+            capacidad,
+            servicios,
+            id_hotales,
+            id]);
+        if (result.rowCount > 0) {
+            res.json({ message: 'Actualización realizada correctamente' });
+        }
+        else {
+            res.status(503)
+                .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' });
+        }
+        (0, configcloud_2.uploadFileGoogle)(originalname).catch(console.error);
+    }
+    catch (err) {
+        console.log({ err });
+        res.status(500).json({ error: 'Internal error server' });
+    }
+}));
+exports.roomRouter.delete('/room/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { id } = req.params;
+    try {
+        const result = yield cliente.query(`DELETE FROM room WHERE id = $1`, [id]);
+        if (result.rowCount > 0) {
+            res.send('Se eliminado habitacion de manera exitosa');
+        }
+        else {
+            res.status(409).json({ message: 'Error en dato enviado' });
+        }
+    }
+    catch (err) {
+        res.status(500).json({ error: 'Error server' });
+    }
+}));
+//# sourceMappingURL=habitacion.js.map

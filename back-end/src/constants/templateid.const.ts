@@ -1,3 +1,2 @@
 export default {
-    'SEND_CODE':'d-ebef0995557749fab593edb5edde0ec3'
-}
+    'SEND_CODE':'d-1544d18a56d5484dadc9268db4ffc896'}

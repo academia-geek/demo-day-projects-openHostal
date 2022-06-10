@@ -1,11 +1,12 @@
 import express, { Request, Response, Router } from 'express'
 import { pool } from '../sql/config';
-export const usersRouter = express.Router()
+export const usersRouter = express.Router();
+import { createValidator } from "express-joi-validation";
+import { usersSchema }  from"../schemas-joi/hostal"
+
+const validator=createValidator({});
 
 usersRouter.use(express.json())
-
-
-
 
 usersRouter.get('/users',async(req,res)=>{
     let cliente = await pool.connect()
@@ -18,13 +19,10 @@ usersRouter.get('/users',async(req,res)=>{
 }
 })
 
-
 usersRouter.get('/users/:id', async(req,res)=>{
     let cliente = await pool.connect()
-    const { id } = req.params
-    
+    const { id } = req.params  
     try{
- 
         let result =await cliente.query(`SELECT * FROM users WHERE id = $1`,
         [id])
        if(result.rows.length>0){
@@ -38,7 +36,7 @@ usersRouter.get('/users/:id', async(req,res)=>{
 }
 })
 
-usersRouter.post('/users',async(req,res)=>{
+usersRouter.post('/users',validator.body(usersSchema),async(req,res)=>{
     try{
        
         const{
@@ -51,11 +49,11 @@ usersRouter.post('/users',async(req,res)=>{
             numero_documento,
             nacionalidad,
             rol,
-            id_hotales
+            id_hostal
         }=req.body
        
         const cliente=await pool.connect()
-        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hotales)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
+        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
             [  nombre,
                 apellido,
                 email,
@@ -65,7 +63,7 @@ usersRouter.post('/users',async(req,res)=>{
                 numero_documento,
                 nacionalidad,
                 rol,
-                id_hotales]
+                id_hostal]
         )
         if (response.rowCount > 0) {res.send ('Se crea usuario correctamente')
             }
@@ -75,7 +73,7 @@ usersRouter.post('/users',async(req,res)=>{
             }
          } )
 
-         usersRouter.put('/users/:id',async(req,res)=>{
+         usersRouter.put('/users/:id',validator.body(usersSchema),async(req,res)=>{
             let cliente=await pool.connect()
             const{ id }=req.params
             const{
@@ -88,10 +86,10 @@ usersRouter.post('/users',async(req,res)=>{
                 numero_documento,
                 nacionalidad,
                 rol,
-                id_hotales
+                id_hostal
             }=req.body
             try{
-                const result=await cliente.query(`UPDATE users SET nombre = $1, apellido=$2,email = $3,contrasena =$4,celular =$5, tipo_documento=$6,numero_documento=$7,nacionalidad=$8,rol=$9, id_hotales=$10 WHERE id =$11`,
+                const result=await cliente.query(`UPDATE users SET nombre = $1, apellido=$2,email = $3,contrasena =$4,celular =$5, tipo_documento=$6,numero_documento=$7,nacionalidad=$8,rol=$9, id_hostal=$10 WHERE id =$11`,
                     [  nombre,
                         apellido,
                         email,
@@ -101,7 +99,7 @@ usersRouter.post('/users',async(req,res)=>{
                         numero_documento,
                         nacionalidad,
                         rol,
-                        id_hotales,
+                        id_hostal,
                         id]
                     ) 
                     if (result.rowCount > 0) {

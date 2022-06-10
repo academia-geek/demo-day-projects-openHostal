@@ -1,8 +1,7 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
 
-import { pool } from '../sql/config';
 
 export const reservasRouter = express.Router();
 

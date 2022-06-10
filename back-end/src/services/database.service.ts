@@ -16,7 +16,6 @@ export const connectToDatabase=async ()=> {
 
     // Connect to the database with the name specified in .env
     const db = client.db(process.env.DB_NAME);
-    console.log(db)
 
     const reservasCollection = db.collection<reservas>(process.env.COLLECTION_NAME_RESERVA);
     collections.reservas = reservasCollection;

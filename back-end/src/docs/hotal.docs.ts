@@ -2,6 +2,43 @@
  * @swagger
  * components:
  *  schemas:
+ *      hostal:
+ *          type: object
+ *          properties:
+ *              nombre:
+ *                  type: string
+ *                  description: nombre de hostal
+ *              ciudad:
+ *                  type: string
+ *                  description: ciudad en la cual se encuentra hubicado el hostal
+ *              sede:
+ *                  type: string
+ *                  description: sede del hostal
+ *              descripcion:
+ *                  type: string
+ *                  description: describe la caracteristicas particulares del hostal
+ *              direccion:
+ *                  type: string
+ *                  description: direccion de la sede
+ *              foto:
+ *                  type: string
+ *                  description: url de la imagen 
+ *              geometry1:
+ *                  type: float
+ *                  description: cordenadas en longitud del hostal 
+ *              geometry2:
+ *                  type: float
+ *                  description: cordenadas en latitud
+ *          required:
+ *                  - nombre:
+ *                  - ciudad:
+ *                  - sede:
+ *                  - descripcion:
+ *                  - foto:
+ *                  - direccion: 
+ *                  - geometry1:
+ *                  - geometry2:
+ *  
  *      room:
  *          type: object
  *          properties:
@@ -78,38 +115,45 @@
  *                  - nacionalida:
  *                  - rol:
  *                  - id_hostal: 
- *      hostal:
+ *      reserva:
  *          type: object
- *          properties: 
- *              nombre:
+ *          properties:
+ *               sede:
  *                  type: string
- *                  description: nombre de hostal
- *              ciudad:
+ *                  description: sede de la reserva
+ *               ciudad:
  *                  type: string
- *                  description: ciudad en la cual se encuentra hubicado el hostal
- *              sede:
+ *                  description: ciudad de la reserva
+ *               checkIn:
  *                  type: string
- *                  description: sede del hostal
- *              descripcion:
+ *                  description: fecha de entrada de la reserva
+ *               checkOut:
  *                  type: string
- *                  description: describe la caracteristicas particulares del hostal
- *              direccion:
- *                  type: string
- *                  description: direccion de la sede
- *              foto:
- *                  type: string
- *                  description: url de la imagen 
- *              coordenadas:
- *                  type: string
- *                  description: cordenadas en eje x y del hostal
- *          required: 
- *                  - nombre:
- *                  - ciudad:
+ *                  description: fecha de salida de la reserva
+ *               huespedes:
+ *                  type: number
+ *                  description: cantidad de huespedes de la reserva
+ *               noches:
+ *                  type: number
+ *                  description: cantidad de noches de la reserva
+ *               habitacion:
+ *                  type: number
+ *                  description: habitacion de la reserva
+ *               valorTotal:
+ *                  type: number
+ *                  description: valor total de la reserva
+ *          required:
  *                  - sede:
- *                  - descripcion:
- *                  - foto:
- *                  - coordenadas:
- *                  - direccion: 
+ *                  - ciudad:
+ *                  - checkIn:
+ *                  - checkOut:
+ *                  - huespedes:
+ *                  - noches:
+ *                  - habitacion:
+ *                  - valorTotal:
+ *
+ */
+/**
  * @swagger
  * /api/hostal:
  *  get:
@@ -126,7 +170,6 @@
  *                       $ref: '#/components/schemas/hostal'
  *
  */
-
 /**
  * @swagger
  * /api/hostal/{id}:
@@ -176,9 +219,12 @@
  *                          foto:
  *                              type: string
  *                              format: binary
- *                          coordenadas:
- *                              type: string
- *                              description: cordenadas en eje x y del hostal       
+ *                          geometry1:
+ *                              type: float
+ *                              description: cordenadas en longitud del hostal 
+ *                          geometry2:
+ *                              type: float
+ *                              description: cordenadas en latitud       
  *      responses:
  *          200:
  *              description: Hostal creada
@@ -243,10 +289,12 @@
  *                          foto:
  *                              type: string
  *                              format: binary
- *                          coordenadas:
- *                              type: string
- *                              description: cordenadas en eje x y del hostal      
- *      responses:
+ *                          geometry1:
+ *                              type: float
+ *                              description: cordenadas en longitud del hostal 
+ *                          geometry2:
+ *                              type: float
+ *                              description: cordenadas en latitud
  *          200:
  *              description: Se editó de manera correcta 
  *              content:
@@ -384,6 +432,7 @@
  *                     items:
  *                       $ref: '#/components/schemas/room'
  */
+
 /**
  * @swagger
  * /api/room/{id}:
@@ -538,7 +587,93 @@
  *              description: Error en el servidor
  *
  */
-
-
-
-
+/**
+ * @swagger
+ * /api/reserva:
+ *  get:
+ *      summary: Trae todas las reservas
+ *      tags: [reserva]
+ *      responses:
+ *          200:
+ *              description: Lista de todas las reserva
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: array
+ *                     items:
+ *                       $ref: '#/components/schemas/reserva'
+ *
+ */
+/**
+ * @swagger
+ * /api/reserva:
+ *  post:
+ *      summary: Crea una nueva reserva
+ *      tags: [reserva]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/reserva'
+ *      responses:
+ *          200:
+ *              description: reserva creada
+ *          400:
+ *              description: reserva no creada por error en el envío de datos
+ *          500:
+ *              description: reserva no creada por error en el servidor
+*/
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  delete:
+ *      summary: Elimina las reserva pasándole el ID como parámetro
+ *      tags: [reserva]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de las habitaciones 
+ *      responses:
+ *          200:
+ *              description: reserva eliminada
+ *          500:
+ *              description: Error en el servidor
+ */
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  put:
+ *      summary: Edita una reserva pasándole el ID como parámetro
+ *      tags: [reserva]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los usuarios
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/reserva'
+ *      responses:
+ *          200:
+ *              description: Se editó de manera correcta 
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: object
+ *                     $ref: '#/components/schemas/reserva'
+ *          400:
+ *              description: Error en envío de datos por parte del cliente 
+ *          500:
+ *              description: Error en el servidor
+ */

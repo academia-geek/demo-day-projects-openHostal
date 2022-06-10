@@ -109,7 +109,45 @@
  *                  - descripcion:
  *                  - foto:
  *                  - coordenadas:
- *                  - direccion: 
+ *                  - direccion:
+ *      Reserva:
+ *          type: object
+ *          properties:
+ *              sede:
+ *                  type: string
+ *                  description: sede de la reserva
+ *              ciudad:
+ *                  type: string
+ *                  description: ciudad de la reserva
+ *              checkin:
+ *                  type: string
+ *                  description: fecha de entrada de la reserva
+ *              checkout:
+ *                  type: string
+ *                  description: fecha de salida de la reserva
+ *              huespedes:
+ *                  type: number
+ *                  description: cantidad de huespedes de la reserva
+ *              noches:
+ *                  type: number
+ *                  description: cantidad de noches de la reserva
+ *              habitacion:
+ *                  type: string
+ *                  description: habitacion de la reserva
+ *              valorTotal:
+ *                  type: number
+ *                  description: valor total de la reserva
+ *          required:
+ *                  - sede:
+ *                  - ciudad:
+ *                  - checkin:
+ *                  - checkout:
+ *                  - huespedes:
+ *                  - noches:
+ *                  - habitacion:
+ *                  - valorTotal:
+ */
+/**
  * @swagger
  * /api/hostal:
  *  get:
@@ -126,7 +164,6 @@
  *                       $ref: '#/components/schemas/hostal'
  *
  */
-
 /**
  * @swagger
  * /api/hostal/{id}:
@@ -538,7 +575,161 @@
  *              description: Error en el servidor
  *
  */
-
-
-
+/**
+ * @swagger
+ * /api/reserva:
+ * get:
+ *      summary: Trae todas las reservaciones
+ *      tags: [reservas]
+ *      responses:
+ *          200:
+ *              description: Lista de todas las reservaciones
+ *              content:
+ *                  application/json:
+ *                   schema:
+ *                      type: array
+ *                      items:
+ *                        $ref: '#/components/schemas/reserva'
+ * 
+ */
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  get:
+ *      summary: Consulta las reservaciones por su id
+ *      tags: [reservas]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de las reservaciones
+ *      responses:
+ *          200:
+ *              description: Se consultó reservaciones por ID
+ *          500:
+ *              description: Error en el servidor
+ * 
+ */
+/**
+ * @swagger
+ * /api/reserva:
+ *  post:
+ *      summary: Crea una nueva reservación
+ *      tags: [reservas]
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      sede:
+ *                          type: string
+ *                          description: sede de la reservación 
+ *                      ciudad:
+ *                          type: string
+ *                          description: ciudad de la reservación
+ *                      checkIn:
+ *                          type: Date
+ *                          description: Ingreso de la reservación 
+ *                      checkOut: 
+ *                          type: Date
+ *                          description: Salida de la reservación
+ *                      huespedes:
+ *                          type: number
+ *                          description: Cantidad de huespedes de la reservación 
+ *                      noches:
+ *                          type: number
+ *                          description: Estadia de huespedes de la reservación
+ *                      habitacion:
+ *                          type: string
+ *                          description: Habitación de la reservación
+ *                      valorTotal:
+ *                          type: number
+ *                          description: Valor total de la reservación       
+ *      responses:
+ *          200:
+ *              description: Reservación creada
+ *          400:
+ *              description: Reservación no creada por error en el envío de datos
+ *          500:
+ *              description: Reservación no creada por error en el servidor
+*/
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  delete:
+ *      summary: Elimina una reservacion
+ *      tags: [reservas]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de la reservacion
+ *      responses:
+ *          200:
+ *              description: Se eliminó la reservacion
+ *          400:
+ *              description: Reservación no eliminada por error en el envio de datos
+ */
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  put:
+ *      summary: Edita una reservación pasándole el ID como parámetro
+ *      tags: [reservas]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de las reservaciones 
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      sede:
+ *                          type: string
+ *                          description: sede de la reservación 
+ *                      ciudad:
+ *                          type: string
+ *                          description: ciudad de la reservación
+ *                      checkIn:
+ *                          type: Date
+ *                          description: Ingreso de la reservación 
+ *                      checkOut: 
+ *                          type: Date
+ *                          description: Salida de la reservación
+ *                      huespedes:
+ *                          type: number
+ *                          description: Cantidad de huespedes de la reservación 
+ *                      noches:
+ *                          type: number
+ *                          description: Estadia de huespedes de la reservación
+ *                      habitacion:
+ *                          type: string
+ *                          description: Habitación de la reservación
+ *                      valorTotal:
+ *                          type: number
+ *                          description: Valor total de la reservación  
+ *      responses:
+ *          200:
+ *              description: Se editó de manera correcta 
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: object
+ *                     $ref: '#/components/schemas/reserva'
+ *          400:
+ *              description: Error en envío de datos por parte del cliente 
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
 

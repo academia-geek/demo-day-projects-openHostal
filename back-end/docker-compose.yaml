@@ -21,8 +21,7 @@ services:
     postgres:
         image: postgres
         environment: 
-          - DATABASE_HOST=127.0.0.1
-          - POSTGRES_USER=postgres
+          - DATABASE_HOST=localhost        - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=12345
           - POSTGRES_DB=openhostel
         ports: 
@@ -36,4 +35,3 @@ services:
           - "80:80"
         depends_on: 
           - postgres
-

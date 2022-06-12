@@ -437,7 +437,7 @@
  * @swagger
  * /api/room/{id}:
  *  get:
- *      summary: Consulta las hostales por su id 
+ *      summary: Consulta las habitaciones por su id 
  *      tags: [room]
  *      parameters:
  *        - in: path

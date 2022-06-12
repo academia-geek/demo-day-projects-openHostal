@@ -39,17 +39,18 @@ hostalRouter.get('/hostal/:id', async(req,res)=>{
 hostalRouter.post('/hostal',uploadFile,async(req,res)=> { 
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
-    const{nombre,ciudad,sede,descripcion,direccion,coordenadas}=req.body
+    const{nombre,ciudad,sede,descripcion,direccion,geometry1,geometry2}=req.body
     try{
         const cliente= await pool.connect()
-        const response=await cliente.query(`INSERT INTO hostal(nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
+        const response=await cliente.query(`INSERT INTO hostal(nombre,ciudad,sede,descripcion,direccion,foto,geometry1,geometry2)VALUES ($1,$2,$3,$4,$5,$6,$7,$8)RETURNING id`,
         [  nombre,
             ciudad,
             sede,
             descripcion,
             direccion,
             foto,
-            coordenadas])
+            geometry1,
+            geometry2])
             if (response.rowCount > 0) {res.send ('Se crea hotal correctamente')
             uploadFileGoogle(originalname).catch(console.error);
               }
@@ -68,17 +69,19 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
                 sede,
                 descripcion,
                 direccion,
-                coordenadas
+                geometry1,
+                geometry2
             }=req.body
             try{
-                const result=await cliente.query(`UPDATE hostal SET nombre = $1, ciudad=$2,sede = $3,descripcion =$4,direccion=$5,foto=$6,coordenadas=$7 WHERE id =$8`,
+                const result=await cliente.query(`UPDATE hostal SET nombre = $1, ciudad=$2,sede = $3,descripcion =$4,direccion=$5,foto=$6,geometry1=$7,geometry2=$8 WHERE id =$9`,
                     [  nombre,
                        ciudad,
                        sede,
                        descripcion,
                        direccion,
                        foto,
-                       coordenadas,
+                       geometry1,
+                       geometry2,
                        id ]
                     ) 
                     if (result.rowCount > 0) {

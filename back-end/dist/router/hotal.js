@@ -53,7 +53,7 @@ exports.hostalRouter.get('/hostal/:id', (req, res) => __awaiter(void 0, void 0, 
 exports.hostalRouter.post('/hostal', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const originalname = req.file.originalname;
     const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
-    const { nombre, ciudad, sede, descripcion, direccion, coordenadas } = req.body;
+    const { nombre, ciudad, sede, descripcion, direccion, } = req.body;
     try {
         const cliente = yield config_1.pool.connect();
         const response = yield cliente.query(`INSERT INTO hostal(nombre,ciudad,sede,descripcion,direccion,foto,coordenadas)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`, [nombre,

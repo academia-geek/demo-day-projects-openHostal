@@ -1,6 +1,4 @@
 const sgMail = require('@sendgrid/mail')
-import * as dotenv from 'dotenv'
-dotenv.config()
 sgMail.setApiKey(process.env.API_KEY_SENDGRID)
 
 export default async (userEmails: Array<string>,params: object,templateId: string) => {
@@ -10,7 +8,7 @@ export default async (userEmails: Array<string>,params: object,templateId: strin
     templateId: templateId,//Template ID de la plantilla
     dynamic_template_data: params
   }
-
+  
   console.log(msj)
 
   sgMail

@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import morgan from 'morgan';
-
 import { connectToDatabase } from "./services/database.service";
 import { mailRouter } from "./router/mail.router";
 import{hostalRouter}from "./router/hotal";
@@ -9,7 +8,6 @@ import {codigoRouter} from "./router/codigoSengrid";
 import { reservasRouter } from "./router/reservas";
 import{usersRouter}from"./router/users";
 import{roomRouter} from"./router/habitacion";
-
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from "swagger-jsdoc";

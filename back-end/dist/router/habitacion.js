@@ -69,15 +69,6 @@ exports.roomRouter.get('/roomestado/:estado', (req, res) => __awaiter(void 0, vo
     }
 }));
 exports.roomRouter.post('/room', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // uploadFile(req, res, err => {
-    // if (err) {
-    //   console.log(err)
-    //   err.message = 'Error al cargar el archivo'
-    //   res.send(err)
-    // }
-    // if (req.file) console.log(req.file)
-    // else if (req.files) console.log(req.files)
-    // res.send('Archivo cargado')    
     const originalname = req.file.originalname;
     const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
     try {

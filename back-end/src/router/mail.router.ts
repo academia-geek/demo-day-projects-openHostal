@@ -6,7 +6,6 @@ export const mailRouter = express.Router()
 
 mailRouter.use(express.json())
 
-
 mailRouter.post(
   '/send_code',
   async (_req: Request, res: Response) => {

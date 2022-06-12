@@ -11,11 +11,9 @@ CREATE TABLE hostal(
     descripcion  VARCHAR(200)NOT NULL,
     direccion varchar(85)NOT NULL,
     foto VARCHAR (50)NOT NULL,
-    geometry1 int NOT NULL,
-    geometry2  int NOT NULL,        
-
-     PRIMARY KEY (id)
-
+    geometry1  float NOT NULL,
+    geometry2  float NOT NULL,        
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE room(

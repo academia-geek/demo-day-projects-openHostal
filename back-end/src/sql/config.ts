@@ -1,9 +1,22 @@
 import { Pool } from "pg";
+import dotenv from 'dotenv'
+dotenv.config();
+
+console.log(process.env.PASS_DB)
 
 export const pool = new Pool({
- user:'postgres',
- host:'34.74.87.25',
- password:'1234',
- database:'openhostal',
- port:5432
-});
+  
+    host:process.env.HOST_DB, 
+    user:process.env.USER_DB, 
+    password:process.env.PASS_DB, 
+    database:process.env.DATABASE,
+     max: 20, 
+    // Número de milisegundos que un cliente debe permanecer inactivo en el pool y no ser comprobado
+    // antes de ser desconectado del backend y descartado
+    // por defecto es 10000 (10 segundos) - se ajusta a 0 para desactivar la desconexión automática de los clientes inactivos
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000
+})
+
+module.exports = { pool }
+

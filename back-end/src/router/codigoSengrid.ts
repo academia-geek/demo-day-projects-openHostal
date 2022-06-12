@@ -2,7 +2,6 @@ import express, { Request, Response } from "express";
 import templateIds from '../constants/templateid.const'
 import generatecode from '../utilities/generarcodigo'
 import sendEmail from '../utilities/sendgrid'
-import { sendEmailVerification } from "firebase/auth";
 export const codigoRouter =express.Router();
 
 codigoRouter.use(express.json());

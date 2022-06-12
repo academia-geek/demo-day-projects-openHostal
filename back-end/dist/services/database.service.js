@@ -34,11 +34,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectToDatabase = exports.collections = void 0;
 const mongoDB = __importStar(require("mongodb"));
-const dotenv = __importStar(require("dotenv"));
 exports.collections = {};
 const connectToDatabase = () => __awaiter(void 0, void 0, void 0, function* () {
-    // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
-    dotenv.config();
     // Create a new MongoDB client with the connection string from .env
     const client = new mongoDB.MongoClient(process.env.DB_CONN_STRING);
     // Connect to the cluster

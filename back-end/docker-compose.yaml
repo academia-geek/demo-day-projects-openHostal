@@ -11,9 +11,29 @@ services:
 
      links:
       - mongo
+      - postgres
 
     mongo:
         container_name: mongoDB1
         image: mongo
         ports:
           - 27022:27017 
+    postgres:
+        image: postgres
+        environment: 
+          - DATABASE_HOST=127.0.0.1
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=12345
+          - POSTGRES_DB=openhostel
+        ports: 
+          - 5432:5432
+    pgadmin:
+        image: dpage/pgadmin4
+        environment: 
+          PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+          PGADMIN_DEFAULT_PASSWORD: "admin"
+        ports:
+          - "80:80"
+        depends_on: 
+          - postgres
+

@@ -151,7 +151,6 @@
  *                  - noches:
  *                  - habitacion:
  *                  - valorTotal:
- *
  */
 /**
  * @swagger
@@ -603,6 +602,25 @@
  *                     items:
  *                       $ref: '#/components/schemas/reserva'
  *
+/**
+ * @swagger
+ * /api/reserva/{id}:
+ *  get:
+ *      summary: Consulta las reservaciones por su id
+ *      tags: [reservas]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de las reservaciones
+ *      responses:
+ *          200:
+ *              description: Se consultó reservaciones por ID
+ *          500:
+ *              description: Error en el servidor
+ * 
  */
 /**
  * @swagger
@@ -624,7 +642,7 @@
  *              description: reserva no creada por error en el envío de datos
  *          500:
  *              description: reserva no creada por error en el servidor
-*/
+ */
 /**
  * @swagger
  * /api/reserva/{id}:
@@ -677,3 +695,4 @@
  *          500:
  *              description: Error en el servidor
  */
+

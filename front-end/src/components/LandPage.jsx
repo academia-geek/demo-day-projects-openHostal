@@ -6,6 +6,7 @@ import { BootonStyle, CarDivStyle, CarHStyle, CartabStyle, CarthStyle, H1Style, 
   MainDivStyle, PDivStyle, TitlesDivStyle, FormLanStyle, BtnStyle, CardImgStyle, IconCStyle, H2Style,
    CardCateStyle, CardFindStyle, CardImmStyle, ImgIgStyle, CardsStyle, IconIIStyle } from '../styles/styleLandPage'
 import { DateRangePicker } from 'rsuite';
+import Product from './Product';
 
 function LandPage() {
   const {beforeToday} = DateRangePicker;
@@ -72,7 +73,6 @@ function LandPage() {
                           />
                       </div>
                   </div>
-
                   <div className="form-group">
                   <label className="col-sm-4 col-lg-2 col-form-label"></label>
                   <div className="form-group col-sm-8">
@@ -165,8 +165,25 @@ function LandPage() {
           </CardFindStyle>
           
           <CardFindStyle>
+            <Product/>
 
-            <CardsStyle>
+             <CardsStyle>
+              <CardImmStyle>
+                <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
+              </CardImmStyle>
+              <div>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+              </div>
+            </CardsStyle>
+
+        {/*    <CardsStyle>
               <CardImmStyle>
                 <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
               </CardImmStyle>
@@ -212,23 +229,7 @@ function LandPage() {
                     <Button variant="primary">Go somewhere</Button>
                   </Card.Body>
               </div>
-            </CardsStyle>
-
-            <CardsStyle>
-              <CardImmStyle>
-                <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
-              </CardImmStyle>
-              <div>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-              </div>
-            </CardsStyle>
+            </CardsStyle> */}
 
             
           </CardFindStyle>

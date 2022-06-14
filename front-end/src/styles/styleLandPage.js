@@ -37,8 +37,6 @@ position: relative;
 top:20px; 
 display:flex;
 flex-wrap: wrap;
-
-
 `;
 
 export const CarHStyle = styled.h6`
@@ -159,27 +157,30 @@ background-color: black;
 `;
 
 export const CardImmStyle  = styled.div`
-    margin:auto;
+    margin:2px 2px;
+    max-width: 200px;
+    max-height: 400px;
+    
 `;
 
 export const CardsStyle = styled.div`  
     display:flex;
     flex-direction:row;
     background-image: linear-gradient(to right,#212529,#212529,white);
-    width: 42%;
-    height: 200px;
+    width: 430px;
+    height: 330px;
+    overflow: hidden;
     border-radius: 13px;
     margin: 20px;
     transition: all .5s;
-    box-shadow: 10px 5px 5px #454748;
         &:hover{
             margin-top: 5px; 
             background-image: linear-gradient(to right,#212529,#212529);
-            
         }
 `;
 export const ImgIgStyle = styled.img` 
     width: 100%;
+    height: auto;
     margin-left: 5px;
     border-radius: 10px 3px 3px 10px;
 `;

@@ -11,6 +11,7 @@ const DashBoardRouters = () => {
         <Route path='/' element={<Home />} />
         <Route path='/*' element={<Navigate to='/' />} />
         <Route path='/reserva' element={<Reserva to='/' />} />
+        
         {/* <Route path='/*' element={<Navigate to='/' />} /> */}
       </Routes>
     </>

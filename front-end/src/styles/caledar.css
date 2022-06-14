@@ -1,0 +1,11 @@
+.dates {
+    text-align: center;
+    padding-top: auto;
+}
+/* text editor*/
+.rs-picker-default .rs-picker-toggle.rs-btn {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 282px;
+}
+/*  */

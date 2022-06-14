@@ -7,6 +7,7 @@ import  PrivateRouters  from "./PrivateRouters"
 import  PublicRouters  from "./PublicRouters"
 import  DashBoardRouters  from "./DashBoardRouters"
 import LandPage from "../components/LandPage"
+import Descrip from "../components/Descrip"
 
 
 const AppRouters = () => {
@@ -53,7 +54,11 @@ if(checking){
               </PublicRouters>} />
             <Route path='/registro' element={
               <PublicRouters isAuth={isLoggedIn} >
-                <Register />
+                <Register />    
+              </PublicRouters>} />
+            <Route path='/descrip/:index' element={
+              <PublicRouters isAuth={isLoggedIn} >
+                <Descrip/>   
               </PublicRouters>} />
             <Route path='/*' element={
               <PrivateRouters isAuth={isLoggedIn}>

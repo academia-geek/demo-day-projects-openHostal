@@ -13,14 +13,14 @@ import { BootonStyle } from '../styles/styleLandPage';
 //   Popup
 // } from 'https://cdn.esm.sh/react-leaflet'
 
-const Descrip = () => {
+const Descrip = (product) => {
     
     let {index} = useParams();
     const state = useSelector((state) => state);
   
     const {db} = state.crud;
     console.log(db) 
-   
+    console.log(product)
   return (
     <>
       <Navbar  bg="dark" variant="dark">
@@ -60,19 +60,6 @@ const Descrip = () => {
           <p>{`${db[index].servicios}`}</p>    
         </div>
         
-        
-
-  {/* <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={position}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
-  </MapContainer> */}
 
       </>
     

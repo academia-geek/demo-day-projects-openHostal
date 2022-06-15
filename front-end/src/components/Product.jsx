@@ -1,19 +1,19 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { CardFindStyle,  CardImmStyle,  CardsStyle, ImgIgStyle, MainDivStyle } from '../styles/styleLandPage';
 import { helpHttp } from '../helpers/helpHttp';
 import { createAction, noAction, readAllAction } from '../redux/actions/crudActions';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Product = () => {
-  const state = useSelector((state) => state);
+  // const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const {db} = state.crud; 
+  // const {db} = state.crud; 
   const [room, setRoom] = useState([])
-
+  
   let api = helpHttp();
   let url = "https://openhostal.herokuapp.com/rooms";
 
@@ -24,12 +24,10 @@ const Product = () => {
       .then((res) => {
       
         if (!res.err) {
-          //setDb(res);
           setRoom(res)
           dispatch(readAllAction(res));
           
         } else {
-          //setDb(null);
           dispatch(noAction());
          
         }
@@ -75,7 +73,9 @@ const Product = () => {
                             <Card.Text>
                             {ele.descripcion}
                             </Card.Text>
-                            <Link to={`/descrip/${ele.id}`} ><Button variant="primary">Ver Producto</Button></Link>
+                  
+                            {/* <NavLink product={db} to={`/descrip/${ele.id}`} ><Button variant="primary">Ver Producto</Button></NavLink> */}
+                            <NavLink  to={`/descrip/${ele.id}`} ><Button variant="primary">Ver Producto</Button></NavLink>
                         </Card.Body>
                     </div>
               </CardsStyle>

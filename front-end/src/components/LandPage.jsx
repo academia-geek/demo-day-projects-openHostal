@@ -1,31 +1,93 @@
-import React from 'react'
-import { Navbar , Container, Card, Button} from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import { Navbar , Container} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import {BsWifi, BsSnow2,BsFillDice5Fill,BsPersonBoundingBox,BsFillGiftFill } from "react-icons/bs";
 import { BootonStyle, CarDivStyle, CarHStyle, CartabStyle, CarthStyle, H1Style, HDivStyle, ImgDivStyle,
   MainDivStyle, PDivStyle, TitlesDivStyle, FormLanStyle, BtnStyle, CardImgStyle, IconCStyle, H2Style,
-   CardCateStyle, CardFindStyle, CardImmStyle, ImgIgStyle, CardsStyle, IconIIStyle } from '../styles/styleLandPage'
+   CardCateStyle, CardFindStyle, IconIIStyle } from '../styles/styleLandPage'
 import { DateRangePicker } from 'rsuite';
 import Product from './Product';
+import { useDispatch, useSelector } from 'react-redux';
+import { helpHttp } from '../helpers/helpHttp';
+import { noAction, readAllAction } from '../redux/actions/crudActions';
+import Categorias from './Categorias';
+import { Form } from 'react-bootstrap';
+
+
+const personalBusqueda={
+  ciudad:"",
+    cantPersonas:"",
+    checkIn:[],
+    checkout:""
+}
 
 function LandPage() {
   const {beforeToday} = DateRangePicker;
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const {db} = state.crud; 
+  const [hostal, setHostal] = useState([])
+  const [busquedaInfo, setBusquedaInfo]= useState(personalBusqueda)
+
+  const updateBuscar = (e) =>{
+    setBusquedaInfo({
+      ...busquedaInfo,
+      ciudad: e.target.value,
+    })
+  }
+  const updateBuscarr = (e) =>{
+    setBusquedaInfo({
+      ...busquedaInfo,
+      checkIn: e.target.value,
+    })
+  }
+  const updateBuscarH = (e) =>{
+    setBusquedaInfo({
+      ...busquedaInfo,
+      cantPersonas: e.target.value,
+    })
+  }
+  console.log(busquedaInfo.cantPersonas)
+  const hostales = hostal
+  let url = "http://35.237.19.167:4000/api/hostal";
+
+  // useEffect(() => {
+   
+  //   helpHttp()
+  //     .get(url)
+  //     .then((res) => {
+      
+  //       if (!res.err) {
+  //         //setDb(res);
+  //         setHostal(res)
+  //         dispatch(readAllAction(res));
+         
+  //       } else {
+  //         //setDb(null);
+  //         dispatch(noAction());
+         
+  //       }
+       
+  //     });
+  // }, [url, dispatch]);
+  
+
   return (
       <MainDivStyle>    
-       <Navbar  bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="#home"><h3>OpenHostal</h3></Navbar.Brand>
-                <div>
-                <Link to='/registro'><BootonStyle>Registrarse</BootonStyle></Link>
-                <Link to='/login'><BootonStyle>Iniciar Sesion</BootonStyle></Link>
-                </div>
-            </Container> 
+        <Navbar  bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home"><h3>OpenHostal</h3></Navbar.Brand>
+            <div>
+              <Link to='/registro'><BootonStyle>Registrarse</BootonStyle></Link>
+              <Link to='/login'><BootonStyle>Iniciar Sesion</BootonStyle></Link>
+            </div>
+          </Container> 
         </Navbar>
         <ImgDivStyle>
           <TitlesDivStyle>
             <HDivStyle>
-             Tus Mejores
-             Momentos Esperan
+              Tus Mejores
+              Momentos Esperan
             </HDivStyle>
             <PDivStyle>Hospedajes al menor precio, inolvidable experiencia </PDivStyle>
             <PDivStyle><BsFillGiftFill/>   EL MEJOR REGALO . . .</PDivStyle>          
@@ -35,19 +97,19 @@ function LandPage() {
               <CarHStyle>Todo Incluido</CarHStyle>
               <CartabStyle>
                 <thead>
-              <tr>
-              <CarthStyle> Wifi</CarthStyle>
-              <CarthStyle> Juegos</CarthStyle>
-              <CarthStyle>Aire</CarthStyle>
-              <CarthStyle> Servicio</CarthStyle>
-              </tr> 
-                <IconCStyle>
-                <IconIIStyle><BsWifi/></IconIIStyle>
-                <IconIIStyle> <BsFillDice5Fill/></IconIIStyle>
-                <IconIIStyle> <BsSnow2/></IconIIStyle>
-                <IconIIStyle><BsPersonBoundingBox/></IconIIStyle>
-                </IconCStyle> 
-              </thead>
+                  <tr>
+                    <CarthStyle> Wifi</CarthStyle>
+                    <CarthStyle> Juegos</CarthStyle>
+                    <CarthStyle>Aire</CarthStyle>
+                    <CarthStyle> Servicio</CarthStyle>
+                  </tr> 
+                  <IconCStyle>
+                    <IconIIStyle><BsWifi/></IconIIStyle>
+                    <IconIIStyle> <BsFillDice5Fill/></IconIIStyle>
+                    <IconIIStyle> <BsSnow2/></IconIIStyle>
+                    <IconIIStyle><BsPersonBoundingBox/></IconIIStyle>
+                  </IconCStyle> 
+                </thead>
               </CartabStyle>
             </div>
             <CardImgStyle>
@@ -55,13 +117,12 @@ function LandPage() {
               <p>5 dias 6 noche</p>
               <BootonStyle> $890.000</BootonStyle>
             </CardImgStyle>
-            <div>
-            </div>
           </CarDivStyle>
         </ImgDivStyle>
+
         <H1Style>Selecciona tu Destino</H1Style>
         <FormLanStyle>
-        <div className="form-group ">
+        {/* <div className="form-group ">
                       <label className="col-sm-4 col-lg-2 col-form-label"></label>
                       <div className="form-group col-sm-11 ">
                           <input
@@ -72,93 +133,67 @@ function LandPage() {
                               autoComplete="off"                         
                           />
                       </div>
-                  </div>
-                  <div className="form-group">
-                  <label className="col-sm-4 col-lg-2 col-form-label"></label>
-                  <div className="form-group col-sm-8">
-                  <DateRangePicker placeholder="check In, check Out"
-           disabledDate={beforeToday()} />
-           </div>
-          </div>
-                  {/* <div className="form-group">
-                      <label className="col-sm-4 col-lg-2 col-form-label"></label>
-                      <div className="form-group col-sm-11">
-                          <input
-                              type="date"
-                              name="checkin"
-                              className="form-control"
-                              placeholder="Check in"
-                              autoComplete="off"
-                          />
-                      </div>
-                  </div>
-                  <div className="form-group">
-                      <label className="col-sm-4 col-lg-2 col-form-label"></label>
-                      <div className="form-group col-sm-11">
-                          <input
-                              type="date"
-                              name="checkout"
-                              className="form-control"
-                              placeholder="Check out"
-                              autoComplete="off"
-                          />
-                      </div>
+                      <select className="col-sm-4 col-lg-2 col-form-label ">
+                      <option selected>Choose...</option>
+                            <option value="1">Bogota</option>
+                            <option value="2">Medellin</option>
+                            <option value="3">Santa Marta</option>
+                      </select>
                   </div> */}
-                  <BtnStyle>Buscar</BtnStyle>
+                  <Form.Group className="mb-3 col-lg-3" controlId="formBasicName">
+                    <Form.Label>ciudad</Form.Label>
+                    <Form.Select aria-label="Default select example" type="text"
+                          placeholder="ciudad"
+                          name="checkIn "
+                          required
+                          value={busquedaInfo.ciudad}
+                          onChange={updateBuscar}>
+                            <option>Seleccione la Ciudad</option>
+                              <option value='Bogota' >Bogota</option>
+                              <option value='Medellin' >Medellin</option>
+                              <option value='Santa Marta' >Santa Marta</option>
+                          
+                    </Form.Select>
+                    
+                
+            </Form.Group>
+                  <div className="form-group">
+                    <label className="col-sm-4 col-lg-2 col-form-label"></label>
+                        <div className="form-group col-sm-8">
+                        <DateRangePicker 
+                          method="get"
+                          name="checkIn"
+                          placeholder="check In, check Out"
+                          disabledDate={beforeToday()}
+                          value={busquedaInfo.checkIn}
+                          onChange={updateBuscarr}
+                           />
+                          </div>
+                  </div>
+                  <div className="form-group">
+                      <label className="col-sm-4 col-lg-2 col-form-label"></label>
+                      <div className="form-group col-sm-11">
+                          <input
+                              type="number"
+                              name="huespedes"
+                              placeholder="Cantidad personas"
+                
+                              value={busquedaInfo.cantPersonas}
+                              onChange={updateBuscarH}
+                          />
+                      </div>
+                  </div>
+                  <BtnStyle>Buscar </BtnStyle>
         </FormLanStyle>
-        <H2Style>Diferentes Categorias</H2Style>
+        {
+          !busquedaInfo.ciudad 
+            ?<H2Style>Selecciona tu Ciudad de Destino</H2Style>
+            :<H2Style>Busqueda en la ciudad de {busquedaInfo.ciudad}</H2Style>
+        }
           <CardCateStyle>
-          <Card style={{ margin:'2rem',width: '12rem', color: 'black', border:'none',
-                 boxShadow:'10px 5px 5px black'}}>
-          <Card.Img variant="top" src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-           </Card.Body>
-            </Card>
-            <Card style={{ margin:'2rem',width: '12rem', color: 'black', border:'none',
-                 boxShadow:'10px 5px 5px black'}}>
-          <Card.Img variant="top" src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-           </Card.Body>
-            </Card>
 
-            <Card style={{ margin:'2rem',width: '12rem', color: 'black', border:'none',
-                 boxShadow:'10px 5px 5px black'}}>
-          <Card.Img variant="top" src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-           </Card.Body>
-            </Card>
+          <Categorias hostales={hostales}/>
 
-            <Card style={{ margin:'2rem',width: '12rem', color: 'black', border:'none',
-                 boxShadow:'10px 5px 5px black'}}>
-          <Card.Img variant="top" src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-           </Card.Body>
-            </Card>
-            
         </CardCateStyle>
           <CardFindStyle>
             <H2Style>Buscando </H2Style >
@@ -167,55 +202,7 @@ function LandPage() {
           <CardFindStyle>
             <Product/>
 
-             <CardsStyle>
-              <CardImmStyle>
-                <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
-              </CardImmStyle>
-              <div>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-              </div>
-            </CardsStyle>
-
-        {/*    <CardsStyle>
-              <CardImmStyle>
-                <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
-              </CardImmStyle>
-              <div>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-              </div>
-            </CardsStyle>
-
-            <CardsStyle>
-              <CardImmStyle>
-                <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
-              </CardImmStyle>
-              <div>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-              </div>
-            </CardsStyle>
-
-            <CardsStyle>
+             {/* <CardsStyle>
               <CardImmStyle>
                 <ImgIgStyle src="https://res.cloudinary.com/dbdrkxooj/image/upload/v1654386898/openhostal/los-mejores-hoteles-para-alojarte-al-menos-una-vez_1_eonw7r.webp"/>
               </CardImmStyle>
@@ -230,8 +217,7 @@ function LandPage() {
                   </Card.Body>
               </div>
             </CardsStyle> */}
-
-            
+           
           </CardFindStyle>
         
           <div>

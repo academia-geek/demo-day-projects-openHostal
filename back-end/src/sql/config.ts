@@ -5,6 +5,7 @@ dotenv.config();
 console.log(process.env.PASS_DB)
 
 export const pool = new Pool({
+  
     host:process.env.HOST_DB, 
     user:process.env.USER_DB, 
     password:process.env.PASS_DB, 
@@ -18,3 +19,4 @@ export const pool = new Pool({
 })
 
 module.exports = { pool }
+

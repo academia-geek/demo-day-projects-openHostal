@@ -16,7 +16,7 @@ exports.codigoRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const templateid_const_1 = __importDefault(require("../constants/templateid.const"));
 const templateid1_const_1 = __importDefault(require("../constants/templateid1.const"));
-const templateid2_const_1 = __importDefault(require("../constants/templateid2.const"));
+
 const generarcodigo_1 = __importDefault(require("../utilities/generarcodigo"));
 const sendgrid_1 = __importDefault(require("../utilities/sendgrid"));
 exports.codigoRouter = express_1.default.Router();
@@ -51,18 +51,22 @@ exports.codigoRouter.post('/codigo/CHECKIN', (req, res) => __awaiter(void 0, voi
         res.status(500).send("error");
     }
 }));
-exports.codigoRouter.post('/codigo/CheckOut', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const { name, email, password } = req.body;
-        console.log(name, email, password);
-        yield (0, sendgrid_1.default)(email, {
-            subject: 'Validate email',
-            name
-        }, templateid2_const_1.default.SEND_CheckOut);
-        res.status(200).send('Mail send');
-    }
-    catch (error) {
-        res.status(500).send("error");
-    }
-}));
-//# sourceMappingURL=codigoSengrid.js.map
+
+// codigoRouter.post('/codigo/CheckOut',async (req: Request, res: Response) => {
+//   try{
+//    const {name, email,password}=req.body  
+//    console.log(name,email,password);
+//     await sendEmail(
+//       email,
+//       {
+//         subject: 'Validate email',
+//         name
+//       },
+//       templateid2Const.SEND_CheckOut
+//     )
+//     res.status(200).send('Mail send')
+//   }
+//   catch(error){
+//       res.status(500).send("error")
+//   }
+// })

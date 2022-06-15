@@ -35,8 +35,8 @@ usersRouter.get('/users/:id', async(req,res)=>{
         res.status(500).json({ error: 'Internal error server' })
 }
 })
-
-usersRouter.post('/users',validator.body(usersSchema),async(req,res)=>{
+//,validator.body(usersSchema)
+usersRouter.post('/users',async(req,res)=>{
     try{
        
         const{
@@ -53,7 +53,7 @@ usersRouter.post('/users',validator.body(usersSchema),async(req,res)=>{
         }=req.body
        
         const cliente=await pool.connect()
-        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
+        const response=await cliente.query( `INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,numero_documento,nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`,
             [  nombre,
                 apellido,
                 email,

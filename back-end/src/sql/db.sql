@@ -2,6 +2,9 @@ CREATE DATABASE openhostel;
 \l;
 
 \c openhostel;
+DROP TABLE room;
+DROP TABLE users;
+DROP TABLE hostal;
 
 CREATE TABLE hostal(
     id SERIAL NOT NULL,
@@ -24,13 +27,13 @@ CREATE TABLE room(
     estado int NOT NULL,
     capacidad INTEGER NOT NULL,
     servicios VARCHAR(100) NOT NULL,
+    precio  float NOT NULL,
+    imagenes VARCHAR (225)NOT NULL,
     id_hostal SERIAL NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_hostal) 
     REFERENCES hostal (id) ON DELETE RESTRICT ON UPDATE CASCADE
-
 );
-
 
 CREATE TABLE users(
    id SERIAL NOT NULL,
@@ -42,7 +45,7 @@ CREATE TABLE users(
     tipo_documento VARCHAR(16) NOT NULL,
     numero_documento int NOT NULL,
     nacionalidad VARCHAR(15) NOT NULL,
-    rol VARCHAR(10),
+    rol BOOLEAN NOT NULl,
     id_hostal SERIAL NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_hostal)

@@ -69,12 +69,15 @@ exports.roomRouter.get('/roomestado/:estado', (req, res) => __awaiter(void 0, vo
     }
 }));
 exports.roomRouter.post('/room', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!req.file) {
+        return res.send('El campo foto no puede ser null');
+    }
     const originalname = req.file.originalname;
     const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
     try {
-        const { tipo, descripcion, estado, capacidad, servicios, id_hostal } = req.body;
+        const { tipo, descripcion, estado, capacidad, servicios, precio, imagenes, id_hostal } = req.body;
         const cliente = yield config_1.pool.connect();
-        const response = yield cliente.query(`INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`, [tipo, descripcion, foto, estado, capacidad, servicios, id_hostal]);
+        const response = yield cliente.query(`INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id`, [tipo, descripcion, foto, estado, capacidad, servicios, precio, imagenes, id_hostal]);
         if (response.rowCount > 0) {
             res.send('Se crea habitacion correctamente');
             (0, configcloud_2.uploadFileGoogle)(originalname).catch(console.error);
@@ -87,21 +90,26 @@ exports.roomRouter.post('/room', configMulter_1.uploadFile, (req, res) => __awai
         console.log(err);
         res.status(500).json({ error: 'Internal error server' });
     }
-    // } )
 }));
 exports.roomRouter.put('/room/:id', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!req.file) {
+        return res.send('El campo foto no puede ser null');
+    }
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     const originalname = req.file.originalname;
     const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
-    const { tipo, descripcion, estado, capacidad, servicios, id_hotales } = req.body;
+    const { tipo, descripcion, estado, capacidad, servicios, precio, imagenes, id_hotales } = req.body;
     try {
-        const result = yield cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,id_hotales=$7 WHERE id =$8`, [tipo,
+        const result = yield cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
+                imagenes=$8,id_hotales=$9 WHERE id =$10`, [tipo,
             descripcion,
             foto,
             estado,
             capacidad,
             servicios,
+            precio,
+            imagenes,
             id_hotales,
             id]);
         if (result.rowCount > 0) {

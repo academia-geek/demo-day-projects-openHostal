@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomSchema = exports.usersSchema = void 0;
+exports.roomSchema = exports.usersSchema = exports.hostalSchema = void 0;
 const joi_1 = __importDefault(require("joi"));
-//  const  hostalSchema=Joi.object({
-//     nombre:Joi.string().min(1).max(25).required(),
-//     cuidad:Joi.string().min(1).max(45).required(),
-//     sede:Joi.string().min(1).max(45),
-//     descripcion:Joi.string().min(1).max(200).required(),
-//     direccion:Joi.string().required(),
-//     foto: Joi.any().required(),
-//     coordenadas:Joi.string().min(1).max(100).required(),
-// });
+exports.hostalSchema = joi_1.default.object({
+    nombre: joi_1.default.string().min(1).max(25).required(),
+    ciudad: joi_1.default.string().min(1).max(45).required(),
+    sede: joi_1.default.string().required(),
+    descripcion: joi_1.default.string().min(1).max(200).required(),
+    direccion: joi_1.default.string().required(),
+    geometry1: joi_1.default.number().required(),
+    geometry2: joi_1.default.number().required()
+});
 exports.usersSchema = joi_1.default.object({
     nombre: joi_1.default.string().min(1).max(15).required(),
     apellido: joi_1.default.string().min(1).max(50).required(),
@@ -23,7 +23,7 @@ exports.usersSchema = joi_1.default.object({
     tipo_documento: joi_1.default.string().required(),
     numero_documento: joi_1.default.number().required(),
     nacionalidad: joi_1.default.string().min(1).max(15).required(),
-    rol: joi_1.default.string().required(),
+    rol: joi_1.default.boolean().required(),
     id_hotales: joi_1.default.number().required()
 });
 exports.roomSchema = joi_1.default.object({
@@ -33,6 +33,8 @@ exports.roomSchema = joi_1.default.object({
     estado: joi_1.default.number().required(),
     capacidad: joi_1.default.number().required(),
     servicios: joi_1.default.string().min(1).max(30),
+    precio: joi_1.default.boolean().required(),
+    imagenes: joi_1.default.string(),
     id_hotales: joi_1.default.number().required()
 });
 //# sourceMappingURL=hostal.js.map

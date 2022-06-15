@@ -16,7 +16,7 @@ const Reserva = () => {
                 <Navbar.Brand href="#home"><h3>OpenHostal</h3></Navbar.Brand>
                 <Navbar.Brand href="#home"><h2>Reservas</h2></Navbar.Brand>
                 <div>
-                <Link to='/'><BootonStyle>Volver al Home</BootonStyle></Link>
+                <Link to='/home'><BootonStyle>Volver al Home</BootonStyle></Link>
                 <BootonStyle  onClick={()=>dispatch(logoutAsync())}>Cerrar Sesion</BootonStyle>
                 </div>
             </Container> 

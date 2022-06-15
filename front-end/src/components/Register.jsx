@@ -48,6 +48,7 @@ const Register = () => {
                       name="nombre"
                       required
                       onChange={formik.handleChange}
+                      
                   />
               </Form.Group>
 
@@ -60,6 +61,9 @@ const Register = () => {
                       required
                       onChange={formik.handleChange}
                   />
+                                <small id="emailHelp" className="form-text text-muted">
+            Nunca compartiremos tu correo electrónico con nadie.
+          </small>
                 <Form.Group className="mb-3 col-lg-3" controlId="formBasicEmail">
                   </Form.Group>
                   <Form.Label>Fecha de Nacimiento</Form.Label>
@@ -102,7 +106,7 @@ const Register = () => {
               </Button>
               <Link to='/login'>
                   <Button className='m-2'variant="primary" type="submit">
-                      Iniciar Sesion 
+                      Iniciar Sesion
                   </Button>
               </Link>
           

@@ -8,6 +8,8 @@ import  PublicRouters  from "./PublicRouters"
 import  DashBoardRouters  from "./DashBoardRouters"
 import LandPage from "../components/LandPage"
 import Descrip from "../components/Descrip"
+import FormEmail from "../components/auth/FormEmail"
+import Home from "../components/Home"
 
 
 const AppRouters = () => {
@@ -31,7 +33,7 @@ const AppRouters = () => {
 if(checking){
     return(
       <div className="loading">
-        <span></span>
+        <span>Cargando información...</span>
         <span></span>
         <span></span>
         <span></span>
@@ -56,6 +58,14 @@ if(checking){
               <PublicRouters isAuth={isLoggedIn} >
                 <Register />    
               </PublicRouters>} />
+              <Route path='/auth-verify' element={
+              <PrivateRouters isAuth={isLoggedIn} >
+                <FormEmail />
+              </PrivateRouters>} />
+              <Route path='/home' element={
+              <PrivateRouters isAuth={isLoggedIn} >
+                <Home />
+              </PrivateRouters>} />
             <Route path='/descrip/:index' element={
               <PublicRouters isAuth={isLoggedIn} >
                 <Descrip/>   

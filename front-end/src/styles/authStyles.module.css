@@ -1,0 +1,62 @@
+:root{
+    --primary-color: #212529;
+    --secondary-color: #0000ff;
+    --tertiary-color: #212529;
+    --quaternary-color: #fafafa;
+}
+
+.nav{
+    display: inline-block;
+}
+
+.global_auth_verify{
+    background-image: url('https://res.cloudinary.com/dzkollux2/image/upload/v1655311056/open%20hostal/avion_2_uhhxry.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    align-items: center;
+    text-align: center;
+
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.7;
+    /* mix-blend-mode: overlay; */
+    z-index: -3;
+  }
+
+.auth_titles{
+    margin-top: 10vh;
+    padding: 15vh 100px;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.href_email{
+    color: var(--quaternary-color);
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--quaternary-color);
+    margin: 0 3vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.href_email:hover{
+    background-color: var(--tertiary-color);
+    color: var(--quaternary-color);
+}

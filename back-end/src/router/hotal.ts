@@ -66,7 +66,7 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
         }
 )
 
-         hostalRouter.put('/hostal/:id',validator.body(hostalSchema),uploadFile,async(req,res)=>{
+         hostalRouter.put('/hostal/:id',uploadFile,async(req,res)=>{
             if(!req.file){ return res.status(452).json({ error: 'el campo foto no puede ser null' })}
             const originalname=req.file.originalname;
             const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}%20`

@@ -21,7 +21,6 @@ const configcloud_1 = require("../utilities/configcloud");
 const configcloud_2 = require("../utilities/configcloud");
 const express_joi_validation_1 = require("express-joi-validation");
 const validator = (0, express_joi_validation_1.createValidator)({});
-const hostal_1 = require("../schemas-joi/hostal");
 ///////////////////Rutas:
 exports.hostalRouter.use(express_1.default.json());
 /////consultas por metodo GET
@@ -83,7 +82,7 @@ exports.hostalRouter.post('/hostal', configMulter_1.uploadFile, (req, res) => __
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.hostalRouter.put('/hostal/:id', validator.body(hostal_1.hostalSchema), configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.hostalRouter.put('/hostal/:id', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.file) {
         return res.status(452).json({ error: 'el campo foto no puede ser null' });
     }

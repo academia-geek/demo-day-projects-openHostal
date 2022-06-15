@@ -14,7 +14,7 @@ sgMail.setApiKey(process.env.API_KEY_SENDGRID);
 exports.default = (userEmails, params, templateId) => __awaiter(void 0, void 0, void 0, function* () {
     const msj = {
         to: userEmails,
-        from: process.env.API_KEY_EMAIL,
+        from: 'dq083093@gmail.com',
         templateId: templateId,
         dynamic_template_data: params
     };

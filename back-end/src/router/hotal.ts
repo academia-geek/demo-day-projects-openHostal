@@ -4,6 +4,10 @@ import { uploadFile } from '../utilities/configMulter'
 export const hostalRouter = express.Router()
 import{GOOGLE_CLOUD_BUCKET} from'../utilities/configcloud'
 import {uploadFileGoogle}from'../utilities/configcloud'
+import { createValidator } from "express-joi-validation";
+const validator=createValidator({});
+
+import { hostalSchema }  from"../schemas-joi/hostal"
 ///////////////////Rutas:
 hostalRouter.use(express.json())
 
@@ -37,8 +41,9 @@ hostalRouter.get('/hostal/:id', async(req,res)=>{
 })
 
 hostalRouter.post('/hostal',uploadFile,async(req,res)=> { 
+    if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
     const originalname=req.file.originalname;
-    const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
+    const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}%20`
     const{nombre,ciudad,sede,descripcion,direccion,geometry1,geometry2}=req.body
     try{
         const cliente= await pool.connect()
@@ -56,11 +61,15 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
               }
            else{  res.json({ message: 'No se pudo crear el hotal' })}
             }catch(err){console.log(err)
-            res.status(500).json({ error: 'Internal error server' })}
-})
-         hostalRouter.put('/hostal/:id',uploadFile,async(req,res)=>{
+            res.status(500).json({ error: 'Internal error server' })
+            }
+        }
+)
+
+         hostalRouter.put('/hostal/:id',validator.body(hostalSchema),uploadFile,async(req,res)=>{
+            if(!req.file){ return res.status(452).json({ error: 'el campo foto no puede ser null' })}
             const originalname=req.file.originalname;
-            const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
+            const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}%20`
             let cliente=await pool.connect()
             const{ id }=req.params
             const{
@@ -85,6 +94,7 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
                        id ]
                     ) 
                     if (result.rowCount > 0) {
+                        uploadFileGoogle(originalname).catch(console.error);
                         res.json({ message: 'Actualización realizada correctamente' })
                       } else { res.status(503)
                         .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })}

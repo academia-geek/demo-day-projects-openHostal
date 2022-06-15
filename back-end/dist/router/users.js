@@ -48,11 +48,12 @@ exports.usersRouter.get('/users/:id', (req, res) => __awaiter(void 0, void 0, vo
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.usersRouter.post('/users', validator.body(hostal_1.usersSchema), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+//,validator.body(usersSchema)
+exports.usersRouter.post('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { nombre, apellido, email, contrasena, celular, tipo_documento, numero_documento, nacionalidad, rol, id_hostal } = req.body;
         const cliente = yield config_1.pool.connect();
-        const response = yield cliente.query(`INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,"numero_documento",nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`, [nombre,
+        const response = yield cliente.query(`INSERT INTO users(nombre,apellido,email,contrasena,celular,tipo_documento,numero_documento,nacionalidad,rol,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)RETURNING id`, [nombre,
             apellido,
             email,
             contrasena,

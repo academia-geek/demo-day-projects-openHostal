@@ -16,6 +16,7 @@ exports.codigoRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const templateid_const_1 = __importDefault(require("../constants/templateid.const"));
 const templateid1_const_1 = __importDefault(require("../constants/templateid1.const"));
+
 const generarcodigo_1 = __importDefault(require("../utilities/generarcodigo"));
 const sendgrid_1 = __importDefault(require("../utilities/sendgrid"));
 exports.codigoRouter = express_1.default.Router();
@@ -50,6 +51,7 @@ exports.codigoRouter.post('/codigo/CHECKIN', (req, res) => __awaiter(void 0, voi
         res.status(500).send("error");
     }
 }));
+
 // codigoRouter.post('/codigo/CheckOut',async (req: Request, res: Response) => {
 //   try{
 //    const {name, email,password}=req.body  
@@ -68,4 +70,3 @@ exports.codigoRouter.post('/codigo/CHECKIN', (req, res) => __awaiter(void 0, voi
 //       res.status(500).send("error")
 //   }
 // })
-//# sourceMappingURL=codigoSengrid.js.map

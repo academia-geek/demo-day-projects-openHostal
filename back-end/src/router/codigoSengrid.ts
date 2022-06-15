@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import templateIds from '../constants/templateid.const';
 import templateid1Const from "../constants/templateid1.const";
+
+
 import generatecode from '../utilities/generarcodigo';
 import sendEmail from '../utilities/sendgrid';
 export const codigoRouter =express.Router();
@@ -51,7 +53,6 @@ codigoRouter.post('/codigo/CHECKIN',async (req: Request, res: Response) => {
         res.status(500).send("error")
 
     }
-})
 
 // codigoRouter.post('/codigo/CheckOut',async (req: Request, res: Response) => {
 //   try{

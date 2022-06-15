@@ -717,4 +717,3 @@
  *          500:
  *              description: Error en el servidor
  */ 
-//# sourceMappingURL=hotal.docs.js.map

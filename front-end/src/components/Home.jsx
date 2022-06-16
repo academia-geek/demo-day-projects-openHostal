@@ -25,7 +25,7 @@ const Home = () => {
       <Navbar collapseOnSelect fixed='top' expand="lg" bg="dark" variant="dark">
       <Container>
                 <Navbar.Brand href="#home"><h3>OpenHostal{}</h3></Navbar.Brand>
-                <Navbar.Brand href="#home"><h2>Hola</h2></Navbar.Brand>
+                <Navbar.Brand to="/user-info"><h2>Hola</h2></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

@@ -10,6 +10,7 @@ import LandPage from "../components/LandPage"
 import Descrip from "../components/Descrip"
 import FormEmail from "../components/auth/FormEmail"
 import Home from "../components/Home"
+import UserInfo from "../components/UserInfo"
 
 
 const AppRouters = () => {
@@ -65,6 +66,10 @@ if(checking){
               <Route path='/home' element={
               <PrivateRouters isAuth={isLoggedIn} >
                 <Home />
+              </PrivateRouters>} />
+              <Route path='/user-info' element={
+              <PrivateRouters isAuth={isLoggedIn} >
+                <UserInfo />
               </PrivateRouters>} />
             <Route path='/descrip/:index' element={
               <PublicRouters isAuth={isLoggedIn} >

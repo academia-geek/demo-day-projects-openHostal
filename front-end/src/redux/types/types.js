@@ -1,7 +1,8 @@
 export const authTypes = {
   LOGIN: 'LOGIN',
   LOGOUT: 'LOGOUT',
-  REGISTER: 'REGISTER'
+  REGISTER: 'REGISTER',
+  UPDATE: 'UPDATE'
   }
 
 export const getData = {

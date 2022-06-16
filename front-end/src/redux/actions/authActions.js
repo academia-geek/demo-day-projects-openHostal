@@ -1,7 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, updatePassword } from "firebase/auth"
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { db, facebook, google} from "../../firebase/firebaseConfig"
 import { authTypes } from "../types/types";
+
+
 
 //Registro de usuario
 export const registerUsr = ({ nombre, email, contrasenia }) => {
@@ -90,3 +92,85 @@ export const logoutAsync = ()=>{
           })
       }
   }
+
+ // Actualizar usuario
+
+ export const updateUser = ( displayName) => {
+    return async( dispatch ) => {
+        const auth = getAuth();
+        try {
+            const results = await updateProfile( auth.currentUser, { displayName })
+            console.log(results)
+            console.log(displayName)
+            dispatch( update( displayName ) )
+            .then(()=>{
+                alert("usuario actualizado exitosamente")
+            })
+        } catch ( err ) {
+            alert("Error al actualizar el usuario")
+        }
+    }
+ }
+
+//     updateProfile(auth.currentUser, {
+//     displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+//   }).then(() => {
+//     // Profile updated!
+//     // ...
+//   }).catch((error) => {
+//     // An error occurred
+//     // ...
+//   });
+
+    export const updateUsr = ({ nombre, email }) => {
+        return async( dispatch ) => {
+            const auth = getAuth();
+            try {
+                const newUsr = await updateProfile( auth , {
+                    displayName: nombre,
+                } )
+                const results = await setDoc(doc(collection(db,"usuarios"),newUsr.user.uid),{
+                    nombre,
+                    email
+                })
+                console.log(results)
+                alert("usuario actualizado exitosamente")
+                dispatch( update( newUsr.user.uid, nombre, email ) )
+
+            } catch ( err ) {
+                alert("El email ya esta en uso")
+            }
+        };
+    }
+
+    // export const updateUsr = ({ nombre, email, contrasenia }) => {
+    //     return async( dispatch ) => {
+    //         const auth = getAuth();
+    //         try {
+    //             const newUsr = await auth.currentUser.updateProfile({
+    //                 displayName: nombre,
+    //                 // email
+    //             })
+    //             // const results = await setDoc(doc(collection(db,"usuarios"),newUsr.user.uid),{
+    //             //     nombre,
+    //             //     email
+    //             // })
+    //             // console.log(results)
+    //             alert("usuario actualizado exitosamente")
+    //             dispatch( update( newUsr.user.uid, nombre ) )
+               
+    //         }
+    //         catch ( err ) {
+    //             alert("El email ya esta en uso")
+    //         }
+    //     };
+    // }
+
+
+    const update = ( id, nombre, email) => {
+        return {
+            type: authTypes.UPDATE,
+            payload: { id, nombre, email }
+        }
+    }
+    

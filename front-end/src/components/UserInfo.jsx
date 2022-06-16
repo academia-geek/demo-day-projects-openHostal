@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button, Container, Form, Navbar } from 'react-bootstrap';
 import { BootonStyle } from '../styles/styleLandPage';
-import { logoutAsync } from '../redux/actions/authActions';
+import { logoutAsync, updateUser, updateUsr } from '../redux/actions/authActions';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/user.module.css'
 import { Avatar, styled, TextField } from '@mui/material';
@@ -46,8 +46,12 @@ const UserInfo = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formValue)
-    dispatch(updateProfile( password, displayName))
+    //dispatch(updateProfile(displayName))
+    dispatch(updateUser(formValue.displayName))
     rest()
+    if (password !== '') {
+      dispatch(updatePassword(password))
+    }
   }
 
   // useEffect(() => {
@@ -114,6 +118,7 @@ updatePassword(user, newPassword).then(() => {
                 margin="dense"
                 color="primary"
                 name="displayName"
+                autoComplete='off'
                 defaultValue={user.displayName}
                 onChange={handleInputChange}
               />
@@ -135,6 +140,7 @@ updatePassword(user, newPassword).then(() => {
                 margin="dense"
                 color="warning"
                 name="password"
+                autoComplete='off'
                 value={password}
                 onChange={handleInputChange}
               />

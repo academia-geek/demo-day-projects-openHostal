@@ -99,10 +99,12 @@ exports.roomRouter.put('/room/:id', configMulter_1.uploadFile, (req, res) => __a
     const { id } = req.params;
     const originalname = req.file.originalname;
     const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
-    const { tipo, descripcion, estado, capacidad, servicios, precio, imagenes, id_hotales } = req.body;
+    console.log(foto);
+    console.log(`dist/src/public/uploads/${originalname}`);
+    const { tipo, descripcion, estado, capacidad, servicios, precio, imagenes, id_hostal } = req.body;
     try {
         const result = yield cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
-                imagenes=$8,id_hotales=$9 WHERE id =$10`, [tipo,
+                imagenes=$8,id_hostal=$9 WHERE id =$10`, [tipo,
             descripcion,
             foto,
             estado,
@@ -110,7 +112,7 @@ exports.roomRouter.put('/room/:id', configMulter_1.uploadFile, (req, res) => __a
             servicios,
             precio,
             imagenes,
-            id_hotales,
+            id_hostal,
             id]);
         if (result.rowCount > 0) {
             res.json({ message: 'Actualización realizada correctamente' });

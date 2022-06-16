@@ -15,16 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.codigoRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const templateid_const_1 = __importDefault(require("../constants/templateid.const"));
-const templateid1_const_1 = __importDefault(require("../constants/templateid1.const"));
+const templateid_const1_1 = __importDefault(require("../constants/templateid.const1"));
 const generarcodigo_1 = __importDefault(require("../utilities/generarcodigo"));
 const sendgrid_1 = __importDefault(require("../utilities/sendgrid"));
 exports.codigoRouter = express_1.default.Router();
+const validator = createValidator();
 exports.codigoRouter.use(express_1.default.json());
-exports.codigoRouter.post('/codigo', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.codigoRouter.post('/registro', (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { name, email, password } = req.body;
-        console.log(name, email, password);
-        const codigo = (0, generarcodigo_1.default)();
+        const { name, email } = _req.body;
+        const codigo = `https://openhostal.web.app/registro`;
         yield (0, sendgrid_1.default)(email, {
             subject: 'Validate email',
             name,
@@ -33,39 +33,40 @@ exports.codigoRouter.post('/codigo', (req, res) => __awaiter(void 0, void 0, voi
         res.status(200).send('Mail send');
     }
     catch (error) {
+        console.log(error);
         res.status(500).send("error");
     }
 }));
-exports.codigoRouter.post('/codigo/CHECKIN', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.codigoRouter.post('/SEND_CHECKIN', (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { name, email, password } = req.body;
-        console.log(name, email, password);
+        const { name, email } = _req.body;
+        const codigo = (0, generarcodigo_1.default)();
         yield (0, sendgrid_1.default)(email, {
             subject: 'Validate email',
-            name
-        }, templateid1_const_1.default.SEND_CHECKIN);
+            name,
+            codigo
+        }, templateid_const1_1.default.SEND_CHECKIN);
         res.status(200).send('Mail send');
     }
     catch (error) {
+        console.log(error);
         res.status(500).send("error");
     }
 }));
-// codigoRouter.post('/codigo/CheckOut',async (req: Request, res: Response) => {
-//   try{
-//    const {name, email,password}=req.body  
-//    console.log(name,email,password);
-//     await sendEmail(
-//       email,
-//       {
-//         subject: 'Validate email',
-//         name
-//       },
-//       templateid2Const.SEND_CheckOut
-//     )
-//     res.status(200).send('Mail send')
-//   }
-//   catch(error){
-//       res.status(500).send("error")
-//   }
-// })
+exports.codigoRouter.post('/SEND_CheckOut', (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { name, email } = _req.body;
+        const codigo = (0, generarcodigo_1.default)();
+        yield (0, sendgrid_1.default)(email, {
+            subject: 'Validate email',
+            name,
+            codigo
+        }, templateid_const1_1.default.SEND_CHECKIN);
+        res.status(200).send('Mail send');
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).send("error");
+    }
+}));
 //# sourceMappingURL=codigoSengrid.js.map

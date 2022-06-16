@@ -1,20 +1,21 @@
 import express, { Request, Response } from "express";
 import templateIds from '../constants/templateid.const';
-import templateid1Const from "../constants/templateid1.const";
+import templateIds1 from '../constants/templateid.const1';
+import templateIds2 from '../constants/templateid.const2';
 import generatecode from '../utilities/generarcodigo';
 import sendEmail from '../utilities/sendgrid';
+import { createValidator } from 'express-joi-validation'
+import mailSchema from '../schemas-joi/main'
 export const codigoRouter =express.Router();
 
+const validator = createValidator()
 codigoRouter.use(express.json());
 
-
-codigoRouter.post('/codigo',async (req: Request, res: Response) => {
+codigoRouter.post('/registro', validator.body(mailSchema),async (_req: Request, res: Response) => {
   try{
  
-        
-   const {name, email,password}=req.body  
-   console.log(name,email,password);
-   const codigo = generatecode();
+   const {name, email}=_req.body  
+   const codigo = `https://openhostal.web.app/registro`;
     await sendEmail(
       email,
       {
@@ -27,49 +28,54 @@ codigoRouter.post('/codigo',async (req: Request, res: Response) => {
     res.status(200).send('Mail send')
   }
   catch(error){
+      console.log(error)
       res.status(500).send("error")
 
   }
 })
 
-codigoRouter.post('/codigo/CHECKIN',async (req: Request, res: Response) => {
-    try{
-   
-     const {name, email,password}=req.body  
-     console.log(name,email,password);
-      await sendEmail(
-        email,
-        {
-          subject: 'Validate email',
-          name
-        },
-        templateid1Const.SEND_CHECKIN
-      )
-      res.status(200).send('Mail send')
-    }
-    catch(error){
-        res.status(500).send("error")
+codigoRouter.post('/SEND_CHECKIN',validator.body(mailSchema),async (_req: Request, res: Response) => {
+  try{
+ 
+   const {name, email}=_req.body  
+   const codigo = generatecode();
+    await sendEmail(
+      email,
+      {
+        subject: 'Validate email',
+        name,
+        codigo
+      },
+      templateIds1.SEND_CHECKIN
+    )
+    res.status(200).send('Mail send')
+  }
+  catch(error){
+      console.log(error)
+      res.status(500).send("error")
 
-    }
+  }
 })
 
-// codigoRouter.post('/codigo/CheckOut',async (req: Request, res: Response) => {
-//   try{
+codigoRouter.post('/SEND_CheckOut', validator.body(mailSchema),async (_req: Request, res: Response) => {
+  try{
  
-//    const {name, email,password}=req.body  
-//    console.log(name,email,password);
-//     await sendEmail(
-//       email,
-//       {
-//         subject: 'Validate email',
-//         name
-//       },
-//       templateid2Const.SEND_CheckOut
-//     )
-//     res.status(200).send('Mail send')
-//   }
-//   catch(error){
-//       res.status(500).send("error")
+   const {name, email}=_req.body  
+   const codigo = generatecode();
+    await sendEmail(
+      email,
+      {
+        subject: 'Validate email',
+        name,
+        codigo
+      },
+      templateIds1.SEND_CHECKIN
+    )
+    res.status(200).send('Mail send')
+  }
+  catch(error){
+      console.log(error)
+      res.status(500).send("error")
 
-//   }
-// })
+  }
+})

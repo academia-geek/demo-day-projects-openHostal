@@ -1,5 +1,5 @@
 import express from 'express';
-import dotenv from 'dotenv'
+import * as dotenv from "dotenv";
 import morgan from 'morgan';
 import { connectToDatabase } from "./services/database.service";
 import { mailRouter } from "./router/mail.router";
@@ -49,8 +49,8 @@ connectToDatabase()
 app.use('/mail',mailRouter)
 app.use('/api',codigoRouter)
 app.use('/api', hostalRouter)
-app.use('/api',usersRouter)
 app.use('/api',roomRouter)
+app.use('/api',usersRouter)
 app.use('/api',reservasRouter)
 
 app.listen(app.get('port'), () => {

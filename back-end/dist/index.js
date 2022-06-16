@@ -1,10 +1,33 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
+const dotenv = __importStar(require("dotenv"));
 const morgan_1 = __importDefault(require("morgan"));
 const database_service_1 = require("./services/database.service");
 const mail_router_1 = require("./router/mail.router");
@@ -16,7 +39,7 @@ const habitacion_1 = require("./router/habitacion");
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const cors_1 = __importDefault(require("cors"));
-dotenv_1.default.config();
+dotenv.config();
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 //Documentation
@@ -45,8 +68,8 @@ app.set('port', process.env.PORT || 8080);
     app.use('/mail', mail_router_1.mailRouter);
     app.use('/api', codigoSengrid_1.codigoRouter);
     app.use('/api', hotal_1.hostalRouter);
-    app.use('/api', users_1.usersRouter);
     app.use('/api', habitacion_1.roomRouter);
+    app.use('/api', users_1.usersRouter);
     app.use('/api', reservas_1.reservasRouter);
     app.listen(app.get('port'), () => {
         console.log(`Server on port ${app.get('port')}`);

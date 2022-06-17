@@ -2,14 +2,14 @@ import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
 export const roomRouter = express.Router()
 export const hostalRouter = express.Router()
-import{GOOGLE_CLOUD_BUCKET} from'../utilities/configcloud'
-import {uploadFileGoogle}from'../utilities/configcloud'
+import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
+import { uploadFileGoogle } from '../utilities/configcloud'
 import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
-import { roomSchema } from"../schemas-joi/hostal";
-import{decodeToken}from"../firebase/token";
+import { roomSchema } from "../schemas-joi/hostal";
+import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
-const validator=createValidator({});
+const validator = createValidator({});
 
 roomRouter.use(express.json())
 
@@ -18,11 +18,12 @@ roomRouter.get('/room',async(req:Request,res:Response)=>{
     try{
         let result = await cliente.query('SELECT * FROM room')
         res.json(result.rows)
-    } catch(err) {
+    } catch (err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
+
 roomRouter.get('/room/:id', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params
@@ -37,7 +38,7 @@ roomRouter.get('/room/:id', async(req:Request,res:Response)=>{
     } catch(err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
 
 roomRouter.get('/roomestado/:estado', async(req:Request,res:Response)=>{
@@ -54,9 +55,8 @@ roomRouter.get('/roomestado/:estado', async(req:Request,res:Response)=>{
     } catch(err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
-
 
 roomRouter.post('/room',uploadFile,async(req:Request,res:Response)=>{    
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
@@ -78,8 +78,14 @@ roomRouter.post('/room',uploadFile,async(req:Request,res:Response)=>{
             `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id`,
             [  tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal]
         )
-        if (response.rowCount > 0) {res.send ('Se crea habitacion correctamente')
-        uploadFileGoogle(originalname).catch(console.error);       
+        if (response.rowCount > 0) {
+            res.send('Se crea habitacion correctamente')
+            uploadFileGoogle(originalname).catch(console.error);
+        }
+        else { res.json({ message: 'No se pudo crear el habitacion' }) }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ error: 'Internal error server' })
     }
             else{  res.json({ message: 'No se pudo crear el habitacion' })}
             }catch(err){console.log(err)
@@ -97,6 +103,7 @@ roomRouter.post('/room',uploadFile,async(req:Request,res:Response)=>{
             console.log(`dist/src/public/uploads/${originalname}`)
             const{ tipo,
                 descripcion,
+                foto,
                 estado,
                 capacidad,
                 servicios,

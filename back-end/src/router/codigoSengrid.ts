@@ -6,6 +6,7 @@ import generatecode from '../utilities/generarcodigo';
 import sendEmail from '../utilities/sendgrid';
 import { createValidator } from 'express-joi-validation'
 import mailSchema from '../schemas-joi/main'
+
 export const codigoRouter =express.Router();
 
 const validator = createValidator()
@@ -53,9 +54,9 @@ codigoRouter.post('/SEND_CHECKIN',validator.body(mailSchema),async (_req: Reques
   catch(error){
       console.log(error)
       res.status(500).send("error")
-
   }
 })
+
 
 codigoRouter.post('/SEND_CheckOut', validator.body(mailSchema),async (_req: Request, res: Response) => {
   try{

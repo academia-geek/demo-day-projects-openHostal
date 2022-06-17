@@ -9,18 +9,11 @@ import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
-<<<<<<< HEAD
-=======
 
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
 const validator = createValidator({});
 
 roomRouter.use(express.json());
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
 roomRouter.get("/room", async (req, res) => {
   let cliente = await pool.connect();
   try {
@@ -31,6 +24,7 @@ roomRouter.get("/room", async (req, res) => {
     res.status(500).json({ error: "Internal error server" });
   }
 });
+
 roomRouter.get("/room/:id", async (req, res) => {
   let cliente = await pool.connect();
   const { id } = req.params;
@@ -40,10 +34,7 @@ roomRouter.get("/room/:id", async (req, res) => {
       res.json(result.rows);
     } else {
       res.send("NO EXISTE Habitación");
-<<<<<<< HEAD
 
-=======
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
     }
   } catch (err) {
     console.log({ err });
@@ -51,10 +42,7 @@ roomRouter.get("/room/:id", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
 roomRouter.get("/roomestado/:estado", async (req, res) => {
   let cliente = await pool.connect();
   const { estado } = req.params;
@@ -111,7 +99,6 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
       uploadFileGoogle(originalname).catch(console.error);
     } else {
       res.json({ message: "No se pudo crear el habitacion" });
-
     }
   } catch (err) {
     console.log(err);
@@ -119,8 +106,6 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-=======
 roomRouter.put("/room/:id", uploadFile, async (req, res) => {
   if (!req.file) {
     return res.send("El campo foto no puede ser null");
@@ -170,7 +155,6 @@ roomRouter.put("/room/:id", uploadFile, async (req, res) => {
     res.status(500).json({ error: "Internal error server" });
   }
 });
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
 
 roomRouter.delete("/room/:id", async (req, res) => {
   let cliente = await pool.connect();
@@ -185,8 +169,5 @@ roomRouter.delete("/room/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Error server" });
   }
-});
-<<<<<<< HEAD
-=======
 
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc
+});

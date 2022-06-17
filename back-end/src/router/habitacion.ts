@@ -57,23 +57,25 @@ roomRouter.get('/roomestado/:estado', async (req, res) => {
     }
 })
 
-
-roomRouter.post('/room', uploadFile, async (req, res) => {
-    const originalname = req.file.originalname;
-    const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`
-    try {
-        const {
+roomRouter.post('/room',uploadFile,async(req,res)=>{    
+    if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
+    const originalname=req.file.originalname;
+    const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
+    try{
+        const{
             tipo,
             descripcion,
             estado,
             capacidad,
             servicios,
+            precio,
+            imagenes,
             id_hostal
-        } = req.body
-        const cliente = await pool.connect()
-        const response = await cliente.query(
-            `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7)RETURNING id`,
-            [tipo, descripcion, foto, estado, capacidad, servicios, id_hostal]
+        }=req.body
+        const cliente=await pool.connect()
+        const response=await cliente.query(
+            `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id`,
+            [  tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal]
         )
         if (response.rowCount > 0) {
             res.send('Se crea habitacion correctamente')
@@ -84,45 +86,55 @@ roomRouter.post('/room', uploadFile, async (req, res) => {
         console.log(err)
         res.status(500).json({ error: 'Internal error server' })
     }
+            else{  res.json({ message: 'No se pudo crear el habitacion' })}
+            }catch(err){console.log(err)
+                res.status(500).json({ error: 'Internal error server' })
+            }
+         } )
 
-})
-
-roomRouter.put('/room/:id', uploadFile, async (req, res) => {
-    let cliente = await pool.connect()
-    const { id } = req.params
-    const originalname = req.file.originalname;
-    const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`
-    const { tipo,
-        descripcion,
-        estado,
-        capacidad,
-        servicios,
-        id_hotales
-    } = req.body
-    try {
-        const result = await cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,id_hotales=$7 WHERE id =$8`,
-            [tipo,
+         roomRouter.put('/room/:id',uploadFile,async(req,res)=>{
+            if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
+            let cliente=await pool.connect()
+            const{ id }=req.params
+            const originalname=req.file.originalname;
+            const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
+            console.log(foto)
+            console.log(`dist/src/public/uploads/${originalname}`)
+            const{ tipo,
                 descripcion,
                 foto,
                 estado,
                 capacidad,
                 servicios,
-                id_hotales,
-                id]
-        )
-        if (result.rowCount > 0) {
-            res.json({ message: 'Actualización realizada correctamente' })
-        } else {
-            res.status(503)
-            .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })
-        }
-        uploadFileGoogle(originalname).catch(console.error);
-    }
-    catch (err) {
-        console.log({ err })
-        res.status(500).json({ error: 'Internal error server' })
-    }
-})
+                precio,
+                imagenes,
+                id_hostal
+            }=req.body
+            try{
+                const result=await cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
+                imagenes=$8,id_hostal=$9 WHERE id =$10`,
+                    [  tipo,
+                        descripcion,
+                        foto,
+                        estado,
+                        capacidad,
+                        servicios,
+                        precio,
+                        imagenes,
+                        id_hostal,
+                       id ]
+                    ) 
+                    if (result.rowCount > 0) {
+                        res.json({ message: 'Actualización realizada correctamente' })
+                      } else { res.status(503)
+                        .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })}
+                        uploadFileGoogle(originalname).catch(console.error);       
+                    }
+                catch (err) {
+                    console.log({ err })
+                    res.status(500).json({ error: 'Internal error server' })
+                }
+         })
 
 roomRouter.delete('/room/:id', async (req, res) => {
     let cliente = await pool.connect()

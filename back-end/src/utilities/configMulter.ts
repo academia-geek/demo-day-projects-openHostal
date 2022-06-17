@@ -16,6 +16,14 @@ export const uploadFile =multer({
     }
 }).single('foto')
 
+export const uploadFile1 =multer({
+    storage,
+    limits:{
+        fileSize:657128,files:4
+    }
+}).array('foto',4)
+
+
 
    // uploadFile(req, res, err => {
         // if (err) {

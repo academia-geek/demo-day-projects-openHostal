@@ -9,10 +9,10 @@ import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
+
 const validator = createValidator({});
 
 roomRouter.use(express.json());
-
 
 roomRouter.get("/room", async (req, res) => {
   let cliente = await pool.connect();
@@ -24,6 +24,7 @@ roomRouter.get("/room", async (req, res) => {
     res.status(500).json({ error: "Internal error server" });
   }
 });
+
 roomRouter.get("/room/:id", async (req, res) => {
   let cliente = await pool.connect();
   const { id } = req.params;
@@ -33,14 +34,12 @@ roomRouter.get("/room/:id", async (req, res) => {
       res.json(result.rows);
     } else {
       res.send("NO EXISTE Habitación");
-
     }
   } catch (err) {
     console.log({ err });
     res.status(500).json({ error: "Internal error server" });
   }
 });
-
 
 roomRouter.get("/roomestado/:estado", async (req, res) => {
   let cliente = await pool.connect();
@@ -104,7 +103,6 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
     res.status(500).json({ error: "Internal error server" });
   }
 });
-
 
 roomRouter.delete("/room/:id", async (req, res) => {
   let cliente = await pool.connect();

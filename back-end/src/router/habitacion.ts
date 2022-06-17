@@ -1,17 +1,18 @@
-import express, { Request, Response, Router } from "express";
-import { pool } from "../sql/config";
-export const roomRouter = express.Router();
-export const hostalRouter = express.Router();
-import { GOOGLE_CLOUD_BUCKET } from "../utilities/configcloud";
-import { uploadFileGoogle } from "../utilities/configcloud";
-import { uploadFile } from "../utilities/configMulter";
+
+import express, { Request, Response, Router } from 'express';
+import { pool } from '../sql/config';
+export const roomRouter = express.Router()
+import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
+import { uploadFileGoogle } from '../utilities/configcloud'
+import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
-import { required } from "joi";
+import { required } from 'joi';
 const validator = createValidator({});
 
 roomRouter.use(express.json());
+
 
 roomRouter.get("/room", async (req, res) => {
   let cliente = await pool.connect();
@@ -32,12 +33,14 @@ roomRouter.get("/room/:id", async (req, res) => {
       res.json(result.rows);
     } else {
       res.send("NO EXISTE Habitación");
+
     }
   } catch (err) {
     console.log({ err });
     res.status(500).json({ error: "Internal error server" });
   }
 });
+
 
 roomRouter.get("/roomestado/:estado", async (req, res) => {
   let cliente = await pool.connect();
@@ -63,7 +66,7 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
     return res.send("El campo foto no puede ser null");
   }
   const originalname = req.file.originalname;
-  const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
+  let foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
   try {
     const {
       tipo,
@@ -102,56 +105,6 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
   }
 });
 
-roomRouter.put("/room/:id", uploadFile, async (req, res) => {
-  if (!req.file) {
-    return res.send("El campo foto no puede ser null");
-  }
-  let cliente = await pool.connect();
-  const { id } = req.params;
-  const originalname = req.file.originalname;
-  const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
-  console.log(foto);
-  console.log(`dist/src/public/uploads/${originalname}`);
-  const {
-    tipo,
-    descripcion,
-    estado,
-    capacidad,
-    servicios,
-    precio,
-    imagenes,
-    id_hostal,
-  } = req.body;
-  try {
-    const result = await cliente.query(
-      `UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
-                imagenes=$8,id_hostal=$9 WHERE id =$10`,
-      [
-        tipo,
-        descripcion,
-        foto,
-        estado,
-        capacidad,
-        servicios,
-        precio,
-        imagenes,
-        id_hostal,
-        id,
-      ]
-    );
-    if (result.rowCount > 0) {
-      res.json({ message: "Actualización realizada correctamente" });
-    } else {
-      res
-        .status(503)
-        .json({ message: "Ocurrio un envento inesperado, intente de nuevo" });
-    }
-    uploadFileGoogle(originalname).catch(console.error);
-  } catch (err) {
-    console.log({ err });
-    res.status(500).json({ error: "Internal error server" });
-  }
-});
 
 roomRouter.delete("/room/:id", async (req, res) => {
   let cliente = await pool.connect();

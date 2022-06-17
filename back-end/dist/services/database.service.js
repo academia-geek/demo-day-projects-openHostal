@@ -32,9 +32,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connectToDatabase = exports.collections = void 0;
+exports.connectToDatabase = exports.collections4 = exports.collections3 = exports.collections2 = exports.collections = void 0;
 const mongoDB = __importStar(require("mongodb"));
 exports.collections = {};
+exports.collections2 = {};
+exports.collections3 = {};
+exports.collections4 = {};
 const connectToDatabase = () => __awaiter(void 0, void 0, void 0, function* () {
     // Create a new MongoDB client with the connection string from .env
     const client = new mongoDB.MongoClient(process.env.DB_CONN_STRING);
@@ -44,6 +47,12 @@ const connectToDatabase = () => __awaiter(void 0, void 0, void 0, function* () {
     const db = client.db(process.env.DB_NAME);
     const reservasCollection = db.collection(process.env.COLLECTION_NAME_RESERVA);
     exports.collections.reservas = reservasCollection;
+    const planesTuristicosCollection = db.collection(process.env.COLLECTION_NAME_PLANES);
+    exports.collections2.planesTuristicos = planesTuristicosCollection;
+    const restaurantesCollection = db.collection(process.env.COLLECTION_NAME_RESTAURANTE);
+    exports.collections3.restaurantes = restaurantesCollection;
+    const transportesCollection = db.collection(process.env.COLLECTION_NAME_TRANSPORTE);
+    exports.collections4.transportes = transportesCollection;
     console.log(`Successfully connected to database: ${db.databaseName} and collection: ${reservasCollection.collectionName}`);
 });
 exports.connectToDatabase = connectToDatabase;

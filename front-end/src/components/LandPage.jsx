@@ -18,7 +18,8 @@ const personalBusqueda={
   ciudad:"",
     cantPersonas:"",
     checkIn:[],
-    checkout:""
+    checkout:"",
+    diasReservado:"",
 }
 
 function LandPage() {
@@ -35,10 +36,21 @@ function LandPage() {
       ciudad: e.target.value,
     })
   }
+  function calcular(a,b){
+    let fecha1 = Date.UTC(a.getFullYear(), a.getMonth(), b.getDate);
+    let fecha2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate);
+    let diferencia = (a - b) / (1000* 60 * 60 * 24);
+    return Math.floor(diferencia);
+  }
   const updateBuscarr = (e) =>{
     setBusquedaInfo({
       ...busquedaInfo,
-      checkIn: e.target.value,
+      checkIn: [e[0],e[1]],
+      
+    })
+    setBusquedaInfo({
+      ...busquedaInfo,
+     diasReservado: calcular(e[1],e[0])
     })
   }
   const updateBuscarH = (e) =>{
@@ -47,29 +59,28 @@ function LandPage() {
       cantPersonas: e.target.value,
     })
   }
-  console.log(busquedaInfo.cantPersonas)
   const hostales = hostal
   let url = "http://35.237.19.167:4000/api/hostal";
 
-  // useEffect(() => {
+  useEffect(() => {
    
-  //   helpHttp()
-  //     .get(url)
-  //     .then((res) => {
+    helpHttp()
+      .get(url)
+      .then((res) => {
       
-  //       if (!res.err) {
-  //         //setDb(res);
-  //         setHostal(res)
-  //         dispatch(readAllAction(res));
+        if (!res.err) {
+          //setDb(res);
+          setHostal(res)
+          dispatch(readAllAction(res));
          
-  //       } else {
-  //         //setDb(null);
-  //         dispatch(noAction());
+        } else {
+          //setDb(null);
+          dispatch(noAction());
          
-  //       }
+        }
        
-  //     });
-  // }, [url, dispatch]);
+      });
+  }, [url, dispatch]);
   
 
   return (
@@ -144,7 +155,7 @@ function LandPage() {
                     <Form.Label>ciudad</Form.Label>
                     <Form.Select aria-label="Default select example" type="text"
                           placeholder="ciudad"
-                          name="checkIn "
+                          name="ciudad "
                           required
                           value={busquedaInfo.ciudad}
                           onChange={updateBuscar}>
@@ -170,16 +181,16 @@ function LandPage() {
                            />
                           </div>
                   </div>
-                  <div className="form-group">
+                  <div className="form-group text-dark">
                       <label className="col-sm-4 col-lg-2 col-form-label"></label>
                       <div className="form-group col-sm-11">
                           <input
                               type="number"
-                              name="huespedes"
+                              name="cantPersonas"
                               placeholder="Cantidad personas"
-                
                               value={busquedaInfo.cantPersonas}
                               onChange={updateBuscarH}
+                              maxLength="2"
                           />
                       </div>
                   </div>

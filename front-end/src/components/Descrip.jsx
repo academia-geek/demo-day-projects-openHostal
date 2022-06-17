@@ -19,8 +19,7 @@ const Descrip = (product) => {
     const state = useSelector((state) => state);
   
     const {db} = state.crud;
-    console.log(db) 
-    console.log(product)
+    
   return (
     <>
       <Navbar  bg="dark" variant="dark">

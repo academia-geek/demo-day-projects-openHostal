@@ -2,4 +2,6 @@ node_modules
 .env
 dist
 key.json
+
 service-account-key
+

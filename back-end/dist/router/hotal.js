@@ -57,7 +57,7 @@ exports.hostalRouter.post('/hostal', configMulter_1.uploadFile, (req, res) => __
         return res.send('El campo foto no puede ser null');
     }
     const originalname = req.file.originalname;
-    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}%20`;
+    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
     const { nombre, ciudad, sede, descripcion, direccion, geometry1, geometry2 } = req.body;
     try {
         const cliente = yield config_1.pool.connect();
@@ -87,7 +87,7 @@ exports.hostalRouter.put('/hostal/:id', configMulter_1.uploadFile, (req, res) =>
         return res.status(452).json({ error: 'el campo foto no puede ser null' });
     }
     const originalname = req.file.originalname;
-    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}%20`;
+    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     const { nombre, ciudad, sede, descripcion, direccion, geometry1, geometry2 } = req.body;

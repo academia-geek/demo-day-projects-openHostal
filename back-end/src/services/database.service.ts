@@ -3,11 +3,13 @@ import * as dotenv from "dotenv";
 import reservas from "../models/reservas";
 import planesTuristicos from "../models/planesTuristicos";
 import restaurantes from "../models/restaurantes";
+import transportes from "../models/transportes";
 
 
 export const collections: { reservas ?: mongoDB.Collection<reservas> } = {};
 export const collections2: { planesTuristicos ?: mongoDB.Collection<planesTuristicos> } = {};
 export const collections3: { restaurantes ?: mongoDB.Collection<restaurantes> } = {};
+export const collection4: { transportes ?: mongoDB.Collection<transportes> } = {};
 
 export const connectToDatabase=async ()=> {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
@@ -31,6 +33,9 @@ export const connectToDatabase=async ()=> {
 
     const restaurantesCollection = db.collection<restaurantes>(process.env.COLLECTION_NAME_RESTAURANTE);
     collections3.restaurantes = restaurantesCollection;
+
+    const transportesCollection = db.collection<transportes>(process.env.COLLECTION_NAME_TRANSPORTE);
+    collections3.transportes = transportesCollection;
 
     console.log(
         `Successfully connected to database: ${db.databaseName} and collection: ${reservasCollection.collectionName}`,

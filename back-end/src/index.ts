@@ -9,6 +9,7 @@ import { codigoRouter } from "./router/codigoSengrid";
 import { reservasRouter } from "./router/reservas";
 import { planesRouter } from "./router/planesTuristicos";
 import { restauranteRouter } from "./router/restaurantes";
+import { transporteRouter } from "./router/transportes";
 import { usersRouter } from "./router/users";
 import { roomRouter } from "./router/habitacion";
 
@@ -58,6 +59,7 @@ connectToDatabase()
         app.use('/api', reservasRouter)
         app.use('/api', planesRouter)
         app.use('/api', restauranteRouter)
+        app.use('/api', transporteRouter)
 
         app.listen(app.get('port'), () => {
             console.log(`Server on port ${app.get('port')}`);

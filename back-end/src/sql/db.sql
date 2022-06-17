@@ -13,7 +13,7 @@ CREATE TABLE hostal(
     sede VARCHAR(45)NOT NULL,
     descripcion  VARCHAR(200)NOT NULL,
     direccion varchar(85)NOT NULL,
-    foto VARCHAR (50)NOT NULL,
+    foto VARCHAR (250)NOT NULL,
     geometry1  float NOT NULL,
     geometry2  float NOT NULL,        
     PRIMARY KEY (id)

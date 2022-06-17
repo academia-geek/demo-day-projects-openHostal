@@ -2,6 +2,15 @@
  * @swagger
  * components:
  *  schemas:
+ *      correo:
+ *          type: object
+ *          properties:
+ *              email:
+ *                  type: string
+ *                  description: correo del usuario
+ *              name:
+ *                  type: string
+ *                  description: nombre de usuario
  *      hostal:
  *          type: object
  *          properties:
@@ -627,7 +636,7 @@
  */
 /**
  * @swagger
- * /api/reserva:
+ * /api/SEND_CHECKIN:
  *  post:
  *      summary: Crea una nueva reserva
  *      tags: [reserva]
@@ -717,3 +726,60 @@
  *          500:
  *              description: Error en el servidor
  */
+/**
+ * @swagger
+ * /api/SEND_CheckOut:
+ *  post:
+ *      summary: Correo de CheckOut
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+/**
+ * @swagger
+ * /api/SEND_CHECKIN:
+ *  post:
+ *      summary: Correo de Checkin
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+/**
+ * @swagger
+ * /api/registro:
+ *  post:
+ *      summary: Correo de registro
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/

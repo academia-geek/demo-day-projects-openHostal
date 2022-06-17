@@ -21,7 +21,6 @@ exports.GOOGLE_CLOUD_BUCKET = 'semilleroshapi_350212';
 //clear el cliente de cloud storage
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({
-    projertId: GOOGLE_CLOUD_PROJECT,
     keyFilename: './src/utilities/key.json'
 });
 // //subi una imagen a mi bucket en GCP

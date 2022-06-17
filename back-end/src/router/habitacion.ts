@@ -93,6 +93,8 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             const{ id }=req.params
             const originalname=req.file.originalname;
             const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
+            console.log(foto)
+            console.log(`dist/src/public/uploads/${originalname}`)
             const{ tipo,
                 descripcion,
                 estado,
@@ -100,11 +102,11 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 servicios,
                 precio,
                 imagenes,
-                id_hotales
+                id_hostal
             }=req.body
             try{
                 const result=await cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
-                imagenes=$8,id_hotales=$9 WHERE id =$10`,
+                imagenes=$8,id_hostal=$9 WHERE id =$10`,
                     [  tipo,
                         descripcion,
                         foto,
@@ -113,7 +115,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                         servicios,
                         precio,
                         imagenes,
-                        id_hotales,
+                        id_hostal,
                        id ]
                     ) 
                     if (result.rowCount > 0) {

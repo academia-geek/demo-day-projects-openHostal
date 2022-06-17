@@ -1,14 +1,16 @@
-import express, { Request, Response, Router } from "express";
-import { pool } from "../sql/config";
-export const roomRouter = express.Router();
-export const hostalRouter = express.Router();
-import { GOOGLE_CLOUD_BUCKET } from "../utilities/configcloud";
-import { uploadFileGoogle } from "../utilities/configcloud";
-import { uploadFile } from "../utilities/configMulter";
+
+import express, { Request, Response, Router } from 'express';
+import { pool } from '../sql/config';
+export const roomRouter = express.Router()
+export const hostalRouter = express.Router()
+import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
+import { uploadFileGoogle } from '../utilities/configcloud'
+import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
-import { required } from "joi";
+import { required } from 'joi';
+
 const validator = createValidator({});
 
 roomRouter.use(express.json());
@@ -95,6 +97,7 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
       uploadFileGoogle(originalname).catch(console.error);
     } else {
       res.json({ message: "No se pudo crear el habitacion" });
+
     }
   } catch (err) {
     console.log(err);
@@ -124,8 +127,7 @@ roomRouter.put("/room/:id", uploadFile, async (req, res) => {
   } = req.body;
   try {
     const result = await cliente.query(
-      `UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7,
-                imagenes=$8,id_hostal=$9 WHERE id =$10`,
+      `UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7, imagenes=$8,id_hostal=$9 WHERE id =$10`,
       [
         tipo,
         descripcion,
@@ -167,3 +169,4 @@ roomRouter.delete("/room/:id", async (req, res) => {
     res.status(500).json({ error: "Error server" });
   }
 });
+

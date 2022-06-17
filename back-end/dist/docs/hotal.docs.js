@@ -783,4 +783,3 @@
  *          400:
  *              description: error en el envío de datos
 */ 
-//# sourceMappingURL=hotal.docs.js.map

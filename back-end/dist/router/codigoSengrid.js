@@ -16,6 +16,7 @@ exports.codigoRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const templateid_const_1 = __importDefault(require("../constants/templateid.const"));
 const templateid_const1_1 = __importDefault(require("../constants/templateid.const1"));
+
 const generarcodigo_1 = __importDefault(require("../utilities/generarcodigo"));
 const sendgrid_1 = __importDefault(require("../utilities/sendgrid"));
 const express_joi_validation_1 = require("express-joi-validation");
@@ -71,4 +72,4 @@ exports.codigoRouter.post('/SEND_CheckOut', validator.body(main_1.default), (_re
         res.status(500).send("error");
     }
 }));
-//# sourceMappingURL=codigoSengrid.js.map
+

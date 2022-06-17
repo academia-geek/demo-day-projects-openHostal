@@ -12,7 +12,7 @@ import { hostalSchema }  from"../schemas-joi/hostal"
 hostalRouter.use(express.json())
 
 /////consultas por metodo GET
-hostalRouter.get('/hostal', async(req,res)=>{
+hostalRouter.get('/hostal', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     try{
         let result =await cliente.query('SELECT * FROM hostal')
@@ -23,7 +23,7 @@ hostalRouter.get('/hostal', async(req,res)=>{
 }
 })
 
-hostalRouter.get('/hostal/:id', async(req,res)=>{
+hostalRouter.get('/hostal/:id', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params   
     try{

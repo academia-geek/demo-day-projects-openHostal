@@ -3,6 +3,7 @@
     --secondary-color: #0000ff;
     --tertiary-color: #212529;
     --quaternary-color: #fafafa;
+    --quinary-color: #f5f5f5;
 }
 
 
@@ -16,4 +17,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.submit_update_data{
+    margin: 5vh;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: 0.4s all ease-in-out;
+}
+.submit_update_data:hover{
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    border: 1px solid var(--primary-color);
+    border-color: var(--quaternary-color);
 }

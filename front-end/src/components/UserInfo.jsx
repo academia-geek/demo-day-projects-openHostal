@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { Button, Container, Form, Navbar } from 'react-bootstrap';
 import { BootonStyle } from '../styles/styleLandPage';
-import { logoutAsync, updateUser, updateUsr } from '../redux/actions/authActions';
+import { logoutAsync, updatePass, updateUser, updateUsr } from '../redux/actions/authActions';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/user.module.css'
 import { Avatar, styled, TextField } from '@mui/material';
 import { getAuth, updateProfile, updatePassword } from 'firebase/auth';
 import useForm from '../hooks/useForm';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
 
 
 const CssTextField = styled(TextField)({
@@ -29,13 +31,36 @@ const CssTextField = styled(TextField)({
   },
 });
 
-
 const UserInfo = () => {
-
   const dispatch = useDispatch()
 
+
+  //   const formik = useFormik({
+  //     initialValues: {
+  //       displayName: '  ',
+  //       photoURL: '',
+  //       // email: '',
+  //       password: '',
+  //     },
+  //     onSubmit: ( formValue ) => {
+  //       dispatch(updateUser(formValue.displayName))
+  //       rest()
+  //       console.log(formValue)
+  //       if (formValue.password != '') {
+  //         dispatch(updatePass(formValue.password))
+  //       }
+  //       //dispatch(updateProfile(displayName))
+  //       if (formValue.displayName != '') {
+  //       }
+  //     },
+  //     validationSchema: Yup.object({
+  //         displayName: Yup.string().required(),
+  //         contraseña: Yup.string().required().min(6, 'La contraseña debe tener al menos 6 caracteres',)
+  //     })
+  // });
+
   const [formValue, handleInputChange, rest] = useForm({
-    displayName: '',
+    displayName: '  ',
     photoURL: '',
     // email: '',
     password: '',
@@ -45,19 +70,24 @@ const UserInfo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // updateUser(nombre)
+
     console.log(formValue)
-    //dispatch(updateProfile(displayName))
-    dispatch(updateUser(formValue.displayName))
-    rest()
-    if (password !== '') {
-      dispatch(updatePassword(password))
+    if (formValue.password !== '') {
+      dispatch(updatePass(formValue.password))
     }
+    //dispatch(updateProfile(displayName))
+    if (formValue.defaultValue !== '') {
+      dispatch(updateUser(formValue.displayName))
+      rest()
+    }
+
   }
 
   // useEffect(() => {
   const auth = getAuth();
   const user = auth.currentUser;
-  if (user !== null) {
+  if (user != null) {
     const displayName = user.displayName;
     const email = user.email;
     const photoURL = user.photoURL;
@@ -69,25 +99,13 @@ const UserInfo = () => {
   }
   // })
 
-  // updateProfile(auth.currentUser, {
-  //   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
-  // }).then(() => {
-  //   // Profile updated!
-  //   // ...
-  // }).catch((error) => {
-  //   // An error occurred
-  //   // ...
-  // });
-  
-  const newPassword = "";
+  // const newPassword = "";
 
-updatePassword(user, newPassword).then(() => {
-  // Update successful.
-}).catch((error) => {
-  // An error ocurred
-  // ...
-});
+  useEffect(() => {
+    return () => {
 
+    }
+  }, [])
 
   return (
     <>
@@ -111,41 +129,49 @@ updatePassword(user, newPassword).then(() => {
         <div className={styles.userInfo_container}>
           <form onSubmit={handleSubmit}>
             <div className={styles.userInfo_container_input}>
-              <CssTextField
-                id="standard-basic"
-                label="Nombre"
-                variant="standard"
-                margin="dense"
-                color="primary"
-                name="displayName"
-                autoComplete='off'
-                defaultValue={user.displayName}
-                onChange={handleInputChange}
-              />
+              <div>
+                <CssTextField
+                  id="standard-basic"
+                  label="Nombre"
+                  variant="standard"
+                  margin="dense"
+                  color="primary"
+                  name="displayName"
+                  autoComplete='off'
+                  defaultValue={user.displayName}
+                  onChange={handleInputChange}
+                />
+              </div>
 
-              <TextField
-                id="standard-basic"
-                label="Correo electrónico"
-                variant="standard"
-                margin="dense"
-                color="warning"
-                disabled
-                defaultValue={user.email}
-              />
+              <div>
+                <TextField
+                  id="standard-basic"
+                  label="Correo electrónico"
+                  variant="standard"
+                  margin="dense"
+                  color="warning"
+                  name="email"
+                  disabled
+                  defaultValue={user.email}
+                />
+              </div>
 
-              <TextField
-                id="standard-basic"
-                label="Actualizar Contraseña"
-                variant="standard"
-                margin="dense"
-                color="warning"
-                name="password"
-                autoComplete='off'
-                value={password}
-                onChange={handleInputChange}
-              />
+              <div>
+                <TextField
+                  id="standard-basic"
+                  label="Actualizar Contraseña"
+                  variant="standard"
+                  margin="dense"
+                  color="warning"
+                  name="password"
+                  autoComplete='off'
+                  value={password}
+                  onChange={handleInputChange}
+                />
+              </div>
+
             </div>
-            <button>Actualizar datos</button>
+            <button className={styles.submit_update_data} type='submit' >Actualizar datos</button>
           </form>
         </div>
       </div>

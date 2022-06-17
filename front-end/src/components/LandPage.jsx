@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar , Container} from 'react-bootstrap'
+import { Navbar , Container, Stack} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import {BsWifi, BsSnow2,BsFillDice5Fill,BsPersonBoundingBox,BsFillGiftFill } from "react-icons/bs";
 import { BootonStyle, CarDivStyle, CarHStyle, CartabStyle, CarthStyle, H1Style, HDivStyle, ImgDivStyle,
@@ -51,25 +51,25 @@ function LandPage() {
   const hostales = hostal
   let url = "http://35.237.19.167:4000/api/hostal";
 
-  // useEffect(() => {
+  useEffect(() => {
    
-  //   helpHttp()
-  //     .get(url)
-  //     .then((res) => {
+    helpHttp()
+      .get(url)
+      .then((res) => {
       
-  //       if (!res.err) {
-  //         //setDb(res);
-  //         setHostal(res)
-  //         dispatch(readAllAction(res));
+        if (!res.err) {
+          //setDb(res);
+          setHostal(res)
+          dispatch(readAllAction(res));
          
-  //       } else {
-  //         //setDb(null);
-  //         dispatch(noAction());
+        } else {
+          //setDb(null);
+          dispatch(noAction());
          
-  //       }
+        }
        
-  //     });
-  // }, [url, dispatch]);
+      });
+  }, [url, dispatch]);
   
 
   return (
@@ -140,7 +140,7 @@ function LandPage() {
                             <option value="3">Santa Marta</option>
                       </select>
                   </div> */}
-                  <Form.Group className="mb-3 col-lg-3" controlId="formBasicName">
+                  <Form.Group className="mb-2 col-lg-2" controlId="formBasicName">
                     <Form.Label>ciudad</Form.Label>
                     <Form.Select aria-label="Default select example" type="text"
                           placeholder="ciudad"
@@ -157,9 +157,10 @@ function LandPage() {
                     
                 
             </Form.Group>
-                  <div className="form-group">
+            <Stack direction="horizontal" gap={3}>
+                  <div className="form-group mx-3">
                     <label className="col-sm-4 col-lg-2 col-form-label"></label>
-                        <div className="form-group col-sm-8">
+                        <div className="form-group col-sm-11">
                         <DateRangePicker 
                           method="get"
                           name="checkIn"
@@ -171,9 +172,10 @@ function LandPage() {
                           </div>
                   </div>
                   <div className="form-group">
-                      <label className="col-sm-4 col-lg-2 col-form-label"></label>
+                      <label className="col-sm-4 col-lg-2  col-form-label"></label>
                       <div className="form-group col-sm-11">
-                          <input
+                          <input 
+                              className='form-control'
                               type="number"
                               name="huespedes"
                               placeholder="Cantidad personas"
@@ -183,6 +185,7 @@ function LandPage() {
                           />
                       </div>
                   </div>
+                  </Stack>
                   <BtnStyle>Buscar </BtnStyle>
         </FormLanStyle>
         {

@@ -39,7 +39,7 @@ const Login = () => {
         <ContenDivStyle>
           <div className="card-body p-5">
               <form onSubmit={handleSubmit}>
-                  <h3>Inico de Sesion</h3>
+                  <h3>Inicio de Sesion</h3>
                   <div className="orm-group ">
                       <label className="col-sm-4 col-lg-2 col-form-label">Correo</label>
                       <div className="form-group col-sm-8 col-lg-2">

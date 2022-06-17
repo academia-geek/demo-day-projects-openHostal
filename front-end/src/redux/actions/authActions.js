@@ -112,60 +112,31 @@ export const logoutAsync = ()=>{
     }
  }
 
-//     updateProfile(auth.currentUser, {
-//     displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
-//   }).then(() => {
-//     // Profile updated!
-//     // ...
-//   }).catch((error) => {
-//     // An error occurred
-//     // ...
-//   });
-
-    export const updateUsr = ({ nombre, email }) => {
+    // Actualizar contraseña
+    export const updatePass = ( password ) => {
         return async( dispatch ) => {
             const auth = getAuth();
             try {
-                const newUsr = await updateProfile( auth , {
-                    displayName: nombre,
-                } )
-                const results = await setDoc(doc(collection(db,"usuarios"),newUsr.user.uid),{
-                    nombre,
-                    email
-                })
+                const results = await updatePassword( auth.currentUser, password )
                 console.log(results)
-                alert("usuario actualizado exitosamente")
-                dispatch( update( newUsr.user.uid, nombre, email ) )
-
+                console.log(password)
+                dispatch( updatePasswordRedux( password ) )
+                .then(()=>{
+                    alert("contraseña actualizada exitosamente")
+                }
+                )
             } catch ( err ) {
-                alert("El email ya esta en uso")
+                alert("Error al actualizar la contraseña")
             }
-        };
+        }
     }
 
-    // export const updateUsr = ({ nombre, email, contrasenia }) => {
-    //     return async( dispatch ) => {
-    //         const auth = getAuth();
-    //         try {
-    //             const newUsr = await auth.currentUser.updateProfile({
-    //                 displayName: nombre,
-    //                 // email
-    //             })
-    //             // const results = await setDoc(doc(collection(db,"usuarios"),newUsr.user.uid),{
-    //             //     nombre,
-    //             //     email
-    //             // })
-    //             // console.log(results)
-    //             alert("usuario actualizado exitosamente")
-    //             dispatch( update( newUsr.user.uid, nombre ) )
-               
-    //         }
-    //         catch ( err ) {
-    //             alert("El email ya esta en uso")
-    //         }
-    //     };
-    // }
-
+    const updatePasswordRedux = ( password ) => {
+        return {
+            type: authTypes.UPDATE,
+            payload: { password }
+        }
+    }
 
     const update = ( id, nombre, email) => {
         return {
@@ -173,4 +144,13 @@ export const logoutAsync = ()=>{
             payload: { id, nombre, email }
         }
     }
-    
+
+
+    //Token de usuario para Backend
+
+    // Firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+    //     // Send token to your backend via HTTPS
+    //     // ...
+    //   }).catch(function(error) {
+    //     // Handle error
+    //   });

@@ -8,21 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hostalRouter = exports.roomRouter = void 0;
-const express_1 = __importDefault(require("express"));
+var express = ;
+{
+    Request, Response, Router;
+}
+from;
+'express';
 const config_1 = require("../sql/config");
-exports.roomRouter = express_1.default.Router();
-exports.hostalRouter = express_1.default.Router();
+exports.roomRouter = express.Router();
+exports.hostalRouter = express.Router();
 const configcloud_1 = require("../utilities/configcloud");
 const configcloud_2 = require("../utilities/configcloud");
 const configMulter_1 = require("../utilities/configMulter");
 const express_joi_validation_1 = require("express-joi-validation");
 const validator = (0, express_joi_validation_1.createValidator)({});
-exports.roomRouter.use(express_1.default.json());
+exports.roomRouter.use(express.json());
 exports.roomRouter.get('/room', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     try {

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "trusty-coder-350212",
+  "private_key_id": "a47c5840d72f045db20b3f3bf82d05cbecdf34db",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDTq1j+LVp7AvzN\n6NLBiLsUUmpYXbH5Ev2GoOdPeLOjVA8AsHdyRQel0aBiqJH3KvgmqM7cpGWYwGkO\nt1zupFiLqcZl4e4ZLpXjSl5x/fgCyQPRO8s0byQ2GFah4qXN1er49sUhBvAjwZBe\ndrxNFgcTz1IgJi467bBkXLST5qoU603gWKtB7NyWdbNVWUQJwzeaT3KQfthVeHej\ndQHiimMUDvDDJsY7n/Io5b+xlax4MZ4HIDmDmv9WvenEGfkeIbjqPfeXjY/zVL9m\n1B4YbYLh0PM0pd4i1cAK7M7kgGwjLvr0LurBZdaaJ0JVhqqTtOLoAd4dyYBORZGB\nLRpbpIu5AgMBAAECgf9PEJINX6OMj3Ee+PjAkfJPhPl0SItSHmXVBAVjChMPzzZL\na58yb9aLeeIO+CiNyt8mkaezgzTv+e9EL/nmqjzo7mHNbLcjcONMI1tj+RnK8Isc\nfNlKnLlJ+41gquiEGoPKu2KnE5Bfys3Ce1ea879xBuAGYjyihmZ9FqPdGyws44ng\nD0vrJzjs5scXhCZTdpP7uArAJb69h3CYuhMJVGdhcGMRW5N5fRsCbUhG4ksEVIRE\nGRoojGMA8e5wMehEsixXSfl0RXnDZDs7NohVZOI97KYtn+Su/5oNEiiIoHupJKgl\njN4AVeG1ZwMQCpN0twzjWr1Id+S/csUyVK2EqNECgYEA9sTw8chsq1bIHQiPeoZh\neRlDBTzboOvJXfX4IsINOevexpkU/+1N1xRN9OBWXAwmRgS22FPTN+LDVFcsPnXb\nYX5sbB/7Nsm436UdjIlGEs3K020ttQF5s1cb1gSNYvZUnz/hhltMWKV+5B5zLo5F\nqnnS2nNGKYZ49E//PqjgMukCgYEA25ZKJqAeb0gMFM/Zia9AiXCGgNFKNrWVL211\nuJuPDn3xNIUbGBKU0cyO+styqV3+iZ0LB3xYORdmLVR/CrwTofJx/0VjBGfffF/P\n9tSe/e+6Hip1oHD1jhNlU53uTlhaWEBMBDgLwBi1KcUn3Ge1emnA6TIn2ArQ6nDT\nLBTq8FECgYEA3a5KLUo5pSpOlxZrnkw+IEW7WWc0fjmTKh+fC8p7iz8DYDGBFfAe\nb0rERWmK6yHW+Cuf/nI/WwMRKiEtk+bYb5rc171bNfq9Y9u20ds34giRXqHD38k1\nhRCJ5xcr1G0p0+3VMZeu3Cu/9DoOixIwL1dFPg00SHWPDxsWVznqPpECgYAjHFnI\n6UtUgdGktkNTV5lbIInxKQXTz58GEVuEZCMwrwSVYD8fz0DKdwnZohQ4bpYXjOvJ\ni6FTp6En2F3j6oS9HVYK+h5GAxHiAjPvhLnTYrSAxEtAly88Q2+tOhBzqH7xo35E\nIm4GjizRe/vOqyqCY0x8PQ/P5JLZGac6YjHasQKBgHzSv4e/czrCIgYuBMs05Les\n//t81J4j2AwOxjjM8nIAazRMFRiubvAqxT75GAgLpiTiaOXNtbX3BO3a3GyGUYFn\nV+WRjEWWKgnv0Nn4L7zZZVmg1j7Nt41DlktYmg0sYHxq6EKyuJU5tb9Oubhkg2QX\nGAu9D1Msoreaq8hH93YX\n-----END PRIVATE KEY-----\n",
+  "client_email": "storage-openhostel@trusty-coder-350212.iam.gserviceaccount.com",
+  "client_id": "112634713633411226181",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storage-openhostel%40trusty-coder-350212.iam.gserviceaccount.com"
+}

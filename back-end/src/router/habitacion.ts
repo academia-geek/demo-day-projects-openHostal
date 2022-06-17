@@ -13,9 +13,9 @@ const validator = createValidator({});
 
 roomRouter.use(express.json())
 
-roomRouter.get('/room', async (req, res) => {
+roomRouter.get('/room',async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
-    try {
+    try{
         let result = await cliente.query('SELECT * FROM room')
         res.json(result.rows)
     } catch (err) {
@@ -23,41 +23,42 @@ roomRouter.get('/room', async (req, res) => {
         res.status(500).json({ error: 'Internal error server' })
     }
 })
-roomRouter.get('/room/:id', async (req, res) => {
+
+roomRouter.get('/room/:id', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params
-    try {
-        let result = await cliente.query(`SELECT * FROM room WHERE id = $1`,
-            [id])
-        if (result.rows.length > 0) {
-            res.json(result.rows)
-        } else {
-            res.send('NO EXISTE Habitación')
-        }
-    } catch (err) {
+       try{
+         let result = await cliente.query(`SELECT * FROM room WHERE id = $1`,
+        [id])
+       if(result.rows.length>0){
+        res.json(result.rows)
+       }else{
+           res.send('NO EXISTE Habitación')
+       }
+    } catch(err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
     }
 })
 
-roomRouter.get('/roomestado/:estado', async (req, res) => {
+roomRouter.get('/roomestado/:estado', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { estado } = req.params
-    try {
-        let result = await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
-            [estado])
-        if (result.rows.length > 0) {
-            res.json(result.rows)
-        } else {
-            res.send('NO EXISTE Habitación')
-        }
-    } catch (err) {
+       try{
+         let result = await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
+        [estado])
+       if(result.rows.length>0){
+        res.json(result.rows)
+       }else{
+           res.send('NO EXISTE Habitación')
+       }
+    } catch(err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
     }
 })
 
-roomRouter.post('/room',uploadFile,async(req,res)=>{    
+roomRouter.post('/room',uploadFile,async(req:Request,res:Response)=>{    
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -92,7 +93,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             }
          } )
 
-         roomRouter.put('/room/:id',uploadFile,async(req,res)=>{
+         roomRouter.put('/room/:id',uploadFile,async(req:Request,res:Response)=>{
             if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
             let cliente=await pool.connect()
             const{ id }=req.params
@@ -136,17 +137,16 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 }
          })
 
-roomRouter.delete('/room/:id', async (req, res) => {
-    let cliente = await pool.connect()
-    const { id } = req.params
-    try {
-        const result = await cliente.query(`DELETE FROM room WHERE id = $1`, [id])
-        if (result.rowCount > 0) {
-            res.send('Se eliminado habitacion de manera exitosa')
-        } else {
-            res.status(409).json({ message: 'Error en dato enviado' })
-        }
-    } catch (err) {
-        res.status(500).json({ error: 'Error server' })
-    }
-})
+            roomRouter.delete('/room/:id', async (req:Request, res:Response) => {
+                let cliente = await pool.connect()
+                const { id } = req.params
+                try{
+                    const result=await cliente.query(`DELETE FROM room WHERE id = $1`,[id])
+                    if(result.rowCount>0){res.send('Se eliminado habitacion de manera exitosa')
+                }else{
+                    res.status(409).json({ message: 'Error en dato enviado' })
+                }
+            } catch(err){
+                res.status(500).json({ error: 'Error server' })
+            }
+        })

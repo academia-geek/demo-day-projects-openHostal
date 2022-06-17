@@ -6,6 +6,7 @@ import generatecode from '../utilities/generarcodigo';
 import sendEmail from '../utilities/sendgrid';
 import { createValidator } from 'express-joi-validation'
 import mailSchema from '../schemas-joi/main'
+
 export const codigoRouter =express.Router();
 
 const validator = createValidator()

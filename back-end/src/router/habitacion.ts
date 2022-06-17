@@ -2,61 +2,60 @@ import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
 export const roomRouter = express.Router()
 export const hostalRouter = express.Router()
-import{GOOGLE_CLOUD_BUCKET} from'../utilities/configcloud'
-import {uploadFileGoogle}from'../utilities/configcloud'
+import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
+import { uploadFileGoogle } from '../utilities/configcloud'
 import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
-import { roomSchema } from"../schemas-joi/hostal";
-import{decodeToken}from"../firebase/token";
+import { roomSchema } from "../schemas-joi/hostal";
+import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
-const validator=createValidator({});
+const validator = createValidator({});
 
 roomRouter.use(express.json())
 
-roomRouter.get('/room',async(req,res)=>{
+roomRouter.get('/room', async (req, res) => {
     let cliente = await pool.connect()
-    try{
-        let result =await cliente.query('SELECT * FROM room')
+    try {
+        let result = await cliente.query('SELECT * FROM room')
         res.json(result.rows)
-    } catch(err) {
+    } catch (err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
-roomRouter.get('/room/:id', async(req,res)=>{
+roomRouter.get('/room/:id', async (req, res) => {
     let cliente = await pool.connect()
     const { id } = req.params
-       try{
-         let result =await cliente.query(`SELECT * FROM room WHERE id = $1`,
-        [id])
-       if(result.rows.length>0){
-        res.json(result.rows)
-       }else{
-           res.send('NO EXISTE Habitación')
-       }
-    } catch(err) {
+    try {
+        let result = await cliente.query(`SELECT * FROM room WHERE id = $1`,
+            [id])
+        if (result.rows.length > 0) {
+            res.json(result.rows)
+        } else {
+            res.send('NO EXISTE Habitación')
+        }
+    } catch (err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
 
-roomRouter.get('/roomestado/:estado', async(req,res)=>{
+roomRouter.get('/roomestado/:estado', async (req, res) => {
     let cliente = await pool.connect()
     const { estado } = req.params
-       try{
-         let result =await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
-        [estado])
-       if(result.rows.length>0){
-        res.json(result.rows)
-       }else{
-           res.send('NO EXISTE Habitación')
-       }
-    } catch(err) {
+    try {
+        let result = await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
+            [estado])
+        if (result.rows.length > 0) {
+            res.json(result.rows)
+        } else {
+            res.send('NO EXISTE Habitación')
+        }
+    } catch (err) {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
-}
+    }
 })
-
 
 roomRouter.post('/room',uploadFile,async(req,res)=>{    
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
@@ -78,8 +77,14 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id`,
             [  tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal]
         )
-        if (response.rowCount > 0) {res.send ('Se crea habitacion correctamente')
-        uploadFileGoogle(originalname).catch(console.error);       
+        if (response.rowCount > 0) {
+            res.send('Se crea habitacion correctamente')
+            uploadFileGoogle(originalname).catch(console.error);
+        }
+        else { res.json({ message: 'No se pudo crear el habitacion' }) }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ error: 'Internal error server' })
     }
             else{  res.json({ message: 'No se pudo crear el habitacion' })}
             }catch(err){console.log(err)
@@ -97,6 +102,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             console.log(`dist/src/public/uploads/${originalname}`)
             const{ tipo,
                 descripcion,
+                foto,
                 estado,
                 capacidad,
                 servicios,
@@ -130,16 +136,17 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 }
          })
 
-            roomRouter.delete('/room/:id', async (req, res) => {
-                let cliente = await pool.connect()
-                const { id } = req.params
-                try{
-                    const result=await cliente.query(`DELETE FROM room WHERE id = $1`,[id])
-                    if(result.rowCount>0){res.send('Se eliminado habitacion de manera exitosa')
-                }else{
-                    res.status(409).json({ message: 'Error en dato enviado' })
-                }
-            } catch(err){
-                res.status(500).json({ error: 'Error server' })
-            }
-        })
+roomRouter.delete('/room/:id', async (req, res) => {
+    let cliente = await pool.connect()
+    const { id } = req.params
+    try {
+        const result = await cliente.query(`DELETE FROM room WHERE id = $1`, [id])
+        if (result.rowCount > 0) {
+            res.send('Se eliminado habitacion de manera exitosa')
+        } else {
+            res.status(409).json({ message: 'Error en dato enviado' })
+        }
+    } catch (err) {
+        res.status(500).json({ error: 'Error server' })
+    }
+})

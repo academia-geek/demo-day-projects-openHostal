@@ -701,6 +701,7 @@
  *                       $ref: '#/components/schemas/reserva'
  *
  */
+
 /**
  * @swagger
  * /api/SEND_CHECKIN:
@@ -774,19 +775,7 @@
  *          500:
  *              description: Error en el servidor
  */
-/**
- * @swagger
- * /api/reserva/{id}:
- *  get:
- *      summary: Consulta las reservas por su id 
- *      tags: [reserva]
- *          description: Identificador de los usuarios
- *      responses:
- *          200:
- *              description: Se consultó usuarios por ID
- *          500:
- *              description: Error en el servidor
- */
+
 /**
  * @swagger
  * /api/SEND_CheckOut:

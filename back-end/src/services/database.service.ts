@@ -8,7 +8,7 @@ import transportes from "../models/transportes";
 export const collections: { reservas ?: mongoDB.Collection<reservas> } = {};
 export const collections2: { planesTuristicos ?: mongoDB.Collection<planesTuristicos> } = {};
 export const collections3: { restaurantes ?: mongoDB.Collection<restaurantes> } = {};
-export const collection4: { transportes ?: mongoDB.Collection<transportes> } = {};
+export const collections4: { transportes ?: mongoDB.Collection<transportes> } = {};
 
 export const connectToDatabase=async ()=> {
    
@@ -31,7 +31,7 @@ export const connectToDatabase=async ()=> {
     collections3.restaurantes = restaurantesCollection;
 
     const transportesCollection = db.collection<transportes>(process.env.COLLECTION_NAME_TRANSPORTE);
-    collections3.transportes = transportesCollection;
+    collections4.transportes = transportesCollection;
 
     console.log(
         `Successfully connected to database: ${db.databaseName} and collection: ${reservasCollection.collectionName}`,

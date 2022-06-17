@@ -165,7 +165,74 @@
  *                  - noches:
  *                  - habitacion:
  *                  - valorTotal:
- *
+ *      Planes turisticos:
+ *          type: object
+ *          properties:
+ *              destino:
+ *                  type: string
+ *                  description: destino del plan turistico
+ *              descripcion:
+ *                  type: string
+ *                  description: descripcion del plan turistico
+ *              incluye:
+ *                  type: string
+ *                  description: lo que incluye el plan turistico
+ *              valor:
+ *                  type: number
+ *                  description: valor del plan turistico
+ *          required:
+ *                  - destino:
+ *                  - descripcion:
+ *                  - incluye:
+ *                  - valor:
+ *      Restaurantes:
+ *          type: object
+ *          properties:
+ *              nombre:
+ *                  type: string
+ *                  description: nombre del restaurante
+ *              direccion:
+ *                  type: string
+ *                  description: direccion del restaurante
+ *              barrio:
+ *                  type: string
+ *                  description: barrio del restaurante
+ *              telefono:
+ *                  type: number
+ *                  description: telefono del restaurante
+ *              descripcion:
+ *                  type: string
+ *                  description: descripcion del restaurante
+ *              tipo de comida:
+ *                  type: string
+ *                  description: tipo de comida del restaurante
+ *              rango de precios:
+ *                  type: string
+ *                  description: rango de precios del restaurante
+ *          required:
+ *                  - nombre:
+ *                  - direccion:
+ *                  - barrio:
+ *                  - telefono:
+ *                  - descripcion:
+ *                  - tipo de comida:
+ *                  - rango de precios:
+ *      Transportes:
+ *          type: object
+ *          properties:
+ *              nombre:
+ *                  type: string
+ *                  description: nombre del transporte
+ *              tipo:
+ *                  type: string
+ *                  description: tipo de transporte
+ *              contacto:
+ *                  type: string
+ *                  description: contacto del transporte
+ *          required:
+ *                  - nombre:
+ *                  - tipo:
+ *                  - contacto:
  */
 /**
  * @swagger
@@ -709,25 +776,6 @@
  */
 /**
  * @swagger
- * /api/reserva/{id}:
- *  get:
- *      summary: Consulta las reservas por su id
- *      tags: [reserva]
- *      parameters:
- *        - in: path
- *          name: id
- *          schema:
- *              type: string
- *          required: true
- *          description: Identificador de los usuarios
- *      responses:
- *          200:
- *              description: Se consultó usuarios por ID
- *          500:
- *              description: Error en el servidor
- */
-/**
- * @swagger
  * /api/SEND_CheckOut:
  *  post:
  *      summary: Correo de CheckOut
@@ -744,7 +792,7 @@
  *              description: correo enviado de manera exitosa
  *          400:
  *              description: error en el envío de datos
-*/
+ */
 /**
  * @swagger
  * /api/SEND_CHECKIN:
@@ -782,4 +830,416 @@
  *              description: correo enviado de manera exitosa
  *          400:
  *              description: error en el envío de datos
-*/ 
+*/
+/**
+* @swagger
+* /api/planes:
+* get:
+*      summary: Trae todas los planes turisticos
+*      tags: [Planes turisticos]
+*      responses:
+*          200:
+*              description: Lista de todos los planes turisticos
+*              content:
+*                  application/json:
+*                   schema:
+*                      type: array
+*                      items:
+*                        $ref: '#/components/schemas/planesTuristicos'
+*
+*/
+/**
+ * @swagger
+ * /api/planes/{id}:
+ *  get:
+ *      summary: Consulta los planes turisticos por el ID
+ *      tags: [planes turisticos]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los planes turisticos
+ *      responses:
+ *          200:
+ *              description: Se consultó el plan turistico con ID
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/planes:
+ *  post:
+ *      summary: Crea un nuevo plan turistico
+ *      tags: [planes turisticos]
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      destino:
+ *                          type: string
+ *                          description: destino del plan turistico
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion del plan turistico
+ *                      incluye:
+ *                          type: string
+ *                          description: lo que incluye el plan turistico
+ *                      valor:
+ *                          type: number
+ *                          description: valor del plan turistico
+ *      responses:
+ *          200:
+ *              description: Plan turistico creado
+ *          400:
+ *              description: Plan turistico no creado por error en el envío de datos
+ *          500:
+ *              description: Plan turistico no creado por error en el servidor
+*/
+/**
+ * @swagger
+ * /api/planes/{id}:
+ *  put:
+ *      summary: Edita un plan turistico pasándole el ID como parámetro
+ *      tags: [planes turisticos]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los planes turisticos
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      destino:
+ *                          type: string
+ *                          description: destino del plan turistico
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion del plan turistico
+ *                      incluye:
+ *                          type: string
+ *                          description: lo que incluye el plan turistico
+ *                      valor:
+ *                          type: number
+ *                          description: valor del plan turistico
+ *      responses:
+ *          200:
+ *              description: Se editó el plan turistico de manera correcta
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: object
+ *                     $ref: '#/components/schemas/planesTuristicos'
+ *          400:
+ *              description: Error en envío de datos por parte del cliente
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/planes/{id}:
+ *  delete:
+ *      summary: Elimina un plan turistico pasándole el ID como parámetro
+ *      tags: [planes turisticos]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los planes turisticos
+ *      responses:
+ *          200:
+ *              description: Se eliminó el plan turistico de manera correcta
+ *          400:
+ *              description: plan turistico no eliminado por error en el envio de datos
+ */
+/**
+ * @swagger
+ * /api/restaurantes:
+ * get:
+ *      summary: Trae todas los restaurantes
+ *      tags: [restaurantes]
+ *      responses:
+ *          200:
+ *              description: Lista de todos los restaurantes
+ *              content:
+ *                  application/json:
+ *                   schema:
+ *                      type: array
+ *                      items:
+ *                        $ref: '#/components/schemas/restaurantes'
+ *
+ */
+/**
+ * @swagger
+ * /api/restaurantes/{id}:
+ *  get:
+ *      summary: Consulta el restaurante por el ID
+ *      tags: [restaurantes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los restaurantes
+ *      responses:
+ *          200:
+ *              description: Se consultó el restaurante con ID
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/restaurantes:
+ *  post:
+ *      summary: Crea un nuevo restaurante
+ *      tags: [restaurantes]
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      nombre:
+ *                          type: string
+ *                          description: nombre del restaurante
+ *                      direccion:
+ *                          type: string
+ *                          description: direccion del restaurante
+ *                      barrio:
+ *                          type: string
+ *                          description: barrio del restaurante
+ *                      telefono:
+ *                          type: number
+ *                          description: telefono del restaurante
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion del restaurante
+ *                      tipo de comida:
+ *                          type: string
+ *                          description: tipo de comida del restaurante
+ *                      rango de precios:
+ *                          type: string
+ *                          description: rango de precios del restaurante
+ *      responses:
+ *          200:
+ *              description: Restaurante creado
+ *          400:
+ *              description: Restaurante no creado por error en el envío de datos
+ *          500:
+ *              description: Restaurante no creado por error en el servidor
+*/
+/**
+ * @swagger
+ * /api/restaurantes/{id}:
+ *  put:
+ *      summary: Edita un restaurante pasándole el ID como parámetro
+ *      tags: [restaurantes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los restaurantes
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      nombre:
+ *                          type: string
+ *                          description: nombre del restaurante
+ *                      direccion:
+ *                          type: string
+ *                          description: direccion del restaurante
+ *                      barrio:
+ *                          type: string
+ *                          description: barrio del restaurante
+ *                      telefono:
+ *                          type: number
+ *                          description: telefono del restaurante
+ *                      descripcion:
+ *                          type: string
+ *                          description: descripcion del restaurante
+ *                      tipo de comida:
+ *                          type: string
+ *                          description: tipo de comida del restaurante
+ *                      rango de precios:
+ *                          type: string
+ *                          description: rango de precios del restaurante
+ *      responses:
+ *          200:
+ *              description: Se editó el restaurante de manera correcta
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: object
+ *                     $ref: '#/components/schemas/restaurantes'
+ *          400:
+ *              description: Error en envío de datos por parte del cliente
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/restaurantes/{id}:
+ *  delete:
+ *      summary: Elimina un restaurante pasándole el ID como parámetro
+ *      tags: [restaurantes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los restaurantes
+ *      responses:
+ *          200:
+ *              description: Se eliminó el restaurante de manera correcta
+ *          400:
+ *              description: Restaurante no eliminado por error en el envio de datos
+ */
+/**
+ * @swagger
+ * /api/transportes:
+ * get:
+ *      summary: Trae todas los transportes
+ *      tags: [transportes]
+ *      responses:
+ *          200:
+ *              description: Lista de todos los transportes
+ *              content:
+ *                  application/json:
+ *                   schema:
+ *                      type: array
+ *                      items:
+ *                        $ref: '#/components/schemas/transportes'
+ *
+ */
+/**
+ * @swagger
+ * /api/transportes/{id}:
+ *  get:
+ *      summary: Consulta el transporte por el ID
+ *      tags: [transportes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los transportes
+ *      responses:
+ *          200:
+ *              description: Se consultó el transporte con ID
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/transportes:
+ *  post:
+ *      summary: Crea un nuevo transporte
+ *      tags: [transportes]
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      nombre:
+ *                          type: string
+ *                          description: nombre del transporte
+ *                      tipo:
+ *                          type: string
+ *                          description: tipo de transporte
+ *                      contacto:
+ *                          type: string
+ *                          description: contacto del transporte
+ *      responses:
+ *          200:
+ *              description: Transporte creado
+ *          400:
+ *              description: Transporte no creado por error en el envío de datos
+ *          500:
+ *              description: Transporte no creado por error en el servidor
+*/
+/**
+ * @swagger
+ * /api/transportes/{id}:
+ *  put:
+ *      summary: Edita un transporte pasándole el ID como parámetro
+ *      tags: [transportes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los transportes
+ *      requestBody:
+ *          content:
+ *              multipart/form-data:
+ *                 schema:
+ *                   type: object
+ *                   properties:
+ *                      nombre:
+ *                          type: string
+ *                          description: nombre del transporte
+ *                      tipo:
+ *                          type: string
+ *                          description: tipo de transporte
+ *                      contacto:
+ *                          type: string
+ *                          description: contacto del transporte
+ *      responses:
+ *          200:
+ *              description: Se editó el transporte de manera correcta
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: object
+ *                     $ref: '#/components/schemas/transportes'
+ *          400:
+ *              description: Error en envío de datos por parte del cliente
+ *          500:
+ *              description: Error en el servidor
+ *
+ */
+/**
+ * @swagger
+ * /api/transportes/{id}:
+ *  delete:
+ *      summary: Elimina un transporte pasándole el ID como parámetro
+ *      tags: [transportes]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de los transportes
+ *      responses:
+ *          200:
+ *              description: Se eliminó el transporte de manera correcta
+ *          400:
+ *              description: El transporte no eliminado por error en el envio de datos
+ */ 
+//# sourceMappingURL=hotal.docs.js.map

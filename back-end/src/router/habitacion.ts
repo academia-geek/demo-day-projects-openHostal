@@ -13,7 +13,7 @@ const validator=createValidator({});
 
 roomRouter.use(express.json())
 
-roomRouter.get('/room',async(req,res)=>{
+roomRouter.get('/room',async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     try{
         let result =await cliente.query('SELECT * FROM room')
@@ -23,7 +23,7 @@ roomRouter.get('/room',async(req,res)=>{
         res.status(500).json({ error: 'Internal error server' })
 }
 })
-roomRouter.get('/room/:id', async(req,res)=>{
+roomRouter.get('/room/:id', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params
        try{
@@ -40,7 +40,7 @@ roomRouter.get('/room/:id', async(req,res)=>{
 }
 })
 
-roomRouter.get('/roomestado/:estado', async(req,res)=>{
+roomRouter.get('/roomestado/:estado', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { estado } = req.params
        try{
@@ -58,7 +58,7 @@ roomRouter.get('/roomestado/:estado', async(req,res)=>{
 })
 
 
-roomRouter.post('/room',uploadFile,async(req,res)=>{    
+roomRouter.post('/room',uploadFile,async(req:Request,res:Response)=>{    
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -87,7 +87,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
             }
          } )
 
-         roomRouter.put('/room/:id',uploadFile,async(req,res)=>{
+         roomRouter.put('/room/:id',uploadFile,async(req:Request,res:Response)=>{
             if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
             let cliente=await pool.connect()
             const{ id }=req.params
@@ -130,7 +130,7 @@ roomRouter.post('/room',uploadFile,async(req,res)=>{
                 }
          })
 
-            roomRouter.delete('/room/:id', async (req, res) => {
+            roomRouter.delete('/room/:id', async (req:Request, res:Response) => {
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{

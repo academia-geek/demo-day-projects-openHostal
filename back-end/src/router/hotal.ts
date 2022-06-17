@@ -40,7 +40,7 @@ hostalRouter.get('/hostal/:id', async(req:Request,res:Response)=>{
 }
 })
 
-hostalRouter.post('/hostal',uploadFile,async(req,res)=> { 
+hostalRouter.post('/hostal',uploadFile,async(req:Request,res:Response)=> { 
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -66,7 +66,7 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
         }
 )
 
-         hostalRouter.put('/hostal/:id',uploadFile,async(req,res)=>{
+         hostalRouter.put('/hostal/:id',uploadFile,async(req:Request,res:Response)=>{
             if(!req.file){ return res.status(452).json({ error: 'el campo foto no puede ser null' })}
             const originalname=req.file.originalname;
             const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -104,7 +104,7 @@ hostalRouter.post('/hostal',uploadFile,async(req,res)=> {
                     res.status(500).json({ error: 'Internal error server' })
                 }
             })
-            hostalRouter.delete('/hostal/:id', async (req, res) => {
+            hostalRouter.delete('/hostal/:id', async (req:Request, res:Response) => {
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{

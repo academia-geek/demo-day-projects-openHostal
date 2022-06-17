@@ -16,7 +16,7 @@ roomRouter.use(express.json())
 roomRouter.get('/room',async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     try{
-        let result =await cliente.query('SELECT * FROM room')
+        let result = await cliente.query('SELECT * FROM room')
         res.json(result.rows)
     } catch(err) {
         console.log({ err })
@@ -27,7 +27,7 @@ roomRouter.get('/room/:id', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params
        try{
-         let result =await cliente.query(`SELECT * FROM room WHERE id = $1`,
+         let result = await cliente.query(`SELECT * FROM room WHERE id = $1`,
         [id])
        if(result.rows.length>0){
         res.json(result.rows)
@@ -44,7 +44,7 @@ roomRouter.get('/roomestado/:estado', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { estado } = req.params
        try{
-         let result =await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
+         let result = await cliente.query(`SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
         [estado])
        if(result.rows.length>0){
         res.json(result.rows)

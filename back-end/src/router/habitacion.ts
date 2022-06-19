@@ -1,7 +1,6 @@
 
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
-export const roomRouter = express.Router()
 import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
 import { uploadFileGoogle } from '../utilities/configcloud'
 import { uploadFile } from '../utilities/configMulter'
@@ -9,6 +8,8 @@ import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
+
+export const roomRouter = express.Router()
 
 const validator = createValidator({});
 
@@ -113,7 +114,7 @@ roomRouter.put("/room/:id", uploadFile, async (req, res) => {
   let cliente = await pool.connect();
   const { id } = req.params;
   const originalname = req.file.originalname;
-  const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
+  let foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
   console.log(foto);
   console.log(`dist/src/public/uploads/${originalname}`);
   const {

@@ -1,14 +1,17 @@
 import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections4 } from "../services/database.service";
-
+import { createValidator } from 'express-joi-validation';
+import transportesShema from '../schemas-joi/transportes';
 
 export const transporteRouter = express.Router();
+
+const validator = createValidator({});
 
 transporteRouter.use(express.json());
 
 //visualiza todas los transportes 
-transporteRouter.get("/transporte",async (_req: Request, res: Response) => {
+transporteRouter.get("/transporte",validator.query(transportesShema),async (_req: Request, res: Response) => {
     try {
        
         const transportes = await collections4.transportes.find({}).toArray();
@@ -35,7 +38,7 @@ transporteRouter.get("/transporte/:id",async (req: Request, res: Response) => {
 });
 
 //crear nuevos transportes
-transporteRouter.post("/transporte",async (req: Request, res: Response) => {
+transporteRouter.post("/transporte",validator.body(transportesShema),async (req: Request, res: Response) => {
     try {
         const newTransporte = req.body;
         const result = await collections4.transportes.insertOne(newTransporte);
@@ -49,7 +52,7 @@ transporteRouter.post("/transporte",async (req: Request, res: Response) => {
 });
 
 //Actualizar y modificar transportes por id
-transporteRouter.put("/transporte/:_id", async (req: Request, res: Response) => {
+transporteRouter.put("/transporte/:_id",validator.body(transportesShema), async (req: Request, res: Response) => {
     const id = req?.params?.id;
     try {
         const updateTransporte = req.body;

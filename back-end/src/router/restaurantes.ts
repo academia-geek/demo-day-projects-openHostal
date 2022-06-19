@@ -1,14 +1,17 @@
 import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections3 } from "../services/database.service";
-
+import { createValidator } from 'express-joi-validation';
+import restaurantesShema from '../schemas-joi/restaurantes';
 
 export const restauranteRouter = express.Router();
+
+const validator = createValidator({});
 
 restauranteRouter.use(express.json());
 
 //visualiza todas los restaurantes 
-restauranteRouter.get("/restaurante",async (_req: Request, res: Response) => {
+restauranteRouter.get("/restaurante",validator.query(restaurantesShema),async (_req: Request, res: Response) => {
     try {
        
         const restaurantes = await collections3.restaurantes.find({}).toArray();
@@ -35,7 +38,7 @@ restauranteRouter.get("/restaurante/:id",async (req: Request, res: Response) => 
 });
 
 //crear nuevos restaurantes
-restauranteRouter.post("/restaurante",async (req: Request, res: Response) => {
+restauranteRouter.post("/restaurante",validator.body(restaurantesShema),async (req: Request, res: Response) => {
     try {
         const newRestaurantes = req.body;
         const result = await collections3.restaurantes.insertOne(newRestaurantes);
@@ -49,7 +52,7 @@ restauranteRouter.post("/restaurante",async (req: Request, res: Response) => {
 });
 
 //Actualizar y modificar restaurantes por id
-restauranteRouter.put("/restaurante/:_id", async (req: Request, res: Response) => {
+restauranteRouter.put("/restaurante/:_id",validator.body(restaurantesShema), async (req: Request, res: Response) => {
     const id = req?.params?.id;
     try {
         const updateRestaurantes = req.body;

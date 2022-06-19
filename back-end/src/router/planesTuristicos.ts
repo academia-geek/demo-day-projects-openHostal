@@ -1,13 +1,17 @@
 import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections2 } from "../services/database.service";
+import { createValidator } from 'express-joi-validation';
+import planesTuristicosShema from '../schemas-joi/planesTuristicos';
 
 export const planesRouter = express.Router();
+
+const validator = createValidator({});
 
 planesRouter.use(express.json());
 
 //visualiza todas los planes Turisticos
-planesRouter.get("/planes",async (_req: Request, res: Response) => {
+planesRouter.get("/planes",validator.query(planesTuristicosShema),async (_req: Request, res: Response) => {
     try {
        
         const planesTuristicos = await collections2.planesTuristicos.find({}).toArray();
@@ -33,8 +37,8 @@ planesRouter.get("/planes/:id",async (req: Request, res: Response) => {
     }
 });
 
-//crear nuevos planesTuristicos requiere Token Y squema Joi
-planesRouter.post("/planes",async (req: Request, res: Response) => {
+//crear nuevos planesTuristicos requiere squema Joi
+planesRouter.post("/planes", validator.body(planesTuristicosShema), async (req: Request, res: Response) => {
     try {
         const newPlanTuristico = req.body;
         const result = await collections2.planesTuristicos.insertOne(newPlanTuristico);
@@ -47,8 +51,8 @@ planesRouter.post("/planes",async (req: Request, res: Response) => {
     }
 });
 
-// Modificar y Actualizar planesTuristicos por id requiere token y schema joi
-planesRouter.put("/planes/:_id", async (req: Request, res: Response) => {
+// Modificar y Actualizar planesTuristicos por id requiere schema joi
+planesRouter.put("/planes/:_id", validator.body(planesTuristicosShema), async (req: Request, res: Response) => {
     const id = req?.params?.id;
     try {
         const updatedPLanesTuristicos = req.body;
@@ -63,7 +67,7 @@ planesRouter.put("/planes/:_id", async (req: Request, res: Response) => {
     }
 });
 
-//Eliminar plan Turistico por id requiere Token
+//Eliminar plan Turistico por id
 planesRouter.delete("/planes/:id",async (req: Request, res: Response) => {
     const id = req?.params?.id;
 

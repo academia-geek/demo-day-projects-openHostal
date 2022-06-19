@@ -1,3 +1,4 @@
+
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
 import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
@@ -9,11 +10,33 @@ import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
 
 export const roomRouter = express.Router()
+
 export const hostalRouter = express.Router()
 
 const validator = createValidator({});
 
-roomRouter.use(express.json())
+roomRouter.use(express.json());
+
+roomRouter.get("/room", async (req, res) => {
+  let cliente = await pool.connect();
+  try {
+    let result = await cliente.query("SELECT * FROM room");
+    res.json(result.rows);
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
+
+roomRouter.get("/room/:id", async (req, res) => {
+  let cliente = await pool.connect();
+  const { id } = req.params;
+  try {
+    let result = await cliente.query(`SELECT * FROM room WHERE id = $1`, [id]);
+    if (result.rows.length > 0) {
+      res.json(result.rows);
+    } else {
+      res.send("NO EXISTE Habitación");
 
 roomRouter.get('/room', async (_req: Request, res: Response) => {
     let cliente = await pool.connect()
@@ -40,7 +63,11 @@ roomRouter.get('/room/:id', async (req: Request, res: Response) => {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
     }
-})
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
 
 roomRouter.get('/roomestado/:estado', async (req: Request, res: Response) => {
     let cliente = await pool.connect()
@@ -57,7 +84,11 @@ roomRouter.get('/roomestado/:estado', async (req: Request, res: Response) => {
         console.log({ err })
         res.status(500).json({ error: 'Internal error server' })
     }
-})
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
 
 roomRouter.post('/room', uploadFile, async (req, res) => {
     if (!req.file) { return res.send('El campo foto no puede ser null') }
@@ -149,4 +180,8 @@ roomRouter.delete('/room/:id', async (req: Request, res: Response) => {
     } catch (err) {
         res.status(500).json({ error: 'Error server' })
     }
-})
+  } catch (err) {
+    res.status(500).json({ error: "Error server" });
+  }
+
+});

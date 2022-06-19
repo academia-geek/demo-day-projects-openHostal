@@ -1,7 +1,5 @@
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
-export const roomRouter = express.Router()
-export const hostalRouter = express.Router()
 import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
 import { uploadFileGoogle } from '../utilities/configcloud'
 import { uploadFile } from '../utilities/configMulter'
@@ -9,11 +7,15 @@ import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
 import { required } from 'joi';
+
+export const roomRouter = express.Router()
+export const hostalRouter = express.Router()
+
 const validator = createValidator({});
 
 roomRouter.use(express.json())
 
-roomRouter.get('/room', async (req, res) => {
+roomRouter.get('/room', async (_req:Request, res:Response) => {
     let cliente = await pool.connect()
     try {
         let result = await cliente.query('SELECT * FROM room')
@@ -23,7 +25,7 @@ roomRouter.get('/room', async (req, res) => {
         res.status(500).json({ error: 'Internal error server' })
     }
 })
-roomRouter.get('/room/:id', async (req, res) => {
+roomRouter.get('/room/:id', async (req:Request, res:Response) => {
     let cliente = await pool.connect()
     const { id } = req.params
     try {
@@ -40,7 +42,7 @@ roomRouter.get('/room/:id', async (req, res) => {
     }
 })
 
-roomRouter.get('/roomestado/:estado', async (req, res) => {
+roomRouter.get('/roomestado/:estado', async (req:Request, res:Response) => {
     let cliente = await pool.connect()
     const { estado } = req.params
     try {
@@ -58,7 +60,7 @@ roomRouter.get('/roomestado/:estado', async (req, res) => {
 })
 
 
-roomRouter.post('/room', uploadFile, async (req, res) => {
+roomRouter.post('/room', uploadFile, async (req:Request, res:Response) => {
     const originalname = req.file.originalname;
     const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`
     try {
@@ -87,7 +89,7 @@ roomRouter.post('/room', uploadFile, async (req, res) => {
 
 })
 
-roomRouter.put('/room/:id', uploadFile, async (req, res) => {
+roomRouter.put('/room/:id', uploadFile, async (req:Request, res:Response) => {
     let cliente = await pool.connect()
     const { id } = req.params
     const originalname = req.file.originalname;
@@ -114,7 +116,7 @@ roomRouter.put('/room/:id', uploadFile, async (req, res) => {
             res.json({ message: 'Actualización realizada correctamente' })
         } else {
             res.status(503)
-            .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })
+                .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })
         }
         uploadFileGoogle(originalname).catch(console.error);
     }
@@ -124,7 +126,7 @@ roomRouter.put('/room/:id', uploadFile, async (req, res) => {
     }
 })
 
-roomRouter.delete('/room/:id', async (req, res) => {
+roomRouter.delete('/room/:id', async (req:Request, res:Response) => {
     let cliente = await pool.connect()
     const { id } = req.params
     try {

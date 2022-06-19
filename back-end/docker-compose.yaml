@@ -3,7 +3,7 @@ version: '3'
 services:
 
     api:
-     container_name: api-movie-dock
+     container_name: api-openhostal-dock
      restart: always
      build: .
      ports:
@@ -11,9 +11,28 @@ services:
 
      links:
       - mongo
+      - postgres
 
     mongo:
-        container_name: mongoDB
+        container_name: mongoDB1
         image: mongo
         ports:
           - 27022:27017 
+    postgres:
+        image: postgres
+        environment: 
+          - DATABASE_HOST=localhost     
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=12345
+          - POSTGRES_DB=openhostel
+        ports: 
+          - 5432:5432
+    pgadmin:
+        image: dpage/pgadmin4
+        environment: 
+          PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+          PGADMIN_DEFAULT_PASSWORD: "admin"
+        ports:
+          - "80:80"
+        depends_on: 
+          - postgres

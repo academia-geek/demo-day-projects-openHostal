@@ -2,38 +2,89 @@
  * @swagger
  * components:
  *  schemas:
+ *      correo:
+ *          type: object
+ *          properties:
+ *              email:
+ *                  type: string
+ *                  description: correo del usuario
+ *              name:
+ *                  type: string
+ *                  description: nombre de usuario
+ *      hostal:
+ *          type: object
+ *          properties:
+ *              nombre:
+ *                  type: string
+ *                  description: nombre de hostal
+ *              ciudad:
+ *                  type: string
+ *                  description: ciudad en la cual se encuentra ubicado el hostal
+ *              sede:
+ *                  type: string
+ *                  description: sede del hostal
+ *              descripcion:
+ *                  type: string
+ *                  description: describe la características particulares del hostal
+ *              direccion:
+ *                  type: string
+ *                  description: dirección de la sede
+ *              foto:
+ *                  type: string
+ *                  description: url de la imagen 
+ *              geometry1:
+ *                  type: float
+ *                  description: coordenadas en longitud del hostal 
+ *              geometry2:
+ *                  type: float
+ *                  description: coordenadas en latitud
+ *          required:
+ *                  - nombre:
+ *                  - ciudad:
+ *                  - sede:
+ *                  - descripción:
+ *                  - foto:
+ *                  - dirección: 
+ *                  - geometry1:
+ *                  - geometry2:
+ *  
  *      room:
  *          type: object
  *          properties:
  *              tipo:
  *                  type: string
- *                  description: tipo de habitacion 
+ *                  description: tipo de habitación 
  *              descripcion:
  *                  type: string
- *                  description: descripcion de la habitacion del hostal
+ *                  description:  descripción de la habitación del hostal
  *              foto:
  *                  type: string
  *                  description: fotos de las habitaciones 
  *              estado: 
  *                  type: number
- *                  description: estado de la habitacion (1=disponible,2=ocupado,3=reservado sin paga,4= reservadas pagadas 5 =limpieza, 6=no molestar)
+ *                  description: estado de la habitación (1=disponible,2=ocupado,3=reservado sin paga,4= reservadas pagadas 5 =limpieza, 6=no molestar)
  *              capacidad:
  *                  type: string
- *                  description: caracteristicas de la cantidad de personas 
+ *                  description: características de la cantidad de personas 
  *              servicios:
  *                  type: string
- *                  description: servicios prestado en la habitacion
- *              id_hostal:
+ *                  description: servicios prestados en la habitación
+ *              precio:
  *                  type: string
- *                  description: relacion del usuario con el hotal  
+ *                  description: precio por noche 
+ *              imagenes:
+ *                  type: string
+ *                  description: Url de imágenes alternativas  
  *          required: 
  *                  - nombre:
  *                  - ciudad:
  *                  - sede:
- *                  - descripcion:
+ *                  - descripción:
  *                  - foto:
  *                  - coordenadas:
- *                  - direccion:
+ *                  - dirección:
+ *                  - servicios
+ *                  - precio:
  *      users:
  *          type: object
  *          properties:
@@ -51,22 +102,22 @@
  *                  description: contraseña de usuario
  *              celular: 
  *                  type: number
- *                  description: numero de celular de usuario 
+ *                  description: número de celular de usuario 
  *              tipo_documento:
  *                  type: string
  *                  description: describe el tipo de documento del usuario
  *              numero_documento:
  *                  type: string
- *                  description: numero de documento del usuario
+ *                  description: número de documento del usuario
  *              nacionalidad:
  *                  type: string
  *                  description: campo que describe la nacionalidad del usuario
  *              rol: 
- *                  type: string
- *                  description: rol del usuario 
+*                  type: boolean
+ *                  description: rol del usuario donde TRUE(admin) y False(user)
  *              id_hostal:
  *                  type: number
- *                  description: relacion del usuario con el hotal
+ *                  description: relación del usuario con el hostal
  *          required: 
  *                  - nombre:
  *                  - apellido:
@@ -78,71 +129,39 @@
  *                  - nacionalida:
  *                  - rol:
  *                  - id_hostal: 
- *      hostal:
- *          type: object
- *          properties: 
- *              nombre:
- *                  type: string
- *                  description: nombre de hostal
- *              ciudad:
- *                  type: string
- *                  description: ciudad en la cual se encuentra hubicado el hostal
- *              sede:
- *                  type: string
- *                  description: sede del hostal
- *              descripcion:
- *                  type: string
- *                  description: describe la caracteristicas particulares del hostal
- *              direccion:
- *                  type: string
- *                  description: direccion de la sede
- *              foto:
- *                  type: string
- *                  description: url de la imagen 
- *              coordenadas:
- *                  type: string
- *                  description: cordenadas en eje x y del hostal
- *          required: 
- *                  - nombre:
- *                  - ciudad:
- *                  - sede:
- *                  - descripcion:
- *                  - foto:
- *                  - coordenadas:
- *                  - direccion:
- *      Reserva:
+ *      reserva:
  *          type: object
  *          properties:
- *              sede:
+ *               sede:
  *                  type: string
  *                  description: sede de la reserva
- *              ciudad:
+ *               ciudad:
  *                  type: string
  *                  description: ciudad de la reserva
- *              checkin:
+ *               checkIn:
  *                  type: string
  *                  description: fecha de entrada de la reserva
- *              checkout:
+ *               checkOut:
  *                  type: string
  *                  description: fecha de salida de la reserva
- *              huespedes:
+ *               huespedes:
  *                  type: number
- *                  description: cantidad de huespedes de la reserva
- *              noches:
+ *                  description: cantidad de huéspedes de la reserva
+ *               noches:
  *                  type: number
  *                  description: cantidad de noches de la reserva
- *              habitacion:
- *                  type: string
- *                  description: habitacion de la reserva
- *              valorTotal:
+ *               habitacion:
+ *                  type: number
+ *                  description: habitación de la reserva
+ *               valorTotal:
  *                  type: number
  *                  description: valor total de la reserva
  *          required:
  *                  - sede:
  *                  - ciudad:
- *                  - checkin:
- *                  - checkout:
- *                  - huespedes:
+ *                  - checkIn:
+ *                  - checkOut:
+ *                  - huéspedes:
  *                  - noches:
  *                  - habitacion:
  *                  - valorTotal:
@@ -236,7 +255,7 @@
  * @swagger
  * /api/hostal/{id}:
  *  get:
- *      summary: Consulta las hostales por su id 
+ *      summary: Consulta los hostales por su id 
  *      tags: [hostal]
  *      parameters:
  *        - in: path
@@ -268,35 +287,40 @@
  *                              description: nombre de hostal
  *                          ciudad:
  *                              type: string
- *                              description: ciudad en la cual se encuentra hubicado el hostal
+ *                              description: ciudad en la cual se encuentra ubicado el hostal
  *                          sede:
  *                              type: string
  *                              description: sede del hostal
  *                          descripcion:
  *                              type: string
- *                              description: describe la caracteristicas particulares del hostal
+ *                              description: describe las características particulares del hostal
  *                          direccion:
  *                              type: string
- *                              description: direccion de la sede    
+ *                              description: dirección de la sede    
  *                          foto:
  *                              type: string
  *                              format: binary
- *                          coordenadas:
- *                              type: string
- *                              description: cordenadas en eje x y del hostal       
+ *                          geometry1:
+ *                              type: float
+ *                              description: coordenadas en longitud del hostal 
+ *                          geometry2:
+ *                              type: float
+ *                              description: coordenadas en latitud       
  *      responses:
  *          200:
- *              description: Hostal creada
+ *              description: Hostal creado  
  *          400:
- *              description: Hostal no creada por error en el envío de datos
+ *              description: Hostal no creado por error en el envío de datos
  *          500:
- *              description: Hostal no creada por error en el servidor
+ *              description: Hostal no creado por error en el servidor
+ *          452:
+ *              description: Hostal se crea sin campo foto el cual no acepta valores null
 */
 /**
- * @swagger
+ * @swagger 
  * /api/hostal/{id}:
  *  delete:
- *      summary: Elimina los hostal pasándole el ID como parámetro
+ *      summary: Elimina el hostal pasándole el ID como parámetro
  *      tags: [hostal]
  *      parameters:
  *        - in: path
@@ -304,12 +328,13 @@
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de la hostal 
+ *          description: Identificador del hostal 
  *      responses:
  *          200:
- *              description: hostal eliminada
+ *              description: hostal eliminado
  *          500:
  *              description: Error en el servidor
+ *          
  */
 /**
  * @swagger
@@ -335,22 +360,25 @@
  *                              description: nombre de hostal
  *                          ciudad:
  *                              type: string
- *                              description: ciudad en la cual se encuentra hubicado el hostal
+ *                              description: ciudad en la cual se encuentra ubicado el hostal
  *                          sede:
  *                              type: string
  *                              description: sede del hostal
  *                          descripcion:
  *                              type: string
- *                              description: describe la caracteristicas particulares del hostal
+ *                              description: describe la características particulares del hostal
  *                          direccion:
  *                              type: string
- *                              description: direccion de la sede 
+ *                              description: dirección de la sede 
  *                          foto:
  *                              type: string
  *                              format: binary
- *                          coordenadas:
- *                              type: string
- *                              description: cordenadas en eje x y del hostal      
+ *                          geometry1:
+ *                              type: float
+ *                              description: coordenadas en longitud del hostal 
+ *                          geometry2:
+ *                              type: float
+ *                              description: coordenadas en latitud
  *      responses:
  *          200:
  *              description: Se editó de manera correcta 
@@ -363,12 +391,13 @@
  *              description: Error en envío de datos por parte del cliente 
  *          500:
  *              description: Error en el servidor
+ *     
  */
 /** 
  * @swagger
  * /api/users:
  *  get:
- *      summary: Trae todas los usuarios
+ *      summary: Trae todos los usuarios
  *      tags: [users]
  *      responses:
  *          200:
@@ -403,7 +432,7 @@
  * @swagger
  * /api/users:
  *  post:
- *      summary: Crea un nuevo usuarios
+ *      summary: Crea un nuevo usuario
  *      tags: [users]
  *      requestBody:
  *          required: true
@@ -432,10 +461,10 @@
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de la usuarios 
+ *          description: Identificador del usuario 
  *      responses:
  *          200:
- *              description: usuarios eliminada
+ *              description: usuarios eliminado
  *          500:
  *              description: Error en el servidor
  *
@@ -477,7 +506,7 @@
  * @swagger
  * /api/room:
  *  get:
- *      summary: Trae todas los usuarios
+ *      summary: Trae todas las habitaciones
  *      tags: [room]
  *      responses:
  *          200:
@@ -493,7 +522,7 @@
  * @swagger
  * /api/room/{id}:
  *  get:
- *      summary: Consulta las hostales por su id 
+ *      summary: Consulta las habitaciones por su id 
  *      tags: [room]
  *      parameters:
  *        - in: path
@@ -512,7 +541,7 @@
  * @swagger
  * /api/roomestado/{estado}:
  *  get:
- *      summary: Consulta las habitaciones y su realcion con el hostal sugun su estado. 
+ *      summary: Consulta las habitaciones y su relación con el hostal según su estado. 
  *      tags: [room]
  *      parameters:
  *        - in: path
@@ -520,10 +549,10 @@
  *          schema:
  *              type: number
  *          required: true
- *          description: Identificador segun el estado de la habitaciom
+ *          description: Identificador según el estado de la habitación
  *      responses:
  *          200:
- *              description: Se consultó habitacion segun su estado
+ *              description: Se consultó habitación según su estado
  *          500:
  *              description: Error en el servidor
  */
@@ -541,33 +570,39 @@
  *                   properties:
  *                      tipo:
  *                          type: string
- *                          description: tipo de habitacion 
+ *                          description: tipo de habitación 
  *                      descripcion:
  *                          type: string
- *                          description: descripcion de la habitacion del hostal
+ *                          description: descripción de la habitación del hostal
  *                      foto:
  *                          type: string
  *                          format: binary
- *                          description: fotos de las habitaciones 
+ *                          description: foto de la habitación
  *                      estado: 
  *                          type: string
- *                          description: estado de la habitacion
+ *                          description: estado de la habitación
  *                      capacidad:
  *                          type: string
- *                          description: caracteristicas de la cantidad de personas 
+ *                          description: características de la cantidad de personas 
  *                      servicios:
  *                          type: string
- *                          description: servicios prestado en la habitacion
+ *                          description: servicios prestado en la habitación
+ *                      precio:
+ *                          type: string
+ *                          description: valor de la habitación 
+ *                      imagenes:
+ *                          type: string
+ *                          description: imagenes alternativas
  *                      id_hostal:
  *                          type: string
- *                          description: relacion del usuario con el hotal  
+ *                          description: relación del usuario con el hostal  
  *      responses:
  *          200:
- *              description: habitacion creada
+ *              description: habitación creada
  *          400:
  *              description: habitaciones no creada por error en el envío de datos
  *          500:
- *              description: habitacion no creada por error en el servidor
+ *              description: habitación no creada por error en el servidor
 */
 /**
  * @swagger
@@ -584,7 +619,7 @@
  *          description: Identificador de las habitaciones 
  *      responses:
  *          200:
- *              description: habitaciones eliminada
+ *              description: habitacion eliminada
  *          500:
  *              description: Error en el servidor
  */
@@ -592,7 +627,7 @@
  * @swagger
  * /api/room/{id}:
  *  put:
- *      summary: Edita una habitaciones pasándole el ID como parámetro
+ *      summary: Edita una habitación pasándole el ID como parámetro
  *      tags: [room]
  *      parameters:
  *        - in: path
@@ -609,27 +644,33 @@
  *                   properties:
  *                      tipo:
  *                          type: string
- *                          description: tipo de habitacion 
+ *                          description: tipo de habitación 
  *                      descripcion:
  *                          type: string
- *                          description: descripcion de la habitacion del hostal
+ *                          description: descripción de la habitación del hostal
  *                      foto:
  *                          type: string
  *                          format: binary
- *                          description: fotos de las habitaciones 
+ *                          description: foto de la habitación 
  *                      estado: 
  *                          type: string
- *                          description: estado de la habitacion
+ *                          description: estado de la habitación
  *                      capacidad:
  *                          type: string
- *                          description: caracteristicas de la cantidad de personas 
+ *                          description: características de la cantidad de personas 
  *                      servicios:
  *                          type: string
- *                          description: servicios prestado en la habitacion
+ *                          description: servicios prestados en la habitación
+ *                      precio:
+ *                          type: float
+ *                          description: valor de la habitación
+ *                      imagenes:
+ *                          type: string
+ *                          description: imagenes alternativas de la habitación
  *                      id_hostal:
  *                          type: string
- *                          description: relacion del usuario con el hotal  
- *      responses:
+ *                          description: relación del usuario con el hostal  
+ *      responses:  
  *          200:
  *              description: Se editó de manera correcta 
  *              content:
@@ -646,146 +687,80 @@
 /**
  * @swagger
  * /api/reserva:
- * get:
- *      summary: Trae todas las reservaciones
- *      tags: [reservas]
- *      responses:
- *          200:
- *              description: Lista de todas las reservaciones
- *              content:
- *                  application/json:
- *                   schema:
- *                      type: array
- *                      items:
- *                        $ref: '#/components/schemas/reserva'
- * 
- */
-/**
- * @swagger
- * /api/reserva/{id}:
  *  get:
- *      summary: Consulta las reservaciones por su id
- *      tags: [reservas]
- *      parameters:
- *        - in: path
- *          name: id
- *          schema:
- *              type: string
- *          required: true
- *          description: Identificador de las reservaciones
+ *      summary: Trae todas las reservas
+ *      tags: [reserva]
  *      responses:
  *          200:
- *              description: Se consultó reservaciones por ID
- *          500:
- *              description: Error en el servidor
- * 
+ *              description: Lista de todas las reserva
+ *              content:
+ *                 application/json:
+ *                  schema:
+ *                     type: array
+ *                     items:
+ *                       $ref: '#/components/schemas/reserva'
+ *
  */
 /**
  * @swagger
- * /api/reserva:
+ * /api/SEND_CHECKIN:
  *  post:
- *      summary: Crea una nueva reservación
- *      tags: [reservas]
+ *      summary: Crea una nueva reserva
+ *      tags: [reserva]
  *      requestBody:
+ *          required: true
  *          content:
- *              multipart/form-data:
+ *              application/json:
  *                 schema:
  *                   type: object
- *                   properties:
- *                      sede:
- *                          type: string
- *                          description: sede de la reservación 
- *                      ciudad:
- *                          type: string
- *                          description: ciudad de la reservación
- *                      checkIn:
- *                          type: Date
- *                          description: Ingreso de la reservación 
- *                      checkOut: 
- *                          type: Date
- *                          description: Salida de la reservación
- *                      huespedes:
- *                          type: number
- *                          description: Cantidad de huespedes de la reservación 
- *                      noches:
- *                          type: number
- *                          description: Estadia de huespedes de la reservación
- *                      habitacion:
- *                          type: string
- *                          description: Habitación de la reservación
- *                      valorTotal:
- *                          type: number
- *                          description: Valor total de la reservación       
+ *                   $ref: '#/components/schemas/reserva'
  *      responses:
  *          200:
- *              description: Reservación creada
+ *              description: reserva creada
  *          400:
- *              description: Reservación no creada por error en el envío de datos
+ *              description: reserva no creada por error en el envío de datos
  *          500:
- *              description: Reservación no creada por error en el servidor
+ *              description: reserva no creada por error en el servidor
 */
 /**
  * @swagger
  * /api/reserva/{id}:
  *  delete:
- *      summary: Elimina una reservacion
- *      tags: [reservas]
+ *      summary: Elimina las reserva pasándole el ID como parámetro
+ *      tags: [reserva]
  *      parameters:
  *        - in: path
  *          name: id
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de la reservacion
+ *          description: Identificador de las habitaciones 
  *      responses:
  *          200:
- *              description: Se eliminó la reservacion
- *          400:
- *              description: Reservación no eliminada por error en el envio de datos
+ *              description: reserva eliminada
+ *          500:
+ *              description: Error en el servidor
  */
 /**
  * @swagger
  * /api/reserva/{id}:
  *  put:
- *      summary: Edita una reservación pasándole el ID como parámetro
- *      tags: [reservas]
+ *      summary: Edita una reserva pasándole el ID como parámetro
+ *      tags: [reserva]
  *      parameters:
  *        - in: path
  *          name: id
  *          schema:
  *              type: string
  *          required: true
- *          description: Identificador de las reservaciones 
+ *          description: Identificador de los usuarios
  *      requestBody:
+ *          required: true
  *          content:
- *              multipart/form-data:
+ *              application/json:
  *                 schema:
  *                   type: object
- *                   properties:
- *                      sede:
- *                          type: string
- *                          description: sede de la reservación 
- *                      ciudad:
- *                          type: string
- *                          description: ciudad de la reservación
- *                      checkIn:
- *                          type: Date
- *                          description: Ingreso de la reservación 
- *                      checkOut: 
- *                          type: Date
- *                          description: Salida de la reservación
- *                      huespedes:
- *                          type: number
- *                          description: Cantidad de huespedes de la reservación 
- *                      noches:
- *                          type: number
- *                          description: Estadia de huespedes de la reservación
- *                      habitacion:
- *                          type: string
- *                          description: Habitación de la reservación
- *                      valorTotal:
- *                          type: number
- *                          description: Valor total de la reservación  
+ *                   $ref: '#/components/schemas/reserva'
  *      responses:
  *          200:
  *              description: Se editó de manera correcta 
@@ -798,9 +773,78 @@
  *              description: Error en envío de datos por parte del cliente 
  *          500:
  *              description: Error en el servidor
- *
  */
 /**
+ * @swagger
+ * /api/reserva/{id}:
+ *  get:
+ *      summary: Consulta las reservas por su id 
+ *      tags: [reserva]
+ *          description: Identificador de los usuarios
+ *      responses:
+ *          200:
+ *              description: Se consultó usuarios por ID
+ *          500:
+ *              description: Error en el servidor
+ */
+/**
+ * @swagger
+ * /api/SEND_CheckOut:
+ *  post:
+ *      summary: Correo de CheckOut
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+ */
+/**
+ * @swagger
+ * /api/SEND_CHECKIN:
+ *  post:
+ *      summary: Correo de Checkin
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+/**
+ * @swagger
+ * /api/registro:
+ *  post:
+ *      summary: Correo de registro
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+ /**
  * @swagger
  * /api/planes:
  * get:

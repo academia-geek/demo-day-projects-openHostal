@@ -1,13 +1,12 @@
 import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
-import { createValidator } from 'express-joi-validation';
-import reservaShema from '../schemas-joi/reservas';
-
+import { createValidator } from "express-joi-validation";
 export const reservasRouter = express.Router();
 
-// validar los schemas Joi
-const validator = createValidator({});
+import reservaShema   from"../schemas-joi/reservas"
+
+const validator=createValidator({});
 
 reservasRouter.use(express.json());
 //visualiza todas las peliculas requier TOKEN
@@ -35,8 +34,9 @@ reservasRouter.get("/reserva/:id",async (req: Request, res: Response) => {
         res.status(404).send(`No se puede encontrar reserva: ${req.params.id}`);
     }
 });
-//crear nuevas peliculas requiere esquema Joi
-reservasRouter.post("/reserva",validator.body(reservaShema), async (req: Request, res: Response) => {
+
+//crear nuevas peliculas requiere Token Y squema Joi
+reservasRouter.post("/reserva",validator.body(reservaShema ),async (req: Request, res: Response) => {
     try {
         const newReservas = req.body;
         const result = await collections.reservas.insertOne(newReservas);
@@ -49,8 +49,8 @@ reservasRouter.post("/reserva",validator.body(reservaShema), async (req: Request
     }
 });
 
-//Actualizar peliculas por id requiere schema joi
-reservasRouter.put("/reserva/:_id", validator.body(reservaShema), async (req: Request, res: Response) => {
+//Actualizar peliculas por id requiere token y schema joi
+reservasRouter.put("/reserva/:_id",validator.body(reservaShema ),async (req: Request, res: Response) => {
     const id = req?.params?.id;
     try {
         const updatedReservas = req.body;
@@ -69,7 +69,7 @@ reservasRouter.delete("/reserva/:id",async (req: Request, res: Response) => {
     const id = req?.params?.id;
 
     try {
-        const query = { _id: new ObjectId(id) };
+        const query = { id: new ObjectId(id) };
         const result = await collections.reservas.deleteOne(query);
 
         if (result && result.deletedCount) {

@@ -11,7 +11,7 @@ const validator=createValidator({});
 
 reservasRouter.use(express.json());
 //visualiza todas las peliculas requier TOKEN
-reservasRouter.get("/reserva",async (_req: Request, res: Response) => {
+reservasRouter.get("/reserva", validator.query(reservaShema), async (_req: Request, res: Response) => {
     try {
        
         const reservas = await collections.reservas.find({}).toArray();
@@ -35,6 +35,7 @@ reservasRouter.get("/reserva/:id",async (req: Request, res: Response) => {
         res.status(404).send(`No se puede encontrar reserva: ${req.params.id}`);
     }
 });
+
 //crear nuevas reserva requiere 
 reservasRouter.post('/reserva/:id',async (req, res) => {
     let cliente = await pool.connect()
@@ -57,9 +58,8 @@ reservasRouter.post('/reserva/:id',async (req, res) => {
         }
        else {res.send('no exite habitación')}
     }catch(error){res.status(500).json(error.message )
-    }
-  }) 
-//Actualizar peliculas por id requiere token y schema joi
+
+//Actualizar reserva por id requiere token y schema joi
 reservasRouter.put("/reserva/:_id",validator.body(reservaShema ),async (req: Request, res: Response) => {
     const id = req?.params?.id;
     try {
@@ -74,7 +74,7 @@ reservasRouter.put("/reserva/:_id",validator.body(reservaShema ),async (req: Req
         res.status(400).send(error.message);
     }
 });
-//Eliminar peliculas por id requiere Token
+//Eliminar reservas por id requiere Token
 reservasRouter.delete("/reserva/:id",async (req: Request, res: Response) => {
     const id = req?.params?.id;
 

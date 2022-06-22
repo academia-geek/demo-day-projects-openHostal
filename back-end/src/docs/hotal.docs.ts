@@ -702,24 +702,6 @@
  *
  */
  /**
- * @swagger
- * /api/reserva/{id}:
- *  get:
- *      summary: Consulta las reservas por su id
- *      tags: [reserva]
- *      parameters:
- *        - in: path
- *          name: id
- *          schema:
- *              type: string
- *          required: true
- *          description: Identificador de las reservas
- *      responses:
- *          200:
- *              description: Se consultó la reserva por ID
- *          500:
- *              description: Error en el servidor
- */
 /**
  * @swagger
  * /api/reserva/{id}:
@@ -757,25 +739,8 @@
  *              description: reserva no creada por error en el servidor
 */
 /**
- * @swagger
- * /api/reserva/{id}:
- *  delete:
- *      summary: Elimina las reserva pasándole el ID como parámetro
- *      tags: [reserva]
- *      parameters:
- *        - in: path
- *          name: id
- *          schema:
- *              type: string
- *          required: true
- *          description: Identificador de las habitaciones 
- *      responses:
- *          200:
- *              description: reserva eliminada
- *          500:
- *              description: Error en el servidor
- */
-/**
+
+ /**
  * @swagger
  * /api/reserva/{id}:
  *  put:
@@ -808,7 +773,46 @@
  *          500:
  *              description: Error en el servidor
  */
-
+ /**
+ * @swagger
+ * /api/reserva/{id}:
+ *  delete:
+ *      summary: Elimina las reserva pasándole el ID como parámetro
+ *      tags: [reserva]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: Identificador de las habitaciones 
+ *      responses:
+ *          200:
+ *              description: reserva eliminada
+ *          500:
+ *              description: Error en el servidor
+ */
+/**
+ * @swagger
+ * /api/SEND_CHECKIN:
+ *  post:
+ *      summary: Crea una nueva reserva
+ *      tags: [reserva]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/reserva'
+ *      responses:
+ *          200:
+ *              description: reserva creada
+ *          400:
+ *              description: reserva no creada por error en el envío de datos
+ *          500:
+ *              description: reserva no creada por error en el servidor
+*/
 /**
  * @swagger
  * /api/SEND_CheckOut:

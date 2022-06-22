@@ -1,4 +1,3 @@
-
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
 export const roomRouter = express.Router()
@@ -101,7 +100,6 @@ roomRouter.post("/room", uploadFile,decodeToken, async (req, res) => {
   }
 });
 
-
 roomRouter.put("/room/:id",decodeToken, uploadFile, async (req, res) => {
   if (!req.file) {
     return res.send("El campo foto no puede ser null");
@@ -166,5 +164,3 @@ roomRouter.delete("/room/:id",decodeToken,async (req, res) => {
     res.status(500).json({ error: "Error server" });
   }
 });
-
-

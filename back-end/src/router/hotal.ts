@@ -5,13 +5,26 @@ export const hostalRouter = express.Router()
 import{GOOGLE_CLOUD_BUCKET} from'../utilities/configcloud'
 import {uploadFileGoogle}from'../utilities/configcloud'
 import { createValidator } from "express-joi-validation";
+import { decodeToken} from'../firebase/token'
 const validator=createValidator({});
 
 import { hostalSchema }  from"../schemas-joi/hostal"
+import { any } from 'joi';
 ///////////////////Rutas:
 hostalRouter.use(express.json())
 
-/////consultas por metodo GET
+///////////////////////administradores 
+hostalRouter.get('/prueba/:email',async (req, res) => {
+    let cliente = await pool.connect()
+    const { email } = req.params 
+    try{
+        let result =await cliente.query('SELECT email , rol FROM users WHERE email=$1 GROUP BY email,rol',[email])
+        if (result.rows.length > 0) {res.send('Hello world')}
+        else{res.send('no exite ')}
+    }catch(error){res.status(500).json({ error: 'Internal error server' })
+    }
+})
+
 hostalRouter.get('/hostal', async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     try{
@@ -23,7 +36,7 @@ hostalRouter.get('/hostal', async(req:Request,res:Response)=>{
 }
 })
 
-hostalRouter.get('/hostal/:id', async(req:Request,res:Response)=>{
+hostalRouter.get('/hostal/:id',async(req:Request,res:Response)=>{
     let cliente = await pool.connect()
     const { id } = req.params   
     try{
@@ -40,7 +53,7 @@ hostalRouter.get('/hostal/:id', async(req:Request,res:Response)=>{
 }
 })
 
-hostalRouter.post('/hostal',uploadFile,async(req:Request,res:Response)=> { 
+hostalRouter.post('/hostal',decodeToken,uploadFile,async(req:Request,res:Response)=> { 
     if(!req.file){ return res.send(  'El campo foto no puede ser null' )}
     const originalname=req.file.originalname;
     const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -66,7 +79,7 @@ hostalRouter.post('/hostal',uploadFile,async(req:Request,res:Response)=> {
         }
 )
 
-         hostalRouter.put('/hostal/:id',uploadFile,async(req:Request,res:Response)=>{
+         hostalRouter.put('/hostal/:id',uploadFile,decodeToken,async(req:Request,res:Response)=>{
             if(!req.file){ return res.status(452).json({ error: 'el campo foto no puede ser null' })}
             const originalname=req.file.originalname;
             const foto=`${GOOGLE_CLOUD_BUCKET}/${originalname}`
@@ -104,7 +117,7 @@ hostalRouter.post('/hostal',uploadFile,async(req:Request,res:Response)=> {
                     res.status(500).json({ error: 'Internal error server' })
                 }
             })
-            hostalRouter.delete('/hostal/:id', async (req:Request, res:Response) => {
+            hostalRouter.delete('/hostal/:id',decodeToken, async (req:Request, res:Response) => {
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{

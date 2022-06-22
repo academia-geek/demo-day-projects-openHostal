@@ -3,6 +3,7 @@ import { pool } from '../sql/config';
 export const usersRouter = express.Router();
 import { createValidator } from "express-joi-validation";
 import { usersSchema }  from"../schemas-joi/hostal"
+import { decodeToken} from'../firebase/token'
 
 const validator=createValidator({});
 
@@ -36,7 +37,7 @@ usersRouter.get('/users/:id', async(req,res)=>{
 }
 })
 //,validator.body(usersSchema)
-usersRouter.post('/users',async(req,res)=>{
+usersRouter.post('/users',decodeToken,async(req,res)=>{
     try{
        
         const{
@@ -73,7 +74,7 @@ usersRouter.post('/users',async(req,res)=>{
             }
          } )
 
-         usersRouter.put('/users/:id',validator.body(usersSchema),async(req,res)=>{
+         usersRouter.put('/users/:id',decodeToken,validator.body(usersSchema),async(req,res)=>{
             let cliente=await pool.connect()
             const{ id }=req.params
             const{
@@ -113,7 +114,7 @@ usersRouter.post('/users',async(req,res)=>{
                 }
             })
 
-            usersRouter.delete('/users/:id', async (req, res) => {
+            usersRouter.delete('/users/:id',decodeToken, async (req, res) => {
                 let cliente = await pool.connect()
                 const { id } = req.params
                 try{

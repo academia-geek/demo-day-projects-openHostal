@@ -24,13 +24,3 @@ export const uploadFile1 =multer({
 }).array('foto',4)
 
 
-
-   // uploadFile(req, res, err => {
-        // if (err) {
-        //   console.log(err)
-        //   err.message = 'Error al cargar el archivo'
-        //   res.send(err)
-        // }
-        // if (req.file) console.log(req.file)
-        // else if (req.files) console.log(req.files)
-        // res.send('Archivo cargado')    

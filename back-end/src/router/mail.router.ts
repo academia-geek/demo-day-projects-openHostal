@@ -10,7 +10,6 @@ mailRouter.post(
   '/send_code',
   async (_req: Request, res: Response) => {
     try {
-
       const { name, email } = _req.body;
       const code = generatecode();
 

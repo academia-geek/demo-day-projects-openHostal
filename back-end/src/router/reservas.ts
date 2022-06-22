@@ -2,9 +2,10 @@ import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
 import { createValidator } from "express-joi-validation";
-export const reservasRouter = express.Router();
+import { pool } from '../sql/config';
+import reservaShema from"../schemas-joi/reservas"
 
-import reservaShema   from"../schemas-joi/reservas"
+export const reservasRouter = express.Router();
 
 const validator=createValidator({});
 
@@ -34,20 +35,30 @@ reservasRouter.get("/reserva/:id",async (req: Request, res: Response) => {
         res.status(404).send(`No se puede encontrar reserva: ${req.params.id}`);
     }
 });
-//crear nuevas peliculas requiere Token Y squema Joi
-reservasRouter.post("/reserva",validator.body(reservaShema ),async (req: Request, res: Response) => {
-    try {
-        const newReservas = req.body;
-        const result = await collections.reservas.insertOne(newReservas);
-        result
-            ? res.status(200).send(`Se crean reservas con id ${result.insertedId}`)
-            : res.status(500).send(" Error en el servidor");
-    } catch (error) {
-        console.error(error);
-        res.status(400).send(error.message);
+//crear nuevas reserva requiere 
+reservasRouter.post('/reserva/:id',async (req, res) => {
+    let cliente = await pool.connect()
+    const {id} = req.params 
+    console.log(id);
+    try{
+        let result =await cliente.query('SELECT sede , ciudad, precio FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.id=$1 GROUP BY sede,a.ciudad,precio',[id])
+        if(result.rows.length > 0){
+        const resultado =result.rows[0]
+        const sede= resultado.sede;
+        const ciudad=resultado.ciudad;
+        const precio=resultado.precio
+        const upload=req.body
+        
+         const newReservas = {sede,ciudad,upload,precio};
+        const respuesta= await collections.reservas.insertOne(newReservas);
+          result
+              ? res.status(200).send(`Se crean reservas con id ${respuesta.insertedId}`)
+              : res.status(500).send(" Error en el servidor");
+        }
+       else {res.send('no exite habitación')}
+    }catch(error){res.status(500).json(error.message )
     }
-});
-
+  }) 
 //Actualizar peliculas por id requiere token y schema joi
 reservasRouter.put("/reserva/:_id",validator.body(reservaShema ),async (req: Request, res: Response) => {
     const id = req?.params?.id;

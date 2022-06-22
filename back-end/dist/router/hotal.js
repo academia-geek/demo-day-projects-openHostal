@@ -20,10 +20,27 @@ exports.hostalRouter = express_1.default.Router();
 const configcloud_1 = require("../utilities/configcloud");
 const configcloud_2 = require("../utilities/configcloud");
 const express_joi_validation_1 = require("express-joi-validation");
+const token_1 = require("../firebase/token");
 const validator = (0, express_joi_validation_1.createValidator)({});
 ///////////////////Rutas:
 exports.hostalRouter.use(express_1.default.json());
-/////consultas por metodo GET
+///////////////////////administradores 
+exports.hostalRouter.get('/prueba/:email', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { email } = req.params;
+    try {
+        let result = yield cliente.query('SELECT email , rol FROM users WHERE email=$1 GROUP BY email,rol', [email]);
+        if (result.rows.length > 0) {
+            res.send('Hello world');
+        }
+        else {
+            res.send('no exite ');
+        }
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Internal error server' });
+    }
+}));
 exports.hostalRouter.get('/hostal', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     try {
@@ -52,7 +69,7 @@ exports.hostalRouter.get('/hostal/:id', (req, res) => __awaiter(void 0, void 0, 
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.hostalRouter.post('/hostal', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.hostalRouter.post('/hostal', token_1.decodeToken, configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.file) {
         return res.send('El campo foto no puede ser null');
     }
@@ -82,7 +99,7 @@ exports.hostalRouter.post('/hostal', configMulter_1.uploadFile, (req, res) => __
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.hostalRouter.put('/hostal/:id', configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.hostalRouter.put('/hostal/:id', configMulter_1.uploadFile, token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.file) {
         return res.status(452).json({ error: 'el campo foto no puede ser null' });
     }
@@ -115,7 +132,7 @@ exports.hostalRouter.put('/hostal/:id', configMulter_1.uploadFile, (req, res) =>
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.hostalRouter.delete('/hostal/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.hostalRouter.delete('/hostal/:id', token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     try {

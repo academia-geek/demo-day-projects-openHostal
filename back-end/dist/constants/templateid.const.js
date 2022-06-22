@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    'SEND_CODE': 'd-f51f089e58a847d2966b68e50e31e201'
+    'SEND_CODE': 'd-78743e266bac449aa3dd70d6e2b7b17b'
 };
 //# sourceMappingURL=templateid.const.js.map

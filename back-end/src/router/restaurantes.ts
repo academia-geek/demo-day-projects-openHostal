@@ -2,7 +2,6 @@ import express, { Request, Response } from 'express';
 import { ObjectId } from "mongodb";
 import { collections3 } from "../services/database.service";
 
-
 export const restauranteRouter = express.Router();
 
 restauranteRouter.use(express.json());

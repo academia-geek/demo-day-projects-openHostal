@@ -23,7 +23,7 @@ CREATE TABLE room(
     id SERIAL NOT NULL,
     tipo varchar(30) NULL DEFAULT NULL,
     descripcion VARCHAR(200)NOT NULL,
-    foto VARCHAR (50)NOT NULL,
+    foto VARCHAR (250)NOT NULL,
     estado int NOT NULL,
     capacidad INTEGER NOT NULL,
     servicios VARCHAR(100) NOT NULL,

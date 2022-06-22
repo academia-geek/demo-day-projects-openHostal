@@ -17,8 +17,9 @@ const express_1 = __importDefault(require("express"));
 const mongodb_1 = require("mongodb");
 const database_service_1 = require("../services/database.service");
 const express_joi_validation_1 = require("express-joi-validation");
-exports.reservasRouter = express_1.default.Router();
+const config_1 = require("../sql/config");
 const reservas_1 = __importDefault(require("../schemas-joi/reservas"));
+exports.reservasRouter = express_1.default.Router();
 const validator = (0, express_joi_validation_1.createValidator)({});
 exports.reservasRouter.use(express_1.default.json());
 //visualiza todas las peliculas requier TOKEN
@@ -45,18 +46,31 @@ exports.reservasRouter.get("/reserva/:id", (req, res) => __awaiter(void 0, void 
         res.status(404).send(`No se puede encontrar reserva: ${req.params.id}`);
     }
 }));
-//crear nuevas peliculas requiere Token Y squema Joi
-exports.reservasRouter.post("/reserva", validator.body(reservas_1.default), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+//crear nuevas reserva requiere 
+exports.reservasRouter.post('/reserva/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let cliente = yield config_1.pool.connect();
+    const { id } = req.params;
+    console.log(id);
     try {
-        const newReservas = req.body;
-        const result = yield database_service_1.collections.reservas.insertOne(newReservas);
-        result
-            ? res.status(200).send(`Se crean reservas con id ${result.insertedId}`)
-            : res.status(500).send(" Error en el servidor");
+        let result = yield cliente.query('SELECT sede , ciudad, precio FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.id=$1 GROUP BY sede,a.ciudad,precio', [id]);
+        if (result.rows.length > 0) {
+            const resultado = result.rows[0];
+            const sede = resultado.sede;
+            const ciudad = resultado.ciudad;
+            const precio = resultado.precio;
+            const upload = req.body;
+            const newReservas = { sede, ciudad, upload, precio };
+            const respuesta = yield database_service_1.collections.reservas.insertOne(newReservas);
+            result
+                ? res.status(200).send(`Se crean reservas con id ${respuesta.insertedId}`)
+                : res.status(500).send(" Error en el servidor");
+        }
+        else {
+            res.send('no exite habitación');
+        }
     }
     catch (error) {
-        console.error(error);
-        res.status(400).send(error.message);
+        res.status(500).json(error.message);
     }
 }));
 //Actualizar peliculas por id requiere token y schema joi

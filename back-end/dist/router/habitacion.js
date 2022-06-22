@@ -19,8 +19,7 @@ exports.roomRouter = express_1.default.Router();
 const configcloud_1 = require("../utilities/configcloud");
 const configcloud_2 = require("../utilities/configcloud");
 const configMulter_1 = require("../utilities/configMulter");
-const express_joi_validation_1 = require("express-joi-validation");
-const validator = (0, express_joi_validation_1.createValidator)({});
+const token_1 = require("../firebase/token");
 exports.roomRouter.use(express_1.default.json());
 exports.roomRouter.get("/room", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
@@ -67,7 +66,7 @@ exports.roomRouter.get("/roomestado/:estado", (req, res) => __awaiter(void 0, vo
         res.status(500).json({ error: "Internal error server" });
     }
 }));
-exports.roomRouter.post("/room", configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.roomRouter.post("/room", configMulter_1.uploadFile, token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.file) {
         return res.send("El campo foto no puede ser null");
     }
@@ -100,7 +99,46 @@ exports.roomRouter.post("/room", configMulter_1.uploadFile, (req, res) => __awai
         res.status(500).json({ error: "Internal error server" });
     }
 }));
-exports.roomRouter.delete("/room/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.roomRouter.put("/room/:id", token_1.decodeToken, configMulter_1.uploadFile, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!req.file) {
+        return res.send("El campo foto no puede ser null");
+    }
+    let cliente = yield config_1.pool.connect();
+    const { id } = req.params;
+    const originalname = req.file.originalname;
+    const foto = `${configcloud_1.GOOGLE_CLOUD_BUCKET}/${originalname}`;
+    console.log(foto);
+    console.log(`dist/src/public/uploads/${originalname}`);
+    const { tipo, descripcion, estado, capacidad, servicios, precio, imagenes, id_hostal, } = req.body;
+    try {
+        const result = yield cliente.query(`UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7, imagenes=$8,id_hostal=$9 WHERE id =$10`, [
+            tipo,
+            descripcion,
+            foto,
+            estado,
+            capacidad,
+            servicios,
+            precio,
+            imagenes,
+            id_hostal,
+            id,
+        ]);
+        if (result.rowCount > 0) {
+            res.json({ message: "Actualización realizada correctamente" });
+        }
+        else {
+            res
+                .status(503)
+                .json({ message: "Ocurrio un envento inesperado, intente de nuevo" });
+        }
+        (0, configcloud_2.uploadFileGoogle)(originalname).catch(console.error);
+    }
+    catch (err) {
+        console.log({ err });
+        res.status(500).json({ error: "Internal error server" });
+    }
+}));
+exports.roomRouter.delete("/room/:id", token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     try {

@@ -16,6 +16,8 @@ exports.codigoRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const templateid_const_1 = __importDefault(require("../constants/templateid.const"));
 const templateid_const1_1 = __importDefault(require("../constants/templateid.const1"));
+const templateid_const2_1 = __importDefault(require("../constants/templateid.const2"));
+const templateid_const3_1 = __importDefault(require("../constants/templateid.const3"));
 const generarcodigo_1 = __importDefault(require("../utilities/generarcodigo"));
 const sendgrid_1 = __importDefault(require("../utilities/sendgrid"));
 const express_joi_validation_1 = require("express-joi-validation");
@@ -63,7 +65,23 @@ exports.codigoRouter.post('/SEND_CheckOut', validator.body(main_1.default), (_re
             subject: 'Validate email',
             name,
             codigo
-        }, templateid_const1_1.default.SEND_CHECKIN);
+        }, templateid_const2_1.default.SEND_CheckOut);
+        res.status(200).send('Mail send');
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).send("error");
+    }
+}));
+exports.codigoRouter.post('/validar', validator.body(main_1.default), (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { name, email } = _req.body;
+        const codigo = `https://openhostal.web.app/registro`;
+        yield (0, sendgrid_1.default)(email, {
+            subject: 'Validate email',
+            name,
+            codigo
+        }, templateid_const3_1.default.SEND_VALIDAR);
         res.status(200).send('Mail send');
     }
     catch (error) {

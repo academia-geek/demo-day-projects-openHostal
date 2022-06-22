@@ -18,6 +18,7 @@ const config_1 = require("../sql/config");
 exports.usersRouter = express_1.default.Router();
 const express_joi_validation_1 = require("express-joi-validation");
 const hostal_1 = require("../schemas-joi/hostal");
+const token_1 = require("../firebase/token");
 const validator = (0, express_joi_validation_1.createValidator)({});
 exports.usersRouter.use(express_1.default.json());
 exports.usersRouter.get('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -49,7 +50,7 @@ exports.usersRouter.get('/users/:id', (req, res) => __awaiter(void 0, void 0, vo
     }
 }));
 //,validator.body(usersSchema)
-exports.usersRouter.post('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.usersRouter.post('/users', token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { nombre, apellido, email, contrasena, celular, tipo_documento, numero_documento, nacionalidad, rol, id_hostal } = req.body;
         const cliente = yield config_1.pool.connect();
@@ -75,7 +76,7 @@ exports.usersRouter.post('/users', (req, res) => __awaiter(void 0, void 0, void 
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.usersRouter.put('/users/:id', validator.body(hostal_1.usersSchema), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.usersRouter.put('/users/:id', token_1.decodeToken, validator.body(hostal_1.usersSchema), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     const { nombre, apellido, email, contrasena, celular, tipo_documento, numero_documento, nacionalidad, rol, id_hostal } = req.body;
@@ -104,7 +105,7 @@ exports.usersRouter.put('/users/:id', validator.body(hostal_1.usersSchema), (req
         res.status(500).json({ error: 'Internal error server' });
     }
 }));
-exports.usersRouter.delete('/users/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.usersRouter.delete('/users/:id', token_1.decodeToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let cliente = yield config_1.pool.connect();
     const { id } = req.params;
     try {

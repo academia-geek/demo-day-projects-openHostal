@@ -702,68 +702,44 @@
  *
  */
  /**
+/**
  * @swagger
  * /api/reserva/{id}:
- *  get:
- *      summary: Consulta las reservas por su id 
+ *  post:
+ *      summary: Crea una nueva reserva pasandole el id de habitación 
  *      tags: [reserva]
  *      parameters:
  *        - in: path
  *          name: id
- *          schema:
- *              type: string
- *          required: true
- *          description: Identificador de las reservas
- *      responses:
- *          200:
- *              description: Se consultó la reserva por ID
- *          500:
- *              description: Error en el servidor
- */
- /**
- * @swagger
- * /api/reserva:
- *  post:
- *      summary: Crea una nueva habitaciones
- *      tags: [reserva]
  *      requestBody:
+ *          required: true
  *          content:
- *              multipart/form-data:
- *                 schema:
- *                   type: object
- *                   properties:
- *                      sede:
- *                          type: string
- *                          description: sede de la reserva 
- *                      ciudad:
- *                          type: string
- *                          description: ciudad de la sede de la reserva
- *                      checkIn:
- *                          type: string
- *                          description: Ingreso de la reserva 
- *                      checkOut: 
- *                          type: string
- *                          description: Salida de la reserva
- *                      huespedes:
- *                          type: number
- *                          description: Cantidad de huespedes para la reserva 
- *                      noches:
- *                          type: number
- *                          description: Noches de dias hospedados en la reserva
- *                      habitacion:
- *                          type: number
- *                          description: Tipo de habitación en la reserva
- *                      valorTotal:
- *                          type: number
- *                          description: Valor total de la reserva  
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          checkIn:
+ *                              type: string
+ *                              description: fecha de entrada de la reserva
+ *                          checkOut:
+ *                              type: string
+ *                              description: fecha de salida de la reserva
+ *                          huespedes:
+ *                              type: number
+ *                              description: cantidad de huéspedes de la reserva
+ *                          noches:
+ *                              type: number
+ *                              description: cantidad de noches de la reserva
  *      responses:
  *          200:
- *              description: Reservación creada
+ *              description: reserva creada
  *          400:
- *              description: Reservación no creada por error en el envio de datos
+ *              description: reserva no creada por error en el envío de datos
  *          500:
- *              description: Reservación no creada por error en el servidor
- */
+ *              description: reserva no creada por error en el servidor
+*/
+/**
+
  /**
  * @swagger
  * /api/reserva/{id}:
@@ -861,6 +837,25 @@
  * /api/SEND_CHECKIN:
  *  post:
  *      summary: Correo de Checkin
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+/**
+ * @swagger
+ * /api/validar:
+ *  post:
+ *      summary: Validar correo de usuarios no registrados al momento de realizar la reserva  
  *      tags: [correo]
  *      requestBody:
  *          required: true

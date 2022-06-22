@@ -702,18 +702,52 @@
  *
  */
 /**
+* @swagger
+* /api/reserva/{id}:
+*  get:
+*      summary: Consulta las reservas por su id
+*      tags: [reserva]
+*      parameters:
+*        - in: path
+*          name: id
+*          schema:
+*              type: string
+*          required: true
+*          description: Identificador de las reservas
+*      responses:
+*          200:
+*              description: Se consultó la reserva por ID
+*          500:
+*              description: Error en el servidor
+*/
+/**
  * @swagger
- * /api/SEND_CHECKIN:
+ * /api/reserva/{id}:
  *  post:
- *      summary: Crea una nueva reserva
+ *      summary: Crea una nueva reserva pasandole el id de habitación
  *      tags: [reserva]
+ *      parameters:
+ *        - in: path
+ *          name: id
  *      requestBody:
  *          required: true
  *          content:
  *              application/json:
- *                 schema:
- *                   type: object
- *                   $ref: '#/components/schemas/reserva'
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          checkIn:
+ *                              type: string
+ *                              description: fecha de entrada de la reserva
+ *                          checkOut:
+ *                              type: string
+ *                              description: fecha de salida de la reserva
+ *                          huespedes:
+ *                              type: number
+ *                              description: cantidad de huéspedes de la reserva
+ *                          noches:
+ *                              type: number
+ *                              description: cantidad de noches de la reserva
  *      responses:
  *          200:
  *              description: reserva creada
@@ -798,6 +832,25 @@
  * /api/SEND_CHECKIN:
  *  post:
  *      summary: Correo de Checkin
+ *      tags: [correo]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                 schema:
+ *                   type: object
+ *                   $ref: '#/components/schemas/correo'
+ *      responses:
+ *          200:
+ *              description: correo enviado de manera exitosa
+ *          400:
+ *              description: error en el envío de datos
+*/
+/**
+ * @swagger
+ * /api/validar:
+ *  post:
+ *      summary: Validar correo de usuarios no registrados al momento de realizar la reserva
  *      tags: [correo]
  *      requestBody:
  *          required: true

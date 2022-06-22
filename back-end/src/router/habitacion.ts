@@ -1,4 +1,3 @@
-
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
 export const roomRouter = express.Router()
@@ -8,9 +7,6 @@ import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
 import { roomSchema } from "../schemas-joi/hostal";
 import { decodeToken } from "../firebase/token";
-import { required } from 'joi';
-
-const validator = createValidator({});
 
 roomRouter.use(express.json());
 
@@ -59,7 +55,7 @@ roomRouter.get("/roomestado/:estado", async (req, res) => {
   }
 });
 
-roomRouter.post("/room", uploadFile, async (req, res) => {
+roomRouter.post("/room", uploadFile,decodeToken, async (req, res) => {
   if (!req.file) {
     return res.send("El campo foto no puede ser null");
   }
@@ -104,8 +100,7 @@ roomRouter.post("/room", uploadFile, async (req, res) => {
   }
 });
 
-
-roomRouter.put("/room/:id", uploadFile, async (req, res) => {
+roomRouter.put("/room/:id",decodeToken, uploadFile, async (req, res) => {
   if (!req.file) {
     return res.send("El campo foto no puede ser null");
   }
@@ -155,7 +150,7 @@ roomRouter.put("/room/:id", uploadFile, async (req, res) => {
   }
 });
 
-roomRouter.delete("/room/:id", async (req, res) => {
+roomRouter.delete("/room/:id",decodeToken,async (req, res) => {
   let cliente = await pool.connect();
   const { id } = req.params;
   try {

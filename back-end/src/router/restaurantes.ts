@@ -4,6 +4,7 @@ import { collections3 } from "../services/database.service";
 import { createValidator } from 'express-joi-validation';
 import restaurantesShema from '../schemas-joi/restaurantes';
 
+
 export const restauranteRouter = express.Router();
 
 const validator = createValidator({});

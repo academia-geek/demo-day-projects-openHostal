@@ -1,127 +1,170 @@
+
 import express, { Request, Response, Router } from 'express';
 import { pool } from '../sql/config';
-import { uploadFile } from '../utilities/configMulter'
+export const roomRouter = express.Router()
 import { GOOGLE_CLOUD_BUCKET } from '../utilities/configcloud'
 import { uploadFileGoogle } from '../utilities/configcloud'
+import { uploadFile } from '../utilities/configMulter'
 import { createValidator } from "express-joi-validation";
+import { roomSchema } from "../schemas-joi/hostal";
+import { decodeToken } from "../firebase/token";
 
-export const hostalRouter = express.Router()
+roomRouter.use(express.json());
 
-const validator = createValidator({});
-
-import { hostalSchema } from "../schemas-joi/hostal"
-///////////////////Rutas:
-hostalRouter.use(express.json())
-
-/////consultas por metodo GET
-hostalRouter.get('/hostal', async (req: Request, res: Response) => {
-    let cliente = await pool.connect()
-    try {
-        let result = await cliente.query('SELECT * FROM hostal')
-        res.json(result.rows)
-    } catch (err) {
-        console.log({ err })
-        res.status(500).json({ error: 'Internal error server' })
+roomRouter.get("/room", async (req, res) => {
+  let cliente = await pool.connect();
+  try {
+    let result = await cliente.query("SELECT * FROM room");
+    res.json(result.rows);
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
+roomRouter.get("/room/:id", async (req, res) => {
+  let cliente = await pool.connect();
+  const { id } = req.params;
+  try {
+    let result = await cliente.query(`SELECT * FROM room WHERE id = $1`, [id]);
+    if (result.rows.length > 0) {
+      res.json(result.rows);
+    } else {
+      res.send("NO EXISTE Habitación");
     }
-})
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
 
-
-hostalRouter.get('/hostal/:id', async (req: Request, res: Response) => {
-    let cliente = await pool.connect()
-    const { id } = req.params
-    try {
-        let result = await cliente.query(`SELECT * FROM hostal WHERE id = $1`,
-            [id])
-        if (result.rows.length > 0) {
-            res.json(result.rows)
-        } else {
-            res.send('NO EXISTE HOSTAL')
-        }
-    } catch (err) {
-        console.log({ err })
-        res.status(500).json({ error: 'Internal error server' })
+roomRouter.get("/roomestado/:estado", async (req, res) => {
+  let cliente = await pool.connect();
+  const { estado } = req.params;
+  try {
+    let result = await cliente.query(
+      `SELECT * FROM hostal a INNER JOIN room b ON b.id_hostal =a.id WHERE b.estado =$1`,
+      [estado]
+    );
+    if (result.rows.length > 0) {
+      res.json(result.rows);
+    } else {
+      res.send("NO EXISTE Habitación");
     }
-})
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
 
-hostalRouter.post('/hostal', uploadFile, async (req, res) => {
-    if (!req.file) { return res.send('El campo foto no puede ser null') }
-    const originalname = req.file.originalname;
-    const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`
-    const { nombre, ciudad, sede, descripcion, direccion, geometry1, geometry2 } = req.body
-    try {
-        const cliente = await pool.connect()
-        const response = await cliente.query(`INSERT INTO hostal(nombre,ciudad,sede,descripcion,direccion,foto,geometry1,geometry2)VALUES ($1,$2,$3,$4,$5,$6,$7,$8)RETURNING id`,
-            [nombre,
-                ciudad,
-                sede,
-                descripcion,
-                direccion,
-                foto,
-                geometry1,
-                geometry2])
-        if (response.rowCount > 0) {
-            res.send('Se crea hotal correctamente')
-            uploadFileGoogle(originalname).catch(console.error);
-        }
-        else { res.json({ message: 'No se pudo crear el hotal' }) }
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({ error: 'Internal error server' })
-    }
-}
-)
-
-hostalRouter.put('/hostal/:id', uploadFile, async (req, res) => {
-    if (!req.file) { return res.status(452).json({ error: 'el campo foto no puede ser null' }) }
-    const originalname = req.file.originalname;
-    const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`
-    let cliente = await pool.connect()
-    const { id } = req.params
+roomRouter.post("/room", uploadFile,decodeToken, async (req, res) => {
+  if (!req.file) {
+    return res.send("El campo foto no puede ser null");
+  }
+  const originalname = req.file.originalname;
+  let foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
+  try {
     const {
-        nombre,
-        ciudad,
-        sede,
+      tipo,
+      descripcion,
+      estado,
+      capacidad,
+      servicios,
+      precio,
+      imagenes,
+      id_hostal,
+    } = req.body;
+    const cliente = await pool.connect();
+    const response = await cliente.query(
+      `INSERT INTO room(tipo,descripcion,foto,estado,capacidad,servicios,precio,imagenes,id_hostal)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id`,
+      [
+        tipo,
         descripcion,
-        direccion,
-        geometry1,
-        geometry2
-    } = req.body
-    try {
-        const result = await cliente.query(`UPDATE hostal SET nombre = $1, ciudad=$2,sede = $3,descripcion =$4,direccion=$5,foto=$6,geometry1=$7,geometry2=$8 WHERE id =$9`,
-            [nombre,
-                ciudad,
-                sede,
-                descripcion,
-                direccion,
-                foto,
-                geometry1,
-                geometry2,
-                id]
-        )
-        if (result.rowCount > 0) {
-            uploadFileGoogle(originalname).catch(console.error);
-            res.json({ message: 'Actualización realizada correctamente' })
-        } else {
-            res.status(503)
-            .json({ message: 'Ocurrio un envento inesperado, intente de nuevo' })
-        }
+        foto,
+        estado,
+        capacidad,
+        servicios,
+        precio,
+        imagenes,
+        id_hostal,
+      ]
+    );
+    if (response.rowCount > 0) {
+      res.send("Se crea habitacion correctamente");
+      uploadFileGoogle(originalname).catch(console.error);
+    } else {
+      res.json({ message: "No se pudo crear el habitacion" });
+
     }
-    catch (err) {
-        console.log({ err })
-        res.status(500).json({ error: 'Internal error server' })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
+
+
+roomRouter.put("/room/:id",decodeToken, uploadFile, async (req, res) => {
+  if (!req.file) {
+    return res.send("El campo foto no puede ser null");
+  }
+  let cliente = await pool.connect();
+  const { id } = req.params;
+  const originalname = req.file.originalname;
+  const foto = `${GOOGLE_CLOUD_BUCKET}/${originalname}`;
+  console.log(foto);
+  console.log(`dist/src/public/uploads/${originalname}`);
+  const {
+    tipo,
+    descripcion,
+    estado,
+    capacidad,
+    servicios,
+    precio,
+    imagenes,
+    id_hostal,
+  } = req.body;
+  try {
+    const result = await cliente.query(
+      `UPDATE room SET tipo = $1, descripcion=$2,foto = $3,estado=$4,capacidad=$5,servicios=$6,precio=$7, imagenes=$8,id_hostal=$9 WHERE id =$10`,
+      [
+        tipo,
+        descripcion,
+        foto,
+        estado,
+        capacidad,
+        servicios,
+        precio,
+        imagenes,
+        id_hostal,
+        id,
+      ]
+    );
+    if (result.rowCount > 0) {
+      res.json({ message: "Actualización realizada correctamente" });
+    } else {
+      res
+        .status(503)
+        .json({ message: "Ocurrio un envento inesperado, intente de nuevo" });
     }
-})
-hostalRouter.delete('/hostal/:id', async (req, res) => {
-    let cliente = await pool.connect()
-    const { id } = req.params
-    try {
-        const result = await cliente.query(`DELETE FROM hostal WHERE id = $1`, [id])
-        if (result.rowCount > 0) {
-            res.send('Se eliminado hostal de manera exitosa')
-        } else {
-            res.status(409).json({ message: 'Error en dato enviado' })
-        }
-    } catch (err) {
-        res.status(500).json({ error: 'Error server' })
+    uploadFileGoogle(originalname).catch(console.error);
+  } catch (err) {
+    console.log({ err });
+    res.status(500).json({ error: "Internal error server" });
+  }
+});
+
+roomRouter.delete("/room/:id",decodeToken,async (req, res) => {
+  let cliente = await pool.connect();
+  const { id } = req.params;
+  try {
+    const result = await cliente.query(`DELETE FROM room WHERE id = $1`, [id]);
+    if (result.rowCount > 0) {
+      res.send("Se eliminado habitacion de manera exitosa");
+    } else {
+      res.status(409).json({ message: "Error en dato enviado" });
     }
-})
+  } catch (err) {
+    res.status(500).json({ error: "Error server" });
+  }
+});
+
+

@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import templateIds from '../constants/templateid.const';
 import templateIds1 from '../constants/templateid.const1';
 import templateIds2 from '../constants/templateid.const2';
+import templateIds3 from '../constants/templateid.const3';
 import generatecode from '../utilities/generarcodigo';
 import sendEmail from '../utilities/sendgrid';
 import { createValidator } from 'express-joi-validation'
@@ -57,7 +58,6 @@ codigoRouter.post('/SEND_CHECKIN',validator.body(mailSchema),async (_req: Reques
   }
 })
 
-
 codigoRouter.post('/SEND_CheckOut', validator.body(mailSchema),async (_req: Request, res: Response) => {
   try{
  
@@ -70,7 +70,30 @@ codigoRouter.post('/SEND_CheckOut', validator.body(mailSchema),async (_req: Requ
         name,
         codigo
       },
-      templateIds1.SEND_CHECKIN
+      templateIds2.SEND_CheckOut
+    )
+    res.status(200).send('Mail send')
+  }
+  catch(error){
+      console.log(error)
+      res.status(500).send("error")
+
+  }
+})
+
+codigoRouter.post('/validar', validator.body(mailSchema),async (_req: Request, res: Response) => {
+  try{
+ 
+   const {name, email}=_req.body  
+   const codigo = `https://openhostal.web.app/registro`;
+    await sendEmail(
+      email,
+      {
+        subject: 'Validate email',
+        name,
+        codigo
+      },
+      templateIds3.SEND_VALIDAR
     )
     res.status(200).send('Mail send')
   }

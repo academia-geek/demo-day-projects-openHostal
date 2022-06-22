@@ -2,14 +2,5 @@ node_modules
 .env
 dist
 key.json
-<<<<<<< HEAD
-<<<<<<< HEAD
-service-account-key
-=======
-service-account-key
->>>>>>> 6b40ec06ca6e24db1bc60b640f296e3bffca7d3e
-=======
-
 service-account-key
 
->>>>>>> 6bb2101be388090e44e376b12b9cbbc5cc2224dc

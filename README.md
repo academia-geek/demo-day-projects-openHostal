@@ -1,4 +1,10 @@
-# openHostal
+<p align="center">
+
+<img src="https://res.cloudinary.com/dzkollux2/image/upload/v1655310785/open%20hostal/logo_final_yqfacn.svg" alt="drawing" width="200"/>
+
+</p>
+
+# OpenHostal
 
 OpenHostal is a web application designed to do bookings in different hotels and locations, you would select a location, days while you use the service, and a number of persons, and is all ready! you just need to select your room and proceed to the payment. this app solves the problems of stay that many travelers have, in this way they can book easily and quickly from OpenHostal. This web application has the backend services in Firebase and Google Cloud Plattform, tested with super Test.
 

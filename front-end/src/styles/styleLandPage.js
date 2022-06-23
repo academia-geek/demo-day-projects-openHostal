@@ -162,16 +162,15 @@ export const CardImmStyle  = styled.div`
     max-height: 400px;
     
 `;
-
 export const CardsStyle = styled.div`  
     display:flex;
     flex-direction:row;
-    background-image: linear-gradient(to right,#212529,#212529,white);
-    width: 430px;
-    height: 330px;
+    background-color:#212529;
+    width: 520px;
+    height: 300px;
     overflow: hidden;
     border-radius: 13px;
-    margin: 20px;
+    margin: 20px auto;
     transition: all .5s;
         &:hover{
             margin-top: 5px; 
@@ -183,4 +182,9 @@ export const ImgIgStyle = styled.img`
     height: auto;
     margin-left: 5px;
     border-radius: 10px 3px 3px 10px;
+`;
+export const DivContent = styled.div` 
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
 `;

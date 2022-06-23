@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "user_id":1,
+            "codigo":2355,
+            "expiracion":"2022-06-30",
+            "reserva_id":1
+        },
+        {
+            "user_id":2,
+            "codigo":2355,
+            "expiracion":"2022-07-10",
+            "reserva_id":1
+        },
+        {
+            "user_id":3,
+            "codigo":3455,
+            "expiracion":"2022-07-08",
+            "reserva_id":1
+        },
+        {
+            "user_id":4,
+            "codigo":2335,
+            "expiracion":"2022-07-05",
+            "reserva_id":1
+        }
+    ]
+}

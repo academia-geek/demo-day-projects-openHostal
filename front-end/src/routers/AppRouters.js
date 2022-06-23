@@ -19,7 +19,7 @@ const AppRouters = () => {
        const auth = getAuth()
        onAuthStateChanged(auth, (user)=>{
            if(user?.uid){
-                         setIsLoggedIn(true)
+            setIsLoggedIn(true)
            }
            else{
                setIsLoggedIn(false)
@@ -56,7 +56,7 @@ if(checking){
               <PublicRouters isAuth={isLoggedIn} >
                 <Register />    
               </PublicRouters>} />
-            <Route path='/descrip/:index' element={
+            <Route path='/room/:idhostal/:idroom' element={
               <PublicRouters isAuth={isLoggedIn} >
                 <Descrip/>   
               </PublicRouters>} />

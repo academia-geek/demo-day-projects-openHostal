@@ -33,7 +33,7 @@ const Login = () => {
     <div>
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home"><h2>OpenHostal</h2></Navbar.Brand>
+                <Navbar.Brand href="#home"><h2>OpenHostel</h2></Navbar.Brand>
             </Container> 
         </Navbar>
         <ContenDivStyle>

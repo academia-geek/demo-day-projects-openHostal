@@ -1,11 +1,40 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+
 .dates {
     text-align: center;
     padding-top: auto;
 }
-/* text editor*/
-.rs-picker-default .rs-picker-toggle.rs-btn {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    width: 282px;
-}
+
 /*  */
+
+.date-picker {
+    color: black;
+    width: 100%;
+}
+
+.rs-picker-has-value .rs-btn .rs-picker-toggle-value, .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
+    color: black !important;
+}
+
+.container-img{
+    height: 250px;
+}
+.image-card{
+    height: 250px;
+    object-fit: cover;
+}
+
+.description-hostales{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 6rem;
+ }
+ .div-description{
+    background-color: #212529;
+    color: white;
+ }
+ 

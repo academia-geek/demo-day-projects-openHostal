@@ -4,11 +4,14 @@ export const authTypes = {
   REGISTER: 'REGISTER'
   }
 
-export const getData = {
-  ROOM: 'ROOM',
-  HOSPEDAJE: 'HOSPEDAJE'
 
-}
+export const AGREGAR_FILTRO = 'AGREGAR_FILTRO';
+export const AGREGAR_HOSPEDAJE = 'AGREGAR_HOSPEDAJE';
+export const ACTUALIZAR_FILTRO = 'ACTUALIZAR_FILTRO';
+export const ACTUALIZAR_HOSPEDAJE = 'ACTUALIZAR_HOSPEDAJE';
+export const ELIMINAR_FILTRO = 'ELIMINAR_FILTRO';
+export const ELIMINAR_HOSPEDAJE = 'ELIMINAR_HOSPEDAJE';
+
 export const CREATE_DATA = "CREATE_DATA";
 export const READ_ALL_DATA = "READ_ALL_DATA";
 export const UPDATE_DATA = "UPDATE_DATA";

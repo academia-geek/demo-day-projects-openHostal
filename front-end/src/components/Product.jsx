@@ -8,14 +8,15 @@ import { helpHttp } from '../helpers/helpHttp';
 import { createAction, noAction, readAllAction } from '../redux/actions/crudActions';
 import { NavLink } from 'react-router-dom';
 
-const Product = () => {
+const Product = ({data}) => {
   // const state = useSelector((state) => state);
   const dispatch = useDispatch();
   // const {db} = state.crud; 
-  const [room, setRoom] = useState([])
+  const [room, setRoom] = useState([]);
   
   let api = helpHttp();
   let url = "https://openhostal.herokuapp.com/rooms";
+  
 
   useEffect(() => {
    

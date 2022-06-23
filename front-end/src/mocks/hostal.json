@@ -1,0 +1,3154 @@
+{
+    "hostales": [
+        {
+            "id": 1,
+            "nombre": "Open Hostal",
+            "ciudad": "Bogota",
+            "sede": "Open Hostal La Candelaria Bogotá",
+            "descripcion": "Ubicada en la zona histórica empedrada de Bogotá, Selina La Candelaria irradia historia y cultura culinaria.",
+            "direccion": "Cl. 11 ##3-43",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/331233537_dgt5w0.jpg",
+            "geometry1": -16.253125,
+            "geometry2": 28.474925,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion ndar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 1,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 1,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 1,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "OpenHostal VIky",
+            "ciudad": "Bogota",
+            "sede": "1",
+            "descripcion": "700 metros de la casa de chappinero y de la casa de Ana Frank. El Historic Canal View Suites ofrece habitaciones con vista a toda la ciudad .",
+            "direccion": "Diagonal42 cra4",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/358749153_h32gq3.jpg",
+            "geometry1": 4.679251,
+            "geometry2": -74.059356,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 2,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 2,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 2,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Hostal Miguel ",
+            "ciudad": "Bogota",
+            "sede": "1",
+            "descripcion": "100 metros de la casa del centro y 200 metres de monserrate. Hostal Miguel ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.",
+            "direccion": "calle19 #3-01",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/hotelsdotcom-1091739488-fc490226_w-427000_cgg2jh.jpg",
+            "geometry1": 4.603092,
+            "geometry2": -74.068468,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 3,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-01",
+                            "fecha_final": "2022-07-05"
+                        },
+                        {
+                            "fecha_in": "2022-08-01",
+                            "fecha_final": "2022-08-05"
+                        },
+                        {
+                            "fecha_in": "2022-09-01",
+                            "fecha_final": "2022-09-05"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp"  
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 3,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 3,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-10",
+                            "fecha_final": "2022-07-15"
+                        },
+                        {
+                            "fecha_in": "2022-08-10",
+                            "fecha_final": "2022-08-15"
+                        },
+                        {
+                            "fecha_in": "2022-09-10",
+                            "fecha_final": "2022-09-15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Hostal Concordia",
+            "ciudad": "Bogota",
+            "sede": "3",
+            "descripcion": "100 metros de la casa del centro y 200 metres de monserrate. Hostal Miguel ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.",
+            "direccion": "calle12 #2-01",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/The-Charlee-Hotel_ioubdl.jpg",
+            "geometry1": 4.599413,
+            "geometry2": -74.068725,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 4,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 4,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 4,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Hostal Las Nieves",
+            "ciudad": "Bogota",
+            "sede": "4",
+            "descripcion": "200 metros de la casa del centro y 400 metros de monserrate. Hostal ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.",
+            "direccion": "calle19 #10-01",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/hostel-moreno_kos3hr.jpg",
+            "geometry1": 4.604632,
+            "geometry2": -74.070614,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 5,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 5,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 5,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Hostal Botero",
+            "ciudad": "Medellin",
+            "sede": "5",
+            "descripcion": "100 metros de las esculturas de Fernando Botero. Hostal ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.",
+            "direccion": "calle51 #50-01",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/267784_1568366483_zknrjl.jpg",
+            "geometry1": 4.251791,
+            "geometry2": -75.56876,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 6,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 6,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 6,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-21",
+                            "fecha_final": "2022-07-25"
+                        },
+                        {
+                            "fecha_in": "2022-08-21",
+                            "fecha_final": "2022-08-25"
+                        },
+                        {
+                            "fecha_in": "2022-09-21",
+                            "fecha_final": "2022-09-25"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "Hostal Bolivariana",
+            "ciudad": "Medellin",
+            "sede": "6",
+            "descripcion": "Este Hostal ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.\",",
+            "direccion": "carrera73 #129a-01",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748811/openhostal/Garden_medellin_rvlfpn.jpg",
+            "geometry1": 6.244295,
+            "geometry2": -75.591412,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 7,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 7,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 7,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "Hostal Diamante",
+            "ciudad": "Medellin",
+            "sede": "9",
+            "descripcion": "Este Hostal ofrece habitaciones con vista a toda la ciudad  y conexión de wifi gratis.",
+            "direccion": "calle50 #73-12",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748811/openhostal/248869398_v8ryff.jpg",
+            "geometry1": 6.260003,
+            "geometry2": -75.589432,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 8,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 8,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 8,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Hostal Caribe",
+            "ciudad": "Santa Marta",
+            "sede": "10",
+            "descripcion": "Este Hostal ofrece habitaciones con vista al mar, aire acondicionado  y conexión de wifi gratis.",
+            "direccion": "calle16",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/gio-hotel-santa-marta_xtjrtr.jpg",
+            "geometry1": 11.243372,
+            "geometry2": -75.214316,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 9,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 9,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 9,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "Brisa Loca",
+            "ciudad": "Santa Marta",
+            "sede": "11",
+            "descripcion": "Este Hostal ofrece habitaciones con vista al mar, aire acondicionado  y conexión de wifi gratis.",
+            "direccion": "Cra, 1a#25-2",
+            "foto": "https://res.cloudinary.com/dbdrkxooj/image/upload/v1655748810/openhostal/cbe8370d_b_uvm0by.webp",
+            "geometry1": 11.238553,
+            "geometry2": -75.217449,
+            "habitaciones": [
+                {
+                    "id": 1,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación estándar doble es perfecta para pequeños grupos y parejas que desean controlar su presupuesto.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843169/open%20hostal/habitaciones%20dobles/habitacion_doble_1_tyolkk.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843213/open%20hostal/habitaciones%20dobles/habitacion_doble_4_exxph3.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843211/open%20hostal/habitaciones%20dobles/habitacion_doble_2_tsgrgx.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843212/open%20hostal/habitaciones%20dobles/habitacion_doble_3_w8sqtl.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Agua caliente, Servicio de limpieza",
+                    "id_hostal": 10,
+                    "precio": "80000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una estancia clásica, asequible, cómoda y privada. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-B_wuuxzo.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-B_a7j43a.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento1-D_ocjicn.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-C_wtnqip.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-A_pfvejx.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi, Baño Privado, Ropa de cama, Toallas, Armario, Agua caliente, Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una bella habitación, con vista a gran parte de la ciudad y a 200 metros de monserrate. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-C_qwegew.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-D_kjojcv.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843506/openhostal/departamento2-E_yddrx1.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento2-A_cv1oms.jpg",
+                        "https://res.cloudinary.com/dbdrkxooj/image/upload/v1654843505/openhostal/departamento1-E_m1rqk7.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "85000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una habitación confortable, en el centro de Bogotá, una estadía que te ofrece cercanía a la ciudad. Nuestra habitación Estándar ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843406/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_3_tbmih9.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843403/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_1_bjz06s.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843405/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_2_owmhmw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843408/open%20hostal/habitaciones%20dobles/otra%20hab%20doble/habitacion_doble_4_gfym8s.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "75000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Habitacion estandar Multiple",
+                    "descripcion": "Esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843571/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_3_soobbn.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_2_npem5o.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843570/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_1_rli1fo.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843572/open%20hostal/habitaciones%20dobles/hotel%20canford/habitacion_doble_4_w6lyft.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "120000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-26",
+                            "fecha_final": "2022-07-30"
+                        },
+                        {
+                            "fecha_in": "2022-08-26",
+                            "fecha_final": "2022-08-30"
+                        },
+                        {
+                            "fecha_in": "2022-09-26",
+                            "fecha_final": "2022-09-30"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Ubicada en el corazón de medellin, esta habitación ofrece todo lo que 2 personas podrían necesitar, con una vista a la ciudad. Nuestra habitación Doble ofrece a dos huespedes el espacio ideal para relajarse cómodamente en total privacidad.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843990/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_3_yhvwtu.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_1_y7cnxb.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843989/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_2_rwxpgp.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654843991/open%20hostal/habitaciones%20dobles%202%20camas/hotel%201/habitacion_doble_4_w0fzb6.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "100000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Una de nuestras habitaciones más grandes, posee vistas a gran parte de la ciudad y está bien ubicada, cerca del servicio de transporte público.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844375/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_3_dnijhy.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844369/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_1_z9vpyw.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844372/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_2_exhsmj.webp",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1654844377/open%20hostal/habitaciones%20dobles%202%20camas/hotel%203/habitacion_doble_4_ubwkbj.webp"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "110000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Habitacion estandar multiple",
+                    "descripcion": "Habitación amplia, cuenta con todo lo que necesitas para una estadía cómoda y tranquila.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/161002694_tyuahd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564373/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/155515243_aoyt7m.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564375/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/277955452_hzhfgg.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564376/open%20hostal/habitaciones%20dobles%202%20camas/medell%C3%ADn/276244268_agmw7u.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "95000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Habitacion estandar doble",
+                    "descripcion": "Una hacitación para 2 personas, tienes acceso a balcón, piscina y muchos otros servicios más.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564021/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603957_mwsvqe.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564014/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/187872324_l6m5n0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564015/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/294603948_jjw0lb.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655564033/open%20hostal/habitaciones%20dobles%202%20camas/otro%20hotel%20en%20santa%20marta/112480137_kd0vlu.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 2,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama",
+                    "id_hostal": 10,
+                    "precio": "90000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Habitacion de lujo",
+                    "descripcion": "Habitación con capacidad de 5 personas! posee su propia cocina y tiene acceso a piscina.",
+                    "foto": [
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562671/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/249113930_abvkm0.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/298109629_p66yqm.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562670/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/285112566_b6ahdd.jpg",
+                        "https://res.cloudinary.com/dzkollux2/image/upload/v1655562672/open%20hostal/habitaciones%20dobles%202%20camas/hotel%20santa%20martha/297254268_m4riju.jpg"
+                    ],
+                    "estado": 1,
+                    "capacidad": 4,
+                    "servicios": "Wifi,Baño Privado,Ropa de cama,Toallas,Armario,Agua caliente,Enchufe cerca de la cama, cocina, parking, piscina",
+                    "id_hostal": 10,
+                    "precio": "150000",
+                    "reservas": [
+                        {
+                            "fecha_in": "2022-07-16",
+                            "fecha_final": "2022-07-20"
+                        },
+                        {
+                            "fecha_in": "2022-08-16",
+                            "fecha_final": "2022-08-20"
+                        },
+                        {
+                            "fecha_in": "2022-09-16",
+                            "fecha_final": "2022-09-20"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

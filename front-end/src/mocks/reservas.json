@@ -1,0 +1,11 @@
+{
+    "reservas": [
+        {
+            "user_id": 1,
+            "pago_id": 1,
+            "hostal_id": 1,
+            "checkIn": "2022-06-18",
+            "checkOut": "2022-06-25"
+        }
+    ]
+}

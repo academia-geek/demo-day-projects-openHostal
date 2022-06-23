@@ -1,0 +1,28 @@
+{
+    "tarjetas":[
+        {
+            "usuario_id":1,
+            "numeros": 1234567890123456,
+            "cvc":123,
+            "fecha_vencimiento":"25/04"
+        },
+        {
+            "usuario_id":2,
+            "numeros": 9876543210987654,
+            "cvc":234,
+            "fecha_vencimiento":"25/04"
+        },
+        {
+            "usuario_id":3,
+            "numeros": 1234567890123456,
+            "cvc":123,
+            "fecha_vencimiento":"25/04"
+        },
+        {
+            "usuario_id":4,
+            "numeros": 9876543210987654,
+            "cvc":123,
+            "fecha_vencimiento":"22/10"
+        }
+    ]
+}
